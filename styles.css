@@ -1,0 +1,439 @@
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #30436d; /* Light Grey */
+    color: #374151; /* Dark Grey for text */
+}
+header {
+    background-color: #0b2260; /* Navy Blue */
+    color: #FFFFFF; /* White text */
+    padding: 10px 0;
+    position: fixed; /* Make the navbar fixed */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it stays on top of other elements */
+}
+h1{
+    font-size: 45px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Add padding to the sides */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px; /* Space between links */
+}
+
+nav ul li a {
+    color: #FFFFFF; /* White text */
+    text-decoration: none;
+    padding: 10px 15px; /* Add padding around links */
+}
+
+nav ul li a:hover {
+    background-color: #ADD8E6; /* Light blue background on hover */
+    color:#0b2260; /* Keep text color unchanged */
+}
+
+
+nav ul li a i {
+    transition: color 0.3s;
+}
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right {
+    margin-left: auto; /* Push the right nav links to the right */
+}
+
+/* Add some padding to the top of the content to avoid overlapping with the navbar */
+body {
+    padding-top: 60px; /* Adjust this value based on the height of the header */
+}
+
+
+section {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+/* Ensure the sections are stacked vertically with space in between */
+.content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px; /* Add space between each section */
+}
+
+/* Ensure that text inside the "Who Am I?" section starts from the left */
+.about-box p {
+    text-align: left;
+}
+
+/* Add some padding inside the sections */
+.about-box, .info-box{
+    padding: 20px;
+    background-color: #FFFFFF; /* White background */
+    border-radius: 10px;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+    /* Set a height for equal columns */
+    min-height: 430px; /* Adjust as needed */
+}
+
+/* Set a fixed height for the profile picture to fit better */
+.picture-box{
+    min-height: 430px; /* Adjust as needed */
+}
+
+/* Style for the info box */
+.info-box {
+    background-color: #FFFFFF; /* White background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+    width: 100%;
+    max-width: 400px; /* Limit the width for better readability */
+    margin: 0 auto; /* Center align the box */
+}
+
+.info-box h3 {
+    margin-top: 0;
+    font-size: 1.5em; /* Slightly larger font size for the heading */
+    color: #1E3A8A; /* Navy Blue */
+}
+
+.info-box p {
+    font-size: 1em;
+    color: #374151; /* Dark Grey */
+    margin: 10px 0; /* Space between paragraphs */
+    text-align: left;
+}
+
+.info-box a {
+    color: #2563EB; /* Royal Blue */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.info-box a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+
+
+/* Optional: Adjust the overall section styling */
+.section {
+    margin-bottom: 20px; /* Space between the sections */
+}
+
+
+#home {
+    text-align: center;
+    background-color: #30436d; /* Royal Blue */
+    color: #FFFFFF; /* White text */
+    padding: 50px 0;
+}
+
+
+
+.info-box, .about-box{
+    background-color: #FFFFFF; /* White background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+    width: 30%;
+}
+
+
+.picture-box {
+    padding: 10px;
+    border-radius: 10px;
+    width: 25%; /* Adjust width as needed for size */
+    box-shadow: none; /* Remove the box shadow */
+}
+
+.profile-pic {
+    max-width: 100%;
+    border-radius: 10px; /* Remove circle and make it a rounded rectangle */
+    border: 5px solid rgba(243, 244, 246, 0.7); /* Faded border to sync with background */
+    transition: border-color 0.3s ease; /* Add smooth transition for hover effect */
+}
+
+.picture-box:hover .profile-pic {
+    border-color: rgba(243, 244, 246, 0.9); /* Slightly more visible border on hover */
+}
+/* Who AM I PART*/
+
+.about-box {
+    background-color: #FFFFFF; /* White background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+    width: 40%; /* Adjust the width as per your layout */
+    margin: 0 auto; /* Center the box */
+    color: #374151; /* Dark Grey text color */
+}
+
+.about-box h3 {
+    margin-bottom: 15px;
+    color: #1E3A8A; /* Navy Blue */
+}
+
+
+#resume {
+    background-color: #FFFFFF; /* White background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+    padding: 20px;
+}
+
+.resume-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 20px; /* Space between columns */
+}
+
+.resume-box {
+    background-color: #F3F4F6; /* Light Grey background */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+.resume-box h3 {
+    margin-top: 0;
+}
+
+
+.download-link {
+    display: inline-block;
+    background-color: #1E3A8A; /* Navy Blue */
+    color: #FFFFFF; /* White text */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    margin-bottom: 20px; /* Space above the content */
+}
+
+.download-link:hover {
+    background-color: #3172ff; /* Lighter Blue */
+    
+}
+
+
+footer {
+    background-color: #0b2260; /* Navy Blue */
+    color: #FFFFFF; /* White text */
+    font-size: 10px;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+a {
+    color: #1E3A8A; /* Navy Blue for links */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #011030; /* Lighter Blue for hover effect */
+}
+
+
+.experience-item {
+    margin-bottom: 15px; /* Space between experience items */
+}
+
+.experience-item h4 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.experience-item p {
+    margin: 5px 0 0;
+    font-size: 0.9em;
+    color: #6B7280; /* Light Grey text color */
+}
+.experience-item ul {
+    padding-left: 20px; /* Indent list items */
+}
+
+.experience-item li {
+    margin-bottom: 10px; /* Space between list items */
+    line-height: 1.6; /* Improve readability */
+}
+.education-item {
+    margin-bottom: 15px; /* Space between education items */
+}
+
+.education-item h4 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.education-item p {
+    margin: 5px 0 0;
+    font-size: 0.9em;
+    color: #6B7280; /* Light Grey text color */
+}
+
+/* SKILL PART*/
+.skill {
+    margin-bottom: 20px;
+}
+
+.skill h4 {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.skill-bar {
+    background-color: #E5E7EB; /* Light Grey background */
+    border-radius: 5px;
+    overflow: hidden; /* Hide overflow to create the effect of the filled bar */
+    height: 20px; /* Adjust the height of the skill bar */
+}
+
+.skill-bar-fill {
+    background-color: #0d2e77; /* Blue background for the filled part of the bar */
+    height: 100%; /* Fill the height of the skill bar */
+    text-align: center; /* Center the text inside the bar */
+    line-height: 20px; /* Vertically center the text */
+    color: #FFFFFF; /* White text color */
+    font-size: 0.8em; /* Font size for text inside the bar */
+    white-space: nowrap; /* Prevent text from wrapping */
+    transition: width 0.5s ease; /* Smooth transition for the width change */
+}
+
+/* GitHub Projects Section */
+#projects {
+    background-color: #F3F4F6; /* Light Grey background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+    margin-top: 20px;
+}
+
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project {
+    background-color: #dbdbdb; /* White background */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+    width: 30%;
+    text-align: center;
+    position: relative;
+}
+
+.project-image {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.project-link {
+    position: relative;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 95%;
+    background-color: rgba(81, 125, 220, 0.7); /* Blue with opacity */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+    transform: scale(1.1)
+}
+
+.overlay-text {
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.project-link:hover .overlay {
+    opacity: 1;
+}
+
+.project-link:hover .project-image {
+    transform: scale(1.1); /* Slightly zoom the image on hover */
+}
+
+.project h3 {
+    margin-top: 10px;
+    color: #1E3A8A; /* Navy Blue */
+}
+
+.project p {
+    font-size: 0.9em;
+    color: #374151; /* Dark Grey */
+}
+
+.project-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #2563EB; /* Royal Blue */
+    color: #FFFFFF; /* White text */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.project-btn:hover {
+    background-color: #001c79;
+    color: white;
+
+}
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) { /* Adjust this value as needed for your breakpoint */
+    .content {
+        flex-direction: column; /* Stack columns vertically on small screens */
+        align-items: stretch; /* Make columns stretch to full width */
+    }
+
+    .info-box, .about-box, .picture-box{
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .resume-content {
+        grid-template-columns: 1fr; /* One column on small screens */
+    }
+
+    .project {
+        width: 100%; /* Each project takes full width */
+    }
+}
