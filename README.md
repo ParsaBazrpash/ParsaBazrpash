@@ -4,7 +4,6 @@
 - 🔭 I’m currently a software engineering student at UT Dallas.
 - 🌱 I’m always open to learning new languages and tools
 - 💻 I enjoy solving coding challenges and working on new projects
-- 🎯 Goal: Attend HackUTD Ripple Effect and learn more about competitive programming.
 - ⚡ Fun Fact: I love cars and have a HotWheels collection!
 
 ### 🛠 Tech Stack
