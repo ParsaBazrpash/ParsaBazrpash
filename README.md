@@ -1,16 +1,19 @@
-## Hi there 👋
+## Hi, I'm Parsa! 👋
 
-<!--
-**ParsaBazrpash/ParsaBazrpash** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+### 🚀 About Me
+- 🔭 I’m currently a software engineering student at UT Dallas.
+- 🌱 I’m always open to learning new languages and tools
+- 💻 I enjoy solving coding challenges and working on new projects
+- 🎯 Goal: Attend HackUTD Ripple Effect and learn more about competitive programming.
+- ⚡ Fun Fact: I love cars and have a HotWheels collection!
 
-Here are some ideas to get you started:
+### 🛠 Tech Stack
+- 💻 **Languages:** Java, Python, C++, HTML, CSS, JavaScript
+- 🌐 **Web Development:** HTML, CSS, JavaScript
+- 🔢 **Data Science:** Pandas, NumPy
+- 🛠 **Tools:** PyCharm, Visual Studio Code, Git
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+### 📫 Let's Connect
+- GitHub: [github. com/ParsaBazrpash](https://github.com/ParsaBazrpash)
+- LinkedIn [Linkedin. com/in/parsa-bazrpash-amalgar](https://www.linkedin.com/in/parsa-bazrpash-amalgar/)
+- My Portfolio: (https://parsabazrpash.github.io/ParsaBazrpash/#home)
