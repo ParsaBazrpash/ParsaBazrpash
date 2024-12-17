@@ -131,6 +131,8 @@ export default function Home() {
             <div className="space-y-4">
               {[
                 { name: 'Java', level: 70 },
+                { name: 'C#', level: 65 },
+                { name: 'C++', level: 60 },
                 { name: 'Python', level: 50 },
                 { name: 'HTML/CSS/Tailwind CSS', level: 80 },
                 { name: 'JavaScript', level: 50 },
