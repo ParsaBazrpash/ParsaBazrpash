@@ -27,13 +27,15 @@ export default function Home() {
                 />
               </div>
             </div>
-            
             <div className="space-y-4">
               <h3 className="text-2xl font-semibold text-gray-100">Who Am I?</h3>
               <p className="text-gray-400">
-                I&apos;m a software engineering student at the University of Texas at Dallas, 
-                passionate about coding and problem-solving. With a background in C++, Java, 
-                and recently Python, I&apos;ve worked on projects that used HTML/CSS and JavaScript.
+              I&apos;m a Software Engineering student at the University of Texas at Dallas,
+              passionate about full-stack development and UI/UX design. Proficient in 
+              C++, Java, and Python, I&apos;m expanding my expertise in modern web technologies
+              including React.js, Next.js, TypeScript, and JavaScript. My journey in
+              web development has given me strong foundations in HTML/CSS, while I continually
+              embrace new technologies and best practices.
               </p>
             </div>
             
