@@ -132,7 +132,7 @@ export default function Home() {
               {[
                 { name: 'Java', level: 70 },
                 { name: 'Python', level: 50 },
-                { name: 'HTML/CSS', level: 80 },
+                { name: 'HTML/CSS/Tailwind CSS', level: 80 },
                 { name: 'JavaScript', level: 40 },
                 { name: 'TypeScript', level: 40 },
                 { name: 'React.js', level: 60 },
