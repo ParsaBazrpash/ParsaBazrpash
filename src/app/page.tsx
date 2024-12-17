@@ -1,8 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Github, Linkedin, Mail, MapPin, Coffee, Code, GraduationCap} from 'lucide-react'
-import {Navbar} from './components/Navbar'
-import { useEffect, useState } from 'react';
+import { Mail, MapPin, Coffee, Code, GraduationCap } from 'lucide-react';
+import { Navbar } from './components/Navbar';
 
 
 export default function Home() {
@@ -32,9 +31,9 @@ export default function Home() {
             <div className="space-y-4">
               <h3 className="text-2xl font-semibold text-gray-100">Who Am I?</h3>
               <p className="text-gray-400">
-                I'm a software engineering student at the University of Texas at Dallas, 
+                I&apos;m a software engineering student at the University of Texas at Dallas, 
                 passionate about coding and problem-solving. With a background in C++, Java, 
-                and recently Python, I've worked on projects that used HTML/CSS and JavaScript.
+                and recently Python, I&apos;ve worked on projects that used HTML/CSS and JavaScript.
               </p>
             </div>
             
@@ -80,7 +79,7 @@ export default function Home() {
                   <h4 className="font-semibold text-gray-100">Software Engineer</h4>
                   <p className="text-gray-400">AIMD – 10/2024 - Present</p>
                   <ul className="list-disc ml-4 mt-2 text-gray-400">
-                    <li>Developing and creating a full-stack web application named "DocAlert" which you can schedule appointments with your doctor.</li>
+                    <li>Developing and creating a full-stack web application named &quot;DocAlert&quot; which you can schedule appointments with your doctor.</li>
                   </ul>
                 </div>
                 <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
@@ -111,12 +110,12 @@ export default function Home() {
               <div className="space-y-6">
                 <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
                   <h4 className="font-semibold text-gray-100">University of Texas at Dallas</h4>
-                  <p className="text-gray-400">Bachelor's, Software Engineering</p>
+                  <p className="text-gray-400">Bachelor&apos;s, Software Engineering</p>
                   <p className="text-gray-400">08/2024 - 05/2026</p>
                 </div>
                 <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
                   <h4 className="font-semibold text-gray-100">Dallas College</h4>
-                  <p className="text-gray-400">Associate's, Software Engineering</p>
+                  <p className="text-gray-400">Associate&apos;s, Software Engineering</p>
                   <p className="text-gray-400">08/2022 - 08/2024</p>
                   <p className="text-gray-400 mt-2">GPA: 3.96</p>
                 </div>
