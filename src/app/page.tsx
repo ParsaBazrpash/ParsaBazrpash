@@ -114,6 +114,7 @@ export default function Home() {
                   <h4 className="font-semibold text-gray-100">University of Texas at Dallas</h4>
                   <p className="text-gray-400">Bachelor&apos;s, Software Engineering</p>
                   <p className="text-gray-400">08/2024 - 05/2026</p>
+                  <p className="text-gray-400 mt-2">GPA: 3.75</p>
                 </div>
                 <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
                   <h4 className="font-semibold text-gray-100">Dallas College</h4>
@@ -175,7 +176,7 @@ export default function Home() {
         <div className="p-6 rounded-lg bg-gray-800 shadow-lg text-center">
           <div className="flex items-center justify-center gap-4 mb-4">
             <GraduationCap className="w-8 h-8 text-custom-blue" />
-            <h3 className="text-4xl font-bold text-custom-blue">3.96</h3>
+            <h3 className="text-4xl font-bold text-custom-blue">3.75</h3>
           </div>
           <p className="text-gray-300">GPA</p>
         </div>
