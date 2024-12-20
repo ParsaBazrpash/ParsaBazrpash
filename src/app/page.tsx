@@ -202,6 +202,15 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-100">My Projects</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
+                {
+                title: 'CashDash App',
+                description: 'CashDash is a personal finance tracker that lets you manage your money in any currency. Add your daily transactions and see your income and expenses come to life through interactive charts, helping you understand your spending patterns with charts and breakdown across different time periods.',
+                image: '/images/CashDashProject.png',
+                demo: 'https://cashdash-one.vercel.app/',
+                github: 'https://github.com/ParsaBazrpash/CashDash',
+                skills: 'React.js/Next.js/TypeScript/JavaScript/Tailwind CSS',
+                date: 'December 2024'
+              },
               {
                 title: 'ReLeaf App',
                 description: 'ReLeaf is a property management web application that provides and simplifies carbon emission and energy consumption data and analytics at the click of a few buttons. It includes a properties dashboard that combines the metrics of all of the users properties as well as the individual properties dashboard, data input & analytics, pie charts, bar graphs, a built-in carbon emission calculator, and personalized recommendations for reducing carbon emissions and increasing cost-saving.',
