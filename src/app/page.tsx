@@ -126,7 +126,7 @@ export default function Home() {
                   <h4 className="font-semibold text-gray-100">Alborz High School</h4>
                   <p className="text-gray-400">High School Diploma, Mathematics</p>
                   <p className="text-gray-400">07/2015 - 06/2021</p>
-                  <p className="text-gray-400 mt-2">The first and largest modern high school in Asia and the Middle East</p>
+                  <p className="text-gray-400 mt-2">The first modern and largest high school in Asia and the Middle East</p>
                 </div>
               </div>
             </div>
