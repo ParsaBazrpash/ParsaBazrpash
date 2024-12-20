@@ -122,6 +122,12 @@ export default function Home() {
                   <p className="text-gray-400">08/2022 - 08/2024</p>
                   <p className="text-gray-400 mt-2">GPA: 3.96</p>
                 </div>
+                <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
+                  <h4 className="font-semibold text-gray-100">Alborz High School</h4>
+                  <p className="text-gray-400">High School Diploma, Mathematics</p>
+                  <p className="text-gray-400">07/2015 - 06/2021</p>
+                  <p className="text-gray-400 mt-2">The first and largest modern high schools in Asia and the Middle East</p>
+                </div>
               </div>
             </div>
           </div>
