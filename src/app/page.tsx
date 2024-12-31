@@ -203,6 +203,15 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
                 {
+                title: 'LuxDrive App',
+                description: 'A modern, responsive web application built with React, TypeScript, and Tailwind CSS that allows users to browse cars, view detailed specifications, and manage their appointments.',
+                image: '/images/lux-drive.png',
+                demo: 'https://lux-drive-tau.vercel.app/',
+                github: 'https://github.com/ParsaBazrpash/Lux-Drive',
+                skills: 'React.js/Next.js/TypeScript/JavaScript/Tailwind CSS',
+                date: 'December 2024'
+              },
+                {
                 title: 'CashDash App',
                 description: 'CashDash is a personal finance tracker that lets you manage your money in any currency. Add your daily transactions and see your income and expenses come to life through interactive charts, helping you understand your spending patterns with charts and breakdown across different time periods.',
                 image: '/images/CashDashProject.png',
