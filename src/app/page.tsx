@@ -70,7 +70,7 @@ export default function Home() {
               <div className="space-y-6">
                 <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
                   <h4 className="font-semibold text-gray-100">UI/UX Designer</h4>
-                  <p className="text-gray-400">Nebula Labs – 10/2024 - Present</p>
+                  <p className="text-gray-400">Nebula Labs – 10/2024 - 02/2025</p>
                   <ul className="list-disc ml-4 mt-2 text-gray-400">
                     <li>Collaborating with students to design intuitive interfaces</li>
                     <li>Utilizing Figma for responsive designs</li>
@@ -79,7 +79,7 @@ export default function Home() {
                 </div>
                 <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
                   <h4 className="font-semibold text-gray-100">Software Engineer</h4>
-                  <p className="text-gray-400">AIMD – 10/2024 - Present</p>
+                  <p className="text-gray-400">AIMD – 10/2024 - 02/2025</p>
                   <ul className="list-disc ml-4 mt-2 text-gray-400">
                     <li>Developing and creating a full-stack web application named &quot;DocAlert&quot; which you can schedule appointments with your doctor.</li>
                   </ul>
@@ -204,7 +204,16 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
                 {
-                title: 'LuxDrive App',
+                title: 'DocAlert',
+                description: 'Developed a web-based full-stack application that streamlines the scheduling and managing of medical appointments. Implemented a user-friendly interface for patients to find healthcare providers, book visits, and receive appointment reminders—Integrated Firebase for authentication, database, and real-time notifications.',
+                image: '/images/docalert.png',
+                demo: 'https://doc-alert.vercel.app/',
+                github: 'https://github.com/ParsaBazrpash/DocAlert',
+                skills: 'React.js/Next.js/TypeScript/JavaScript/Tailwind CSS,Firebase',
+                date: 'October 2024 - January 2025'
+              },
+                {
+                title: 'LuxDrive',
                 description: 'A modern, responsive web application built with React, TypeScript, and Tailwind CSS that allows users to browse cars, view detailed specifications, and manage their appointments.',
                 image: '/images/lux-drive.png',
                 demo: 'https://lux-drive-tau.vercel.app/',
@@ -213,7 +222,7 @@ export default function Home() {
                 date: 'December 2024'
               },
                 {
-                title: 'CashDash App',
+                title: 'CashDash',
                 description: 'CashDash is a personal finance tracker that lets you manage your money in any currency. Add your daily transactions and see your income and expenses come to life through interactive charts, helping you understand your spending patterns with charts and breakdown across different time periods.',
                 image: '/images/CashDashProject.png',
                 demo: 'https://cashdash-one.vercel.app/',
@@ -222,7 +231,7 @@ export default function Home() {
                 date: 'December 2024'
               },
               {
-                title: 'ReLeaf App',
+                title: 'ReLeaf',
                 description: 'ReLeaf is a property management web application that provides and simplifies carbon emission and energy consumption data and analytics at the click of a few buttons. It includes a properties dashboard that combines the metrics of all of the users properties as well as the individual properties dashboard, data input & analytics, pie charts, bar graphs, a built-in carbon emission calculator, and personalized recommendations for reducing carbon emissions and increasing cost-saving.',
                 image: '/images/releaf.png',
                 demo: 'https://releafutd.vercel.app/',
@@ -231,7 +240,7 @@ export default function Home() {
                 date: 'November 2024 - HACK UTD 2024 (Ripple Effect)'
               },
               {
-                title: 'To Do List Web App',
+                title: 'To Do List',
                 description: 'Dynamic To-Do List application with due dates and task management',
                 image: '/images/To Do List.png',
                 demo: 'https://parsabazrpash.github.io/To-Do-List/',
@@ -241,7 +250,7 @@ export default function Home() {
               },
 
             {
-              title: 'Quiz Generator Website',
+              title: 'Quiz Generator',
               description: 'My first website that I created to practice my skills. This website includes a question page with some basic questions about web development which you can read, and take the quiz, and see your grade at the end of that.',
               image: '/images/quiz-website-image.png',
               demo: 'https://parsabazrpash.github.io/Quiz-Website/home.html',
