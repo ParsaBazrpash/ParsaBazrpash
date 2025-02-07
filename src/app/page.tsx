@@ -52,6 +52,13 @@ export default function Home() {
                 </div>
                 <p>Education: University of Texas at Dallas</p>
                 <p>Languages: English, Persian</p>
+                <br></br>
+                <Link 
+                  href="/elevatorpitch"
+                  className="inline-block mt-4 px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold rounded-lg transition-colors duration-200"
+                >
+                  Watch My Elevator Pitch
+                </Link>
               </div>
             </div>
           </div>
