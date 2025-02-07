@@ -15,7 +15,7 @@ export default function ElevatorPitch() {
               autoPlay={false}
               playsInline
             >
-              <source src="/images/ElevatorPitch.mp4" type="video/mp4" />
+              <source src="/images/Elevatorpitch.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
