@@ -76,6 +76,13 @@ export default function Home() {
               <h3 className="text-2xl font-semibold mb-4 text-gray-100">Professional Experience</h3>
               <div className="space-y-6">
                 <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
+                  <h4 className="font-semibold text-gray-100">Frontend Web Developer</h4>
+                  <p className="text-gray-400">AIAA UT Dallas – 02/2025 - Present</p>
+
+
+                  
+                </div>
+                <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
                   <h4 className="font-semibold text-gray-100">UI/UX Designer</h4>
                   <p className="text-gray-400">Nebula Labs – 10/2024 - 02/2025</p>
                   <ul className="list-disc ml-4 mt-2 text-gray-400">
