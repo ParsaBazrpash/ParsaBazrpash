@@ -218,12 +218,21 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
                 {
+                title: 'VitalPlate',
+                description: 'Vital Plate is a full-stack web application designed to empower users to take control of their health through innovative technology. The platform features a chatbot that interacts with users to assess their symptoms and provides personalized dietary recommendations, advising on which foods to consume or avoid. Additionally, Vital Plate integrates a cutting-edge calorie finder that can analyze meal photos automatically estimating calories, protein, and carbohydrate content, and enabling users to compare multiple meals through dynamic charts. A comprehensive analytics dashboard further enhances user engagement by allowing daily logging of breakfast, lunch, and dinner alongside mood tracking, with interactive visualizations that reveal nutritional trends and support sustained health management.',
+                image: '/images/VitalPlate.png',
+                demo: 'https://vital-plate-11.vercel.app/',
+                github: 'https://github.com/ParsaBazrpash/VitalPlate',
+                skills: 'React.js/Next.js/TypeScript/JavaScript/Tailwind CSS, Firebase',
+                date: 'February 2025 - Axxess Hackathon'
+              },
+                {
                 title: 'DocAlert',
                 description: 'Developed a web-based full-stack application that streamlines the scheduling and managing of medical appointments. Implemented a user-friendly interface for patients to find healthcare providers, book visits, and receive appointment reminders—Integrated Firebase for authentication, database, and real-time notifications.',
                 image: '/images/docalert.png',
                 demo: 'https://doc-alert.vercel.app/',
                 github: 'https://github.com/ParsaBazrpash/DocAlert',
-                skills: 'React.js/Next.js/TypeScript/JavaScript/Tailwind CSS,Firebase',
+                skills: 'React.js/Next.js/TypeScript/JavaScript/Tailwind CSS, Firebase',
                 date: 'October 2024 - January 2025'
               },
                 {
