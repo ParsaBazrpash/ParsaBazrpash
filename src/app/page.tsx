@@ -219,7 +219,7 @@ export default function Home() {
             {[
                 {
                 title: 'VitalPlate',
-                description: 'Vital Plate is a full-stack web application designed to empower users to take control of their health through innovative technology. The platform features a chatbot that interacts with users to assess their symptoms and provides personalized dietary recommendations, advising on which foods to consume or avoid. Additionally, Vital Plate integrates a cutting-edge calorie finder that can analyze meal photos automatically estimating calories, protein, and carbohydrate content, and enabling users to compare multiple meals through dynamic charts. A comprehensive analytics dashboard further enhances user engagement by allowing daily logging of breakfast, lunch, and dinner alongside mood tracking, with interactive visualizations that reveal nutritional trends and support sustained health management.',
+                description: 'A full-stack web application that empowers users to manage their health with innovative technology. It features a chatbot for symptom assessment and personalized dietary recommendations, a calorie finder that analyzes meal photos to estimate nutritional content, and a dashboard for logging meals and moods, providing clear insights into nutritional',
                 image: '/images/VitalPlate.png',
                 demo: 'https://vital-plate-11.vercel.app/',
                 github: 'https://github.com/ParsaBazrpash/VitalPlate',
