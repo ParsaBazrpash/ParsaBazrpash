@@ -219,7 +219,7 @@ export default function Home() {
             {[
                 {
                 title: 'VitalPlate',
-                description: 'A full-stack web application that empowers users to manage their health with innovative technology. It features a chatbot for symptom assessment and personalized dietary recommendations, a calorie finder that analyzes meal photos to estimate nutritional content, and a dashboard for logging meals and moods, providing clear insights into nutritional',
+                description: 'A full-stack web application that empowers users to manage their health with innovative technology. It features a chatbot for symptom assessment and personalized dietary recommendations, a calorie finder that analyzes meal photos to estimate nutritional content, and a dashboard for logging meals and moods, providing clear insights into nutritional trends.',
                 image: '/images/VitalPlate.png',
                 demo: 'https://vital-plate-11.vercel.app/',
                 github: 'https://github.com/ParsaBazrpash/VitalPlate',
