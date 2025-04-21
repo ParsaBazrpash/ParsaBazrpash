@@ -213,6 +213,15 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
                 {
+                  title: 'Connect',
+                  description: 'Connect is a web-based video chatting platform that enables hearing-impaired and hearing people to communicate more effectively. It uses a machine learning model to recognize sign language gestures and convert them into text in real-time and on the other end, spoken words are transcribed into text instantly, ensuring the conversation flows both ways.',
+                  image: '/images/connect.png',
+                  demo: 'https://www.youtube.com/watch?v=QEH0Zvk0bAg&t=1s',
+                  github: 'https://github.com/ParsaBazrpash/Connect',
+                  skills: 'React.js/Next.js/TypeScript/JavaScript/Tailwind CSS/Firebase/Python/ML/Flask/WebRTC',
+                  date: 'April 2025 - 1st Place Winner – HACKAI Hackathon'
+                },
+                {
                 title: 'VitalPlate',
                 description: 'A full-stack web application that empowers users to manage their health with innovative technology. It features a chatbot for symptom assessment and personalized dietary recommendations, a calorie finder that analyzes meal photos to estimate nutritional content, and a dashboard for logging meals and moods, providing clear insights into nutritional trends.',
                 image: '/images/VitalPlate.png',
