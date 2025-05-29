@@ -1,10 +1,17 @@
+'use client'
+import { useState } from 'react';
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { Mail, MapPin, Coffee, Code, GraduationCap } from 'lucide-react';
 import { Navbar } from './components/Navbar';
 
 
+
+
+
 export default function Home() {
+  const [showAll, setShowAll] = useState(false);
   
   return (
     <main className="min-h-screen bg-gray-900 text-gray-100">
@@ -66,53 +73,125 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-12">
         
           {/* Professional Experience Column */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-100">Professional Experience</h3>
-              <div className="space-y-6">
-                <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
-                  <h4 className="font-semibold text-gray-100">Frontend Web Developer</h4>
-                  <p className="text-gray-400">AIAA UT Dallas – 02/2025 - Present</p>
+          
+          <div className="space-y-6">
+            <h3 className="text-2xl font-semibold mb-4 text-gray-100">Professional Experience</h3>
 
+            {/* Always visible experiences */}
+            <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
+              <div className="w-12 h-12 relative">
+                <Image 
+                  src="/logos/mercatalyst.png" 
+                  alt="Mercatalyst Logo" 
+                  fill
+                  className="object-contain rounded-md" 
+                />
+              </div>
+              <h4 className="font-semibold text-gray-100">Software Engineer Intern</h4>
+              <p className="text-gray-100">Mercatalyst – 05/2024 - Present</p>
+            </div>
 
-                  
-                </div>
+            <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
+              <div className="w-12 h-12 relative  mb-2">
+                <Image 
+                  src="/logos/starbucks.png" 
+                  alt="Starbucks Logo" 
+                  fill
+                  className="object-contain rounded-md" 
+                />
+              </div>
+              <h4 className="font-semibold text-gray-100">Barista</h4>
+              <p className="text-gray-100">Starbucks – 01/2024 - Present</p>
+              <ul className="list-disc ml-4 mt-2 text-gray-400">
+                <li>Served 100+ customers daily while maintaining high service standards in fast-paced shifts</li>
+                <li>Collaborated closely with teammates to streamline peak-hour operations</li>
+              </ul>
+            </div>
+
+            <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
+              <div className="w-12 h-12 relative mb-0.5">
+                <Image 
+                  src="/logos/aiaa logo new.avif" 
+                  alt="AIAA Logo" 
+                  fill
+                  className="object-contain rounded-md" 
+                />
+              </div>
+              <h4 className="font-semibold text-gray-100">Frontend Web Developer</h4>
+              <p className="text-gray-100">AIAA UT Dallas – 02/2025 - 05/2025</p>
+            </div>
+
+            {/* Expandable section */}
+            <div
+              className={`transition-all duration-500 overflow-hidden ${
+                showAll ? 'max-h-[3000px]' : 'max-h-0'
+              }`}
+            >
+              <div className="space-y-6 pt-2">
                 <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
+                  <div className="w-12 h-12 relative mb-2">
+                    <Image 
+                      src="/logos/NebulaLabs.png" 
+                      alt="Nebula Labs Logo" 
+                      fill
+                      className="object-contain rounded-md" 
+                    />
+                  </div>
                   <h4 className="font-semibold text-gray-100">UI/UX Designer</h4>
-                  <p className="text-gray-400">Nebula Labs – 10/2024 - 02/2025</p>
+                  <p className="text-gray-100">Nebula Labs – 10/2024 - 02/2025</p>
                   <ul className="list-disc ml-4 mt-2 text-gray-400">
-                    <li>Collaborating with students to design intuitive interfaces</li>
-                    <li>Utilizing Figma for responsive designs</li>
-                    <li>Working with developers on implementation</li>
+                    <li>Designed responsive UI/UX for Trends, a website for the UTD student community...</li>
                   </ul>
                 </div>
+
                 <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
-                  <h4 className="font-semibold text-gray-100">Software Engineer</h4>
-                  <p className="text-gray-400">AIMD – 10/2024 - 02/2025</p>
+                  <div className="w-12 h-12 relative mb-2">
+                    <Image 
+                      src="/logos/AIMD.webp" 
+                      alt="AIMD Logo" 
+                      fill
+                      className="object-contain rounded-md" 
+                    />
+                  </div>
+                  <h4 className="font-semibold text-gray-100">Full Stack Developer</h4>
+                  <p className="text-gray-100">AIMD – 10/2024 - 02/2025</p>
                   <ul className="list-disc ml-4 mt-2 text-gray-400">
-                    <li>Developing and creating a full-stack web application named &quot;DocAlert&quot; which you can schedule appointments with your doctor.</li>
+                    <li>Developed a full-stack web-based medical appointment app with secure login and provider search</li>
                   </ul>
                 </div>
+
                 <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
-                  <h4 className="font-semibold text-gray-100">Barista</h4>
-                  <p className="text-gray-400">Starbucks – 01/2024 - Present</p>
-                  <ul className="list-disc ml-4 mt-2 text-gray-400">
-                    <li>Excel in precision, building genuine customer connections, maintaining efficiency and organization</li>
-                    <li>Thrive in fast-paced environments, collaborating effectively with the team to ensure every visit is a memorable experience</li>
-                  </ul>
-                </div>
-                <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
+                  <div className="w-12 h-12 relative mb-2">
+                    <Image 
+                      src="/logos/icode.jpeg" 
+                      alt="iCode Logo" 
+                      fill
+                      className="object-contain rounded-md" 
+                    />
+                  </div>
                   <h4 className="font-semibold text-gray-100">Computer Science Instructor</h4>
-                  <p className="text-gray-400">iCode School Franchise – 03/2024 - 08/2024</p>
+                  <p className="text-gray-100">iCode School Franchise – 03/2024 - 08/2024</p>
                   <ul className="list-disc ml-4 mt-2 text-gray-400">
-                    <li>Teaching how to create 2D games using the Scratch programming language, including games like PacMan, Flappy Bird, and various ball games</li>
-                    <li>How to create YouTube content, including using green screens, editing, and recording videos</li>
-                    <li>Robotics, 3D design, and Python programming language</li>
+                    <li>Taught 200+ K–12 students coding, robotics, game dev, and digital media skills</li>
                   </ul>
                 </div>
               </div>
             </div>
+
+            {/* See More / See Less Button */}
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="group flex items-center justify-center gap-2 w-full px-4 py-3 
+                     bg-gray-600 hover:bg-gray-700 active:bg-gray-800
+                     text-white font-medium rounded-lg
+                     transition-all duration-200 ease-in-out
+                     focus:outline-none focus:ring-2 focus:ring-offset-2
+                     shadow-sm hover:shadow-md"
+            >
+              {showAll ? 'See Less ▲' : 'See More (+3) ▼'}
+            </button>
           </div>
+
 
           {/* Education Column */}
           <div className="space-y-8">
