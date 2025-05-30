@@ -140,7 +140,8 @@ export default function Home() {
                   <h4 className="font-semibold text-gray-100">UI/UX Designer</h4>
                   <p className="text-gray-100">Nebula Labs – 10/2024 - 02/2025</p>
                   <ul className="list-disc ml-4 mt-2 text-gray-400">
-                    <li>Designed responsive UI/UX for Trends, a website for the UTD student community...</li>
+                    <li>Designed responsive UI/UX for Trends, a website for the UTD student community to select the best professors and compare them
+using Figma, collaborating with developers to improve usability for 2,000+ users.</li>
                   </ul>
                 </div>
 
@@ -156,7 +157,8 @@ export default function Home() {
                   <h4 className="font-semibold text-gray-100">Full Stack Developer</h4>
                   <p className="text-gray-100">AIMD – 10/2024 - 02/2025</p>
                   <ul className="list-disc ml-4 mt-2 text-gray-400">
-                    <li>Developed a full-stack web-based medical appointment app with secure login and provider search</li>
+                    <li>• Developed a full-stack web-based medical appointment app named (Doc Alert) with secure login, real-time reminders, and
+                      provider search, streamlining scheduling and communication for patients.</li>
                   </ul>
                 </div>
 
@@ -172,7 +174,8 @@ export default function Home() {
                   <h4 className="font-semibold text-gray-100">Computer Science Instructor</h4>
                   <p className="text-gray-100">iCode School Franchise – 03/2024 - 08/2024</p>
                   <ul className="list-disc ml-4 mt-2 text-gray-400">
-                    <li>Taught 200+ K–12 students coding, robotics, game dev, and digital media skills</li>
+                    <li>Taught 200+ K–12 students coding, robotics, game development (Scratch, Python), and digital media skills, including green
+screen, video editing, and 3D design.</li>
                   </ul>
                 </div>
               </div>
