@@ -201,6 +201,14 @@ screen, video editing, and 3D design.</li>
             <div>
               <h3 className="text-2xl font-semibold mb-4 text-gray-100">Education</h3>
               <div className="space-y-6">
+                <div className="w-12 h-12 relative">
+                    <Image 
+                      src="/logos/utdlogo.png" 
+                      alt="UTD Logo" 
+                      fill
+                      className="object-contain rounded-md" 
+                    />
+                  </div>
                 <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
                   <h4 className="font-semibold text-gray-100">University of Texas at Dallas</h4>
                   <p className="text-gray-400">Bachelor&apos;s, Software Engineering</p>
@@ -208,12 +216,28 @@ screen, video editing, and 3D design.</li>
                   <p className="text-gray-400 mt-2">GPA: 3.75</p>
                 </div>
                 <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
+                  <div className="w-12 h-12 relative">
+                    <Image 
+                      src="/logos/dallascollege.png" 
+                      alt="Dallas College Logo" 
+                      fill
+                      className="object-contain rounded-md" 
+                    />
+                  </div>
                   <h4 className="font-semibold text-gray-100">Dallas College</h4>
                   <p className="text-gray-400">Associate&apos;s, Software Engineering</p>
                   <p className="text-gray-400">08/2022 - 08/2024</p>
                   <p className="text-gray-400 mt-2">GPA: 3.96</p>
                 </div>
                 <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
+                  <div className="w-12 h-12 relative">
+                    <Image 
+                      src="/logos/alborz.jpeg" 
+                      alt="Alborz Logo" 
+                      fill
+                      className="object-contain rounded-md" 
+                    />
+                  </div>
                   <h4 className="font-semibold text-gray-100">Alborz High School</h4>
                   <p className="text-gray-400">High School Diploma, Mathematics</p>
                   <p className="text-gray-400">07/2015 - 06/2021</p>
