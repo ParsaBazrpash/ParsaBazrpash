@@ -201,7 +201,8 @@ screen, video editing, and 3D design.</li>
             <div>
               <h3 className="text-2xl font-semibold mb-4 text-gray-100">Education</h3>
               <div className="space-y-6">
-                <div className="w-12 h-12 relative">
+                <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
+                  <div className="w-12 h-12 relative">
                     <Image 
                       src="/logos/utdlogo.png" 
                       alt="UTD Logo" 
@@ -209,7 +210,6 @@ screen, video editing, and 3D design.</li>
                       className="object-contain rounded-md" 
                     />
                   </div>
-                <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
                   <h4 className="font-semibold text-gray-100">University of Texas at Dallas</h4>
                   <p className="text-gray-400">Bachelor&apos;s, Software Engineering</p>
                   <p className="text-gray-400">08/2024 - 05/2026</p>
