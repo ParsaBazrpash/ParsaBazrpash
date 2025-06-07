@@ -72,128 +72,271 @@ export default function Home() {
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-100">My Resume</h2>
         <div className="grid md:grid-cols-3 gap-12">
         
-          {/* Professional Experience Column */}
+
+{/* Professional Experience Column */}
+<div className="space-y-8 relative">
+  {/* Animated background elements */}
+  <div className="absolute inset-0 pointer-events-none overflow-hidden">
+    <div className="absolute top-10 left-1/4 w-32 h-32 bg-green-500/5 rounded-full blur-3xl animate-pulse"></div>
+    <div className="absolute bottom-20 right-1/4 w-40 h-40 bg-blue-500/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+  </div>
+
+  <div className="relative z-10">
+    <div className="flex items-center gap-4 mb-8">
+      <div className="w-1 h-12 bg-gradient-to-b from-green-400 to-blue-500 rounded-full"></div>
+      <h3 className="text-3xl font-bold text-transparent bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 bg-clip-text">
+        Professional Experience
+      </h3>
+    </div>
+    
+    <div className="space-y-8 relative">
+      {/* Timeline line */}
+      <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-green-400 via-blue-500 to-purple-500 rounded-full opacity-30"></div>
+      
+      {/* Always visible experiences */}
+      {[
+        {
+          logo: "/logos/mercatalyst.png",
+          company: "Mercatalyst",
+          position: "Software Engineer Intern",
+          period: "05/2024 - Present",
+          status: "Current",
+          color: "from-green-500 to-emerald-500",
+          glowColor: "shadow-green-500/20",
+          responsibilities: []
+        },
+        {
+          logo: "/logos/starbucks.png",
+          company: "Starbucks",
+          position: "Barista",
+          period: "01/2024 - 06/2024",
+          status: "Completed",
+          color: "from-green-600 to-teal-500",
+          glowColor: "shadow-green-600/20",
+          responsibilities: [
+            "Served 100+ customers daily while maintaining high service standards in fast-paced shifts",
+            "Collaborated closely with teammates to streamline peak-hour operations"
+          ]
+        },
+        {
+          logo: "/logos/aiaa logo new.avif",
+          company: "AIAA UT Dallas",
+          position: "Frontend Web Developer",
+          period: "02/2025 - 05/2025",
+          status: "Completed",
+          color: "from-blue-500 to-cyan-500",
+          glowColor: "shadow-blue-500/20",
+          responsibilities: []
+        }
+      ].map((exp, index) => (
+        <div
+          key={exp.company}
+          className="relative group"
+          style={{
+            animationDelay: `${index * 200}ms`
+          }}
+        >
+          {/* Timeline dot */}
+          <div className={`absolute left-4 w-4 h-4 bg-gradient-to-r ${exp.color} rounded-full border-2 border-gray-900 group-hover:scale-125 transition-all duration-300 z-20`}></div>
           
-          <div className="space-y-6">
-            <h3 className="text-2xl font-semibold mb-4 text-gray-100">Professional Experience</h3>
-
-            {/* Always visible experiences */}
-            <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
-              <div className="w-12 h-12 relative">
+          {/* Experience card */}
+          <div className={`ml-14 relative overflow-hidden bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-gray-600 transition-all duration-500 hover:shadow-2xl hover:${exp.glowColor} hover:transform hover:scale-[1.02]`}>
+            
+            {/* Animated background pattern */}
+            <div className="absolute inset-0 opacity-5">
+              <div className="absolute top-4 right-4 w-20 h-20 border border-white/10 rounded-full animate-spin" style={{animationDuration: '20s'}}></div>
+              <div className="absolute bottom-4 left-4 w-16 h-16 bg-white/5 rounded-full animate-pulse"></div>
+            </div>
+            
+            {/* Status badge */}
+            <div className="absolute top-4 right-4 z-10">
+              <span className={`px-3 py-1 text-xs font-semibold rounded-full ${
+                exp.status === 'Current' 
+                  ? 'bg-green-500/20 text-green-400 border border-green-500/30'
+                  : 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
+              }`}>
+                {exp.status}
+              </span>
+            </div>
+            
+            <div className="flex items-start gap-4 relative z-10">
+              {/* Logo */}
+              <div className={`w-16 h-16 relative rounded-xl overflow-hidden ring-2 ring-gray-600 group-hover:ring-opacity-50 transition-all duration-300`}>
                 <Image 
-                  src="/logos/mercatalyst.png" 
-                  alt="Mercatalyst Logo" 
+                  src={exp.logo}
+                  alt={`${exp.company} Logo`}
                   fill
-                  className="object-contain rounded-md" 
+                  className="object-contain p-1"
                 />
               </div>
-              <h4 className="font-semibold text-gray-100">Software Engineer Intern</h4>
-              <p className="text-gray-100">Mercatalyst – 05/2024 - Present</p>
-            </div>
-
-            <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
-              <div className="w-12 h-12 relative  mb-2">
-                <Image 
-                  src="/logos/starbucks.png" 
-                  alt="Starbucks Logo" 
-                  fill
-                  className="object-contain rounded-md" 
-                />
-              </div>
-              <h4 className="font-semibold text-gray-100">Barista</h4>
-              <p className="text-gray-100">Starbucks – 01/2024 - Present</p>
-              <ul className="list-disc ml-4 mt-2 text-gray-400">
-                <li>Served 100+ customers daily while maintaining high service standards in fast-paced shifts</li>
-                <li>Collaborated closely with teammates to streamline peak-hour operations</li>
-              </ul>
-            </div>
-
-            <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
-              <div className="w-12 h-12 relative mb-0.5">
-                <Image 
-                  src="/logos/aiaa logo new.avif" 
-                  alt="AIAA Logo" 
-                  fill
-                  className="object-contain rounded-md" 
-                />
-              </div>
-              <h4 className="font-semibold text-gray-100">Frontend Web Developer</h4>
-              <p className="text-gray-100">AIAA UT Dallas – 02/2025 - 05/2025</p>
-            </div>
-
-            {/* Expandable section */}
-            <div
-              className={`transition-all duration-500 overflow-hidden ${
-                showAll ? 'max-h-[3000px]' : 'max-h-0'
-              }`}
-            >
-              <div className="space-y-6 pt-2">
-                <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
-                  <div className="w-12 h-12 relative mb-2">
-                    <Image 
-                      src="/logos/NebulaLabs.png" 
-                      alt="Nebula Labs Logo" 
-                      fill
-                      className="object-contain rounded-md" 
-                    />
-                  </div>
-                  <h4 className="font-semibold text-gray-100">UI/UX Designer</h4>
-                  <p className="text-gray-100">Nebula Labs – 10/2024 - 02/2025</p>
-                  <ul className="list-disc ml-4 mt-2 text-gray-400">
-                    <li>Designed responsive UI/UX for Trends, a website for the UTD student community to select the best professors and compare them
-using Figma, collaborating with developers to improve usability for 2,000+ users.</li>
+              
+              {/* Content */}
+              <div className="flex-1">
+                <h4 className="text-lg font-bold text-gray-100 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 group-hover:bg-clip-text transition-all duration-300 pr-20">
+                  {exp.position}
+                </h4>
+                <p className="text-gray-300 font-medium mt-1">{exp.company}</p>
+                <p className="text-gray-400 text-sm mt-1">{exp.period}</p>
+                
+                {/* Responsibilities */}
+                {exp.responsibilities.length > 0 && (
+                  <ul className="list-disc ml-4 mt-3 text-gray-400 space-y-1">
+                    {exp.responsibilities.map((resp, idx) => (
+                      <li key={idx} className="text-sm">{resp}</li>
+                    ))}
                   </ul>
-                </div>
-
-                <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
-                  <div className="w-12 h-12 relative mb-2">
-                    <Image 
-                      src="/logos/AIMD.webp" 
-                      alt="AIMD Logo" 
-                      fill
-                      className="object-contain rounded-md" 
-                    />
-                  </div>
-                  <h4 className="font-semibold text-gray-100">Full Stack Developer</h4>
-                  <p className="text-gray-100">AIMD – 10/2024 - 02/2025</p>
-                  <ul className="list-disc ml-4 mt-2 text-gray-400">
-                    <li>• Developed a full-stack web-based medical appointment app named (Doc Alert) with secure login, real-time reminders, and
-                      provider search, streamlining scheduling and communication for patients.</li>
-                  </ul>
-                </div>
-
-                <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
-                  <div className="w-12 h-12 relative mb-2">
-                    <Image 
-                      src="/logos/icode.jpeg" 
-                      alt="iCode Logo" 
-                      fill
-                      className="object-contain rounded-md" 
-                    />
-                  </div>
-                  <h4 className="font-semibold text-gray-100">Computer Science Instructor</h4>
-                  <p className="text-gray-100">iCode School Franchise – 03/2024 - 08/2024</p>
-                  <ul className="list-disc ml-4 mt-2 text-gray-400">
-                    <li>Taught 200+ K–12 students coding, robotics, game development (Scratch, Python), and digital media skills, including green
-screen, video editing, and 3D design.</li>
-                  </ul>
-                </div>
+                )}
               </div>
             </div>
-
-            {/* See More / See Less Button */}
-            <button
-              onClick={() => setShowAll(!showAll)}
-              className="group flex items-center justify-center gap-2 w-full px-4 py-3 
-                     bg-gray-600 hover:bg-gray-700 active:bg-gray-800
-                     text-white font-medium rounded-lg
-                     transition-all duration-200 ease-in-out
-                     focus:outline-none focus:ring-2 focus:ring-offset-2
-                     shadow-sm hover:shadow-md"
-            >
-              {showAll ? 'See Less ▲' : 'See More (+3) ▼'}
-            </button>
+            
+            {/* Hover gradient overlay */}
+            <div className={`absolute inset-0 bg-gradient-to-br ${exp.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}></div>
           </div>
+        </div>
+      ))}
+
+      {/* Expandable section */}
+      <div
+        className={`transition-all duration-500 overflow-hidden ${
+          showAll ? 'max-h-[3000px]' : 'max-h-0'
+        }`}
+      >
+        <div className="space-y-8 pt-2">
+          {[
+            {
+              logo: "/logos/NebulaLabs.png",
+              company: "Nebula Labs",
+              position: "UI/UX Designer",
+              period: "10/2024 - 02/2025",
+              status: "Completed",
+              color: "from-purple-500 to-pink-500",
+              glowColor: "shadow-purple-500/20",
+              responsibilities: [
+                "Designed responsive UI/UX for Trends, a website for the UTD student community to select the best professors and compare them using Figma, collaborating with developers to improve usability for 2,000+ users."
+              ]
+            },
+            {
+              logo: "/logos/AIMD.webp",
+              company: "AIMD",
+              position: "Full Stack Developer",
+              period: "10/2024 - 02/2025",
+              status: "Completed",
+              color: "from-indigo-500 to-purple-500",
+              glowColor: "shadow-indigo-500/20",
+              responsibilities: [
+                "Developed a full-stack web-based medical appointment app named (Doc Alert) with secure login, real-time reminders, and provider search, streamlining scheduling and communication for patients."
+              ]
+            },
+            {
+              logo: "/logos/icode.jpeg",
+              company: "iCode School Franchise",
+              position: "Computer Science Instructor",
+              period: "03/2024 - 08/2024",
+              status: "Completed",
+              color: "from-orange-500 to-red-500",
+              glowColor: "shadow-orange-500/20",
+              responsibilities: [
+                "Taught 200+ K–12 students coding, robotics, game development (Scratch, Python), and digital media skills, including green screen, video editing, and 3D design."
+              ]
+            }
+          ].map((exp, index) => (
+            <div
+              key={exp.company}
+              className="relative group"
+              style={{
+                animationDelay: `${(index + 3) * 200}ms`
+              }}
+            >
+              {/* Timeline dot */}
+              <div className={`absolute left-4 w-4 h-4 bg-gradient-to-r ${exp.color} rounded-full border-2 border-gray-900 group-hover:scale-125 transition-all duration-300 z-20`}></div>
+              
+              {/* Experience card */}
+              <div className={`ml-14 relative overflow-hidden bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-gray-600 transition-all duration-500 hover:shadow-2xl hover:${exp.glowColor} hover:transform hover:scale-[1.02]`}>
+                
+                {/* Animated background pattern */}
+                <div className="absolute inset-0 opacity-5">
+                  <div className="absolute top-4 right-4 w-20 h-20 border border-white/10 rounded-full animate-spin" style={{animationDuration: '20s'}}></div>
+                  <div className="absolute bottom-4 left-4 w-16 h-16 bg-white/5 rounded-full animate-pulse"></div>
+                </div>
+                
+                {/* Status badge */}
+                <div className="absolute top-4 right-4 z-10">
+                  <span className={`px-3 py-1 text-xs font-semibold rounded-full ${
+                    exp.status === 'Current' 
+                      ? 'bg-green-500/20 text-green-400 border border-green-500/30'
+                      : 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
+                  }`}>
+                    {exp.status}
+                  </span>
+                </div>
+                
+                <div className="flex items-start gap-4 relative z-10">
+                  {/* Logo */}
+                  <div className={`w-16 h-16 relative rounded-xl overflow-hidden ring-2 ring-gray-600 group-hover:ring-opacity-50 transition-all duration-300`}>
+                    <Image 
+                      src={exp.logo}
+                      alt={`${exp.company} Logo`}
+                      fill
+                      className="object-contain p-1"
+                    />
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="flex-1">
+                    <h4 className="text-lg font-bold text-gray-100 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 group-hover:bg-clip-text transition-all duration-300 pr-20">
+                      {exp.position}
+                    </h4>
+                    <p className="text-gray-300 font-medium mt-1">{exp.company}</p>
+                    <p className="text-gray-400 text-sm mt-1">{exp.period}</p>
+                    
+                    {/* Responsibilities */}
+                    {exp.responsibilities.length > 0 && (
+                      <ul className="list-disc ml-4 mt-3 text-gray-400 space-y-1">
+                        {exp.responsibilities.map((resp, idx) => (
+                          <li key={idx} className="text-sm">{resp}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                </div>
+                
+                {/* Hover gradient overlay */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${exp.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* See More / See Less Button */}
+      <div className="ml-14">
+        <button
+          onClick={() => setShowAll(!showAll)}
+          className="group flex items-center justify-center gap-2 w-full px-6 py-4 
+                     bg-gradient-to-r from-gray-700 to-gray-600 hover:from-gray-600 hover:to-gray-500 active:from-gray-800 active:to-gray-700
+                     text-white font-medium rounded-2xl
+                     transition-all duration-300 ease-in-out
+                     focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500
+                     shadow-lg hover:shadow-xl hover:shadow-gray-500/20 hover:transform hover:scale-[1.02]
+                     border border-gray-600/50 hover:border-gray-500"
+        >
+          <span className="group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-200 group-hover:bg-clip-text transition-all duration-300">
+            {showAll ? 'See Less ▲' : 'See More (+3) ▼'}
+          </span>
+        </button>
+      </div>
+    </div>
+    
+    {/* Decorative elements */}
+    <div className="mt-12 flex justify-center">
+      <div className="flex items-center gap-2 text-gray-500 text-sm">
+        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+        <span>Professional Growth Journey</span>
+        <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
           {/* Education Column */}
@@ -335,76 +478,140 @@ screen, video editing, and 3D design.</li>
   </div>
 </div>
 
-          {/* Skills Column */}
-          <div>
-              <h3 className="text-3xl font-bold mb-8 text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text">
-                Skills & Expertise
-              </h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {[
-                  { name: 'Java', color: 'from-orange-500 to-red-500', glow: 'shadow-orange-500/20' },
-                  { name: 'C#', color: 'from-purple-500 to-indigo-500', glow: 'shadow-purple-500/20' },
-                  { name: 'C++', color: 'from-blue-500 to-cyan-500', glow: 'shadow-blue-500/20' },
-                  { name: 'Python', color: 'from-yellow-400 to-green-500', glow: 'shadow-yellow-500/20' },
-                  { name: 'SQL/MySQL', color: 'from-teal-400 to-blue-500', glow: 'shadow-teal-500/20' },
-                  { name: 'HTML/CSS/Tailwind CSS', color: 'from-pink-500 to-rose-500', glow: 'shadow-pink-500/20' },
-                  { name: 'JavaScript', color: 'from-yellow-400 to-orange-500', glow: 'shadow-yellow-500/20' },
-                  { name: 'TypeScript', color: 'from-blue-600 to-indigo-600', glow: 'shadow-blue-600/20' },
-                  { name: 'React.js', color: 'from-cyan-400 to-blue-500', glow: 'shadow-cyan-500/20' },
-                  { name: 'Next.js', color: 'from-gray-800 to-gray-600', glow: 'shadow-gray-500/20' },
-                  { name: 'Git', color: 'from-red-500 to-orange-500', glow: 'shadow-red-500/20' },
-                  { name: 'Figma', color: 'from-purple-400 to-pink-400', glow: 'shadow-purple-400/20' },
-                ].map((skill, index) => (
+{/* Skills Column */}
+<div className="space-y-8 relative">
+  {/* Animated background elements */}
+  <div className="absolute inset-0 pointer-events-none overflow-hidden">
+    <div className="absolute top-10 left-1/4 w-32 h-32 bg-purple-500/5 rounded-full blur-3xl animate-pulse"></div>
+    <div className="absolute bottom-20 right-1/4 w-40 h-40 bg-cyan-500/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+  </div>
+
+  <div className="relative z-10">
+    <div className="flex items-center gap-4 mb-8">
+      <div className="w-1 h-12 bg-gradient-to-b from-purple-400 to-cyan-500 rounded-full"></div>
+      <h3 className="text-3xl font-bold text-transparent bg-gradient-to-r from-purple-400 via-cyan-500 to-blue-500 bg-clip-text">
+        Skills & Expertise
+      </h3>
+    </div>
+    
+    <div className="space-y-8 relative">
+      {/* Timeline line */}
+      <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-400 via-cyan-500 to-blue-500 rounded-full opacity-30"></div>
+      
+      {[
+        {
+          category: "Programming Languages",
+          skills: [
+            { name: 'Java', color: 'from-orange-500 to-red-500' },
+            { name: 'C#', color: 'from-purple-500 to-indigo-500' },
+            { name: 'C++', color: 'from-blue-500 to-cyan-500' },
+            { name: 'Python', color: 'from-yellow-400 to-green-500' }
+          ],
+          color: "from-orange-500 to-red-500",
+          glowColor: "shadow-orange-500/20",
+          icon: "💻"
+        },
+        {
+          category: "Web Technologies",
+          skills: [
+            { name: 'HTML/CSS', color: 'from-pink-500 to-rose-500' },
+            { name: 'JavaScript', color: 'from-yellow-400 to-orange-500' },
+            { name: 'TypeScript', color: 'from-blue-600 to-indigo-600' },
+            { name: 'React.js', color: 'from-cyan-400 to-blue-500' },
+            { name: 'Next.js', color: 'from-gray-800 to-gray-600' }
+          ],
+          color: "from-cyan-500 to-blue-500",
+          glowColor: "shadow-cyan-500/20",
+          icon: "🌐"
+        },
+        {
+          category: "Database & Tools",
+          skills: [
+            { name: 'SQL/MySQL', color: 'from-teal-400 to-blue-500' },
+            { name: 'Git', color: 'from-red-500 to-orange-500' },
+            { name: 'Figma', color: 'from-purple-400 to-pink-400' }
+          ],
+          color: "from-teal-500 to-green-500",
+          glowColor: "shadow-teal-500/20",
+          icon: "🛠️"
+        }
+      ].map((category, index) => (
+        <div
+          key={category.category}
+          className="relative group"
+          style={{
+            animationDelay: `${index * 200}ms`
+          }}
+        >
+          {/* Timeline dot */}
+          <div className={`absolute left-4 w-4 h-4 bg-gradient-to-r ${category.color} rounded-full border-2 border-gray-900 group-hover:scale-125 transition-all duration-300 z-20`}></div>
+          
+          {/* Skills card */}
+          <div className={`ml-14 relative overflow-hidden bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-gray-600 transition-all duration-500 hover:shadow-2xl hover:${category.glowColor} hover:transform hover:scale-[1.02]`}>
+            
+            {/* Animated background pattern */}
+            <div className="absolute inset-0 opacity-5">
+              <div className="absolute top-4 right-4 w-20 h-20 border border-white/10 rounded-full animate-spin" style={{animationDuration: '20s'}}></div>
+              <div className="absolute bottom-4 left-4 w-16 h-16 bg-white/5 rounded-full animate-pulse"></div>
+            </div>
+            
+            <div className="relative z-10">
+              {/* Category header */}
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-2xl">{category.icon}</span>
+                <h4 className="text-lg font-bold text-gray-100 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 group-hover:bg-clip-text transition-all duration-300">
+                  {category.category}
+                </h4>
+              </div>
+              
+              {/* Skills grid */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                {category.skills.map((skill, skillIndex) => (
                   <div
                     key={skill.name}
                     className={`
-          relative group cursor-pointer
-          bg-gradient-to-br ${skill.color}
-          rounded-2xl p-[2px] 
-          hover:scale-105 hover:rotate-1
-          transition-all duration-500 ease-out
-          hover:shadow-2xl hover:${skill.glow}
-        `}
+                      relative group/skill cursor-pointer
+                      bg-gradient-to-br ${skill.color}
+                      rounded-xl p-[1px] 
+                      hover:scale-105
+                      transition-all duration-300 ease-out
+                      hover:shadow-lg
+                    `}
                     style={{
-                      animationDelay: `${index * 100}ms`
+                      animationDelay: `${(index * 200) + (skillIndex * 100)}ms`
                     }}
                   >
-                    <div className="bg-gray-900/90 backdrop-blur-sm rounded-2xl p-6 h-full flex items-center justify-center relative overflow-hidden">
-                      {/* Animated background pattern */}
-                      <div className="absolute inset-0 opacity-10">
-                        <div className="absolute top-2 right-2 w-8 h-8 border border-white/20 rounded-full animate-pulse"></div>
-                        <div className="absolute bottom-2 left-2 w-4 h-4 bg-white/10 rounded-full animate-bounce" style={{ animationDelay: '1s' }}></div>
-                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 border border-white/5 rounded-full animate-spin" style={{ animationDuration: '8s' }}></div>
-                      </div>
-
+                    <div className="bg-gray-900/90 backdrop-blur-sm rounded-xl p-3 h-full flex items-center justify-center relative overflow-hidden">
                       {/* Skill name */}
-                      <h4 className="text-white font-semibold text-sm text-center z-10 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-200 group-hover:bg-clip-text transition-all duration-300">
+                      <span className="text-white font-medium text-xs text-center z-10 group-hover/skill:text-transparent group-hover/skill:bg-gradient-to-r group-hover/skill:from-white group-hover/skill:to-gray-200 group-hover/skill:bg-clip-text transition-all duration-300">
                         {skill.name}
-                      </h4>
-
+                      </span>
+                      
                       {/* Hover glow effect */}
-                      <div className={`absolute inset-0 bg-gradient-to-br ${skill.color} opacity-0 group-hover:opacity-20 rounded-2xl transition-opacity duration-300`}></div>
+                      <div className={`absolute inset-0 bg-gradient-to-br ${skill.color} opacity-0 group-hover/skill:opacity-20 rounded-xl transition-opacity duration-300`}></div>
                     </div>
                   </div>
                 ))}
               </div>
-
-              {/* Floating particles background effect */}
-              <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                {[...Array(12)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="absolute w-1 h-1 bg-blue-400/30 rounded-full animate-pulse"
-                    style={{
-                      left: `${Math.random() * 100}%`,
-                      top: `${Math.random() * 100}%`,
-                      animationDelay: `${Math.random() * 3}s`,
-                      animationDuration: `${2 + Math.random() * 2}s`
-                    }}
-                  ></div>
-                ))}
-              </div>
             </div>
+            
+            {/* Hover gradient overlay */}
+            <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}></div>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    {/* Decorative elements */}
+    <div className="mt-12 flex justify-center">
+      <div className="flex items-center gap-2 text-gray-500 text-sm">
+        <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+        <span>Technical Mastery Path</span>
+        <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+      </div>
+    </div>
+  </div>
+</div>
         </div>
       </div>
     </section>
