@@ -109,7 +109,7 @@ export default function Home() {
           logo: "/logos/starbucks.png",
           company: "Starbucks",
           position: "Barista",
-          period: "01/2024 - 06/2024",
+          period: "01/2024 - 06/2025",
           status: "Completed",
           color: "from-green-600 to-teal-500",
           glowColor: "shadow-green-600/20",
@@ -366,7 +366,7 @@ export default function Home() {
           school: "University of Texas at Dallas",
           degree: "Bachelor's, Software Engineering",
           period: "08/2024 - 05/2026",
-          gpa: "3.75",
+          gpa: "3.67",
           status: "Current",
           color: "from-orange-500 to-red-500",
           glowColor: "shadow-orange-500/20"
@@ -518,7 +518,8 @@ export default function Home() {
             { name: 'JavaScript', color: 'from-yellow-400 to-orange-500' },
             { name: 'TypeScript', color: 'from-blue-600 to-indigo-600' },
             { name: 'React.js', color: 'from-cyan-400 to-blue-500' },
-            { name: 'Next.js', color: 'from-gray-800 to-gray-600' }
+            { name: 'Next.js', color: 'from-gray-800 to-gray-600' },
+            { name: 'Node.js', color: 'from-green-800 to-green-600' }
           ],
           color: "from-cyan-500 to-blue-500",
           glowColor: "shadow-cyan-500/20",
@@ -528,8 +529,12 @@ export default function Home() {
           category: "Database & Tools",
           skills: [
             { name: 'SQL/MySQL', color: 'from-teal-400 to-blue-500' },
-            { name: 'Git', color: 'from-red-500 to-orange-500' },
-            { name: 'Figma', color: 'from-purple-400 to-pink-400' }
+            { name: 'MongoDB', color: 'from-green-800 to-green-600' },
+            { name: 'Redis', color: 'from-red-500 to-orange-500' },
+            { name: 'Firebase', color: 'from-orange-900 to-orange-600' },
+            { name: 'Git/GitHub', color: 'from-purple-500 to-purple-500' },
+            { name: 'Figma', color: 'from-blue-400 to-blue-400' },
+            { name: 'npm/pm2', color: 'from-yellow-400 to-orange-500' },
           ],
           color: "from-teal-500 to-green-500",
           glowColor: "shadow-teal-500/20",
@@ -799,7 +804,7 @@ export default function Home() {
 
       <footer className="bg-gray-800 py-8">
         <div className="max-w-7xl mx-auto px-4 text-center text-gray-400">
-          <p>&copy; 2024 Parsa Bazrpash Amalgar. All rights reserved.</p>
+          <p>&copy; 2025 Parsa Bazrpash Amalgar. All rights reserved.</p>
         </div>
       </footer>
     </main>
