@@ -37,12 +37,11 @@ export default function Home() {
             <div className="space-y-4">
               <h3 className="text-2xl font-semibold text-gray-100">Who Am I?</h3>
               <p className="text-gray-400">
-              I&apos;m a Software Engineering student at the University of Texas at Dallas,
-              passionate about full-stack development and UI/UX design. Proficient in 
-              C++, Java, and Python, I&apos;m expanding my expertise in modern web technologies
-              including React.js, Next.js, TypeScript, and JavaScript. My journey in
-              web development has given me strong foundations in HTML/CSS, while I continually
-              embrace new technologies and best practices.
+              I&apos;m a Software Engineering student at The University of Texas at Dallas,
+                passionate about full-stack development and user-friendly applications.
+                Skilled in C++, Java, Python, and modern web technologies like JavaScript,
+                React.js, Next.js, TypeScript, Node.js, and MongoDB. I bring a strong foundation
+                in both front-end and back-end development, with a growing interest in AI.
               </p>
             </div>
             
