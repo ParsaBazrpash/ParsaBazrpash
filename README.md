@@ -40,3 +40,4 @@
 [![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://parsa-bazrpash.vercel.app/)
 
 ---
+![GitHub Stats](https://camo.githubusercontent.com/d8a37fc2a6f6cb890b91a6bc848d488bc2d5a4620922a401ff54d9a12b2463fc/68747470733a2f2f6b6f6d617265762e636f6d2f67687076632f3f757365726e616d653d7368726979613737267374796c653d666c61742d73717561726526636f6c6f723d626c7565)
