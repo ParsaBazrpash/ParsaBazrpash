@@ -634,7 +634,7 @@ export default function Home() {
         <div className="p-6 rounded-lg bg-gray-800 shadow-lg text-center">
           <div className="flex items-center justify-center gap-4 mb-4">
             <GraduationCap className="w-8 h-8 text-custom-blue" />
-            <h3 className="text-4xl font-bold text-custom-blue">3.75</h3>
+            <h3 className="text-4xl font-bold text-custom-blue">3.67</h3>
           </div>
           <p className="text-gray-300">GPA</p>
         </div>
