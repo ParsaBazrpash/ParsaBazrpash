@@ -108,7 +108,7 @@ export default function Home() {
           logo: "/logos/starbucks.png",
           company: "Starbucks",
           position: "Barista",
-          period: "01/2024 - 06/2025",
+          period: "01/2024 - Present",
           status: "Completed",
           color: "from-green-600 to-teal-500",
           glowColor: "shadow-green-600/20",
