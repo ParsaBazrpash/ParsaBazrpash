@@ -95,27 +95,26 @@ export default function Home() {
       {/* Always visible experiences */}
       {[
         {
-          logo: "/logos/mercatalyst.png",
-          company: "Mercatalyst",
-          position: "Software Engineer Intern",
-          period: "05/2024 - Present",
-          status: "Current",
-          color: "from-green-500 to-emerald-500",
-          glowColor: "shadow-green-500/20",
-          responsibilities: []
-        },
-        {
           logo: "/logos/starbucks.png",
           company: "Starbucks",
           position: "Barista",
-          period: "01/2024 - 08/2024",
-          status: "Completed",
+          period: "01/2024 - Present",
+          status: "Current",
           color: "from-green-600 to-teal-500",
           glowColor: "shadow-green-600/20",
           responsibilities: [
             "Served 100+ customers daily while maintaining high service standards in fast-paced shifts",
             "Collaborated closely with teammates to streamline peak-hour operations"
           ]
+        },{
+          logo: "/logos/mercatalyst.png",
+          company: "Mercatalyst",
+          position: "Software Engineer Intern",
+          period: "05/2025 - 10/2025",
+          status: "Completed",
+          color: "from-blue-500 to-cyan-500",
+          glowColor: "shadow-blue-500/20",
+          responsibilities: []
         },
         {
           logo: "/logos/aiaa logo new.avif",
