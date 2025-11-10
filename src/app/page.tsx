@@ -654,6 +654,15 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
                 {
+                  title: 'MirrorAPI',
+                  description: "MirrorAPI is an AI-powered web-application that compares two API endpoints, detects changes, and generates detailed documentation using NVIDIA's Nemotron Agentic AI. Built with Next.js & TypeScript it streamlines API version control and automates developer insights.",
+                  image: '/images/mirrorapi.png',
+                  demo: 'https://www.youtube.com/watch?v=zJ3Deft3lVo&t=1s',
+                  github: 'https://github.com/ParsaBazrpash/MirrorAPI',
+                  skills: 'Next.js/JavaScript/TypeScript/Python/OAuth/NVIDIA Nemotron/AI/RAG/ML',
+                  date: 'November 2025 – 1st Place Winner – HackUTD 2025 (State Farm Challenge)'
+                },
+                {
                   title: 'Connect',
                   description: 'Connect is a web-based video chatting platform that enables hearing-impaired and hearing people to communicate more effectively. It uses a machine learning model to recognize sign language gestures and convert them into text in real-time and on the other end, spoken words are transcribed into text instantly, ensuring the conversation flows both ways.',
                   image: '/images/connect.png',
@@ -763,7 +772,7 @@ export default function Home() {
               date: 'February 2024'
             }
             ].map((project) => (
-              <div key={project.title} className="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:-translate-y-2">
+              <div key={project.title} className="bg-gray-900 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:-translate-y-2">
                 <Link href={project.demo} target="_blank">
                 <div className="relative h-48">
                 
@@ -792,7 +801,7 @@ export default function Home() {
                       GitHub Repository
                     </Link>
                   </div>
-                  <p className="text-sm text-gray-500 mt-4">{project.date}</p>
+                  <p className="text-sm text-gray-200 mt-4">{project.date}</p>
                 </div>
               </div>
             ))}
