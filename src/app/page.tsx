@@ -12,6 +12,80 @@ import { Navbar } from './components/Navbar';
 
 export default function Home() {
   const [showAll, setShowAll] = useState(false);
+  const [sortOrder, setSortOrder] = useState<'desc' | 'asc'>('desc');
+  
+  const projects = [
+    {
+      title: 'MirrorAPI',
+      description: "MirrorAPI is an AI-powered web-application that compares two API endpoints, detects changes, and generates detailed documentation using NVIDIA's Nemotron Agentic AI. Built with Next.js & TypeScript it streamlines API version control and automates developer insights.",
+      image: '/images/mirrorapi.png',
+      demo: 'https://www.youtube.com/watch?v=zJ3Deft3lVo&t=1s',
+      github: 'https://github.com/ParsaBazrpash/MirrorAPI',
+      skills: 'Next.js/JavaScript/TypeScript/Python/OAuth/NVIDIA Nemotron/AI/RAG/ML',
+      date: 'November 2025 – 1st Place Winner – HackUTD 2025 (State Farm Challenge)',
+      sortDate: '2025-11-01',
+      tags: ['Next.js', 'TypeScript', 'Python', 'AI']
+    },
+    {
+      title: 'Connect',
+      description: 'Connect is a web-based video chatting platform that enables hearing-impaired and hearing people to communicate more effectively. It uses a machine learning model to recognize sign language gestures and convert them into text in real-time and on the other end, spoken words are transcribed into text instantly, ensuring the conversation flows both ways.',
+      image: '/images/connect.png',
+      demo: 'https://www.youtube.com/watch?v=QEH0Zvk0bAg&t=1s',
+      github: 'https://github.com/ParsaBazrpash/Connect',
+      skills: 'React.js/Next.js/TypeScript/JavaScript/Tailwind CSS/Firebase/Python/ML/Flask/WebRTC',
+      date: 'April 2025 - 1st Place Winner – HACKAI Hackathon',
+      sortDate: '2025-04-01',
+      tags: ['Next.js', 'TypeScript', 'Python', 'Firebase', 'ML']
+    },
+    {
+      title: 'VitalPlate',
+      description: 'A full-stack web application that empowers users to manage their health with innovative technology. It features a chatbot for symptom assessment and personalized dietary recommendations, a calorie finder that analyzes meal photos to estimate nutritional content, and a dashboard for logging meals and moods, providing clear insights into nutritional trends.',
+      image: '/images/VitalPlate.png',
+      demo: 'https://vital-plate-11.vercel.app/',
+      github: 'https://github.com/ParsaBazrpash/VitalPlate',
+      skills: 'React.js/Next.js/TypeScript/JavaScript/Tailwind CSS, Firebase',
+      date: 'February 2025 - Axxess Hackathon',
+      sortDate: '2025-02-01',
+      tags: ['Next.js', 'TypeScript', 'Firebase']
+    },
+    {
+      title: 'DocAlert',
+      description: 'Developed a web-based full-stack application that streamlines the scheduling and managing of medical appointments. Implemented a user-friendly interface for patients to find healthcare providers, book visits, and receive appointment reminders—Integrated Firebase for authentication, database, and real-time notifications.',
+      image: '/images/docalert.png',
+      demo: 'https://doc-alert.vercel.app/',
+      github: 'https://github.com/ParsaBazrpash/DocAlert',
+      skills: 'React.js/Next.js/TypeScript/JavaScript/Tailwind CSS, Firebase',
+      date: 'October 2024 - January 2025',
+      sortDate: '2024-10-01',
+      tags: ['Next.js', 'TypeScript', 'Firebase']
+    },
+    {
+      title: 'LuxDrive',
+      description: 'A modern, responsive web application built with React, TypeScript, and Tailwind CSS that allows users to browse cars, view detailed specifications, and manage their appointments.',
+      image: '/images/lux-drive.png',
+      demo: 'https://lux-drive-tau.vercel.app/',
+      github: 'https://github.com/ParsaBazrpash/Lux-Drive',
+      skills: 'React.js/Next.js/TypeScript/JavaScript/Tailwind CSS',
+      date: 'December 2024',
+      sortDate: '2024-12-01',
+      tags: ['React', 'TypeScript', 'Next.js']
+    },
+    {
+      title: 'CashDash',
+      description: 'CashDash is a personal finance tracker that lets you manage your money in any currency. Add your daily transactions and see your income and expenses come to life through interactive charts, helping you understand your spending patterns with charts and breakdown across different time periods.',
+      image: '/images/CashDashProject.png',
+      demo: 'https://cashdash-one.vercel.app/',
+      github: 'https://github.com/ParsaBazrpash/CashDash',
+      skills: 'React.js/Next.js/TypeScript/JavaScript/Tailwind CSS',
+      date: 'December 2024',
+      sortDate: '2024-12-01',
+      tags: ['Next.js', 'TypeScript', 'React']
+    }
+  ];
+
+  const sortedProjects = [...projects].sort((a, b) =>
+    sortOrder === 'desc' ? b.sortDate.localeCompare(a.sortDate) : a.sortDate.localeCompare(b.sortDate)
+  );
   
   return (
     <main className="min-h-screen bg-gray-900 text-gray-100">
@@ -387,127 +461,21 @@ export default function Home() {
       <section id="projects" className="py-20 px-4 bg-gray-800">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-100">My Projects</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-                {
-                  title: 'MirrorAPI',
-                  description: "MirrorAPI is an AI-powered web-application that compares two API endpoints, detects changes, and generates detailed documentation using NVIDIA's Nemotron Agentic AI. Built with Next.js & TypeScript it streamlines API version control and automates developer insights.",
-                  image: '/images/mirrorapi.png',
-                  demo: 'https://www.youtube.com/watch?v=zJ3Deft3lVo&t=1s',
-                  github: 'https://github.com/ParsaBazrpash/MirrorAPI',
-                  skills: 'Next.js/JavaScript/TypeScript/Python/OAuth/NVIDIA Nemotron/AI/RAG/ML',
-                  date: 'November 2025 – 1st Place Winner – HackUTD 2025 (State Farm Challenge)'
-                },
-                {
-                  title: 'Connect',
-                  description: 'Connect is a web-based video chatting platform that enables hearing-impaired and hearing people to communicate more effectively. It uses a machine learning model to recognize sign language gestures and convert them into text in real-time and on the other end, spoken words are transcribed into text instantly, ensuring the conversation flows both ways.',
-                  image: '/images/connect.png',
-                  demo: 'https://www.youtube.com/watch?v=QEH0Zvk0bAg&t=1s',
-                  github: 'https://github.com/ParsaBazrpash/Connect',
-                  skills: 'React.js/Next.js/TypeScript/JavaScript/Tailwind CSS/Firebase/Python/ML/Flask/WebRTC',
-                  date: 'April 2025 - 1st Place Winner – HACKAI Hackathon'
-                },
-                {
-                title: 'VitalPlate',
-                description: 'A full-stack web application that empowers users to manage their health with innovative technology. It features a chatbot for symptom assessment and personalized dietary recommendations, a calorie finder that analyzes meal photos to estimate nutritional content, and a dashboard for logging meals and moods, providing clear insights into nutritional trends.',
-                image: '/images/VitalPlate.png',
-                demo: 'https://vital-plate-11.vercel.app/',
-                github: 'https://github.com/ParsaBazrpash/VitalPlate',
-                skills: 'React.js/Next.js/TypeScript/JavaScript/Tailwind CSS, Firebase',
-                date: 'February 2025 - Axxess Hackathon'
-              },
-                {
-                title: 'DocAlert',
-                description: 'Developed a web-based full-stack application that streamlines the scheduling and managing of medical appointments. Implemented a user-friendly interface for patients to find healthcare providers, book visits, and receive appointment reminders—Integrated Firebase for authentication, database, and real-time notifications.',
-                image: '/images/docalert.png',
-                demo: 'https://doc-alert.vercel.app/',
-                github: 'https://github.com/ParsaBazrpash/DocAlert',
-                skills: 'React.js/Next.js/TypeScript/JavaScript/Tailwind CSS, Firebase',
-                date: 'October 2024 - January 2025'
-              },
-                {
-                title: 'LuxDrive',
-                description: 'A modern, responsive web application built with React, TypeScript, and Tailwind CSS that allows users to browse cars, view detailed specifications, and manage their appointments.',
-                image: '/images/lux-drive.png',
-                demo: 'https://lux-drive-tau.vercel.app/',
-                github: 'https://github.com/ParsaBazrpash/Lux-Drive',
-                skills: 'React.js/Next.js/TypeScript/JavaScript/Tailwind CSS',
-                date: 'December 2024'
-              },
-                {
-                title: 'CashDash',
-                description: 'CashDash is a personal finance tracker that lets you manage your money in any currency. Add your daily transactions and see your income and expenses come to life through interactive charts, helping you understand your spending patterns with charts and breakdown across different time periods.',
-                image: '/images/CashDashProject.png',
-                demo: 'https://cashdash-one.vercel.app/',
-                github: 'https://github.com/ParsaBazrpash/CashDash',
-                skills: 'React.js/Next.js/TypeScript/JavaScript/Tailwind CSS',
-                date: 'December 2024'
-              },
-              {
-                title: 'ReLeaf',
-                description: 'ReLeaf is a property management web application that provides and simplifies carbon emission and energy consumption data and analytics at the click of a few buttons. It includes a properties dashboard that combines the metrics of all of the users properties as well as the individual properties dashboard, data input & analytics, pie charts, bar graphs, a built-in carbon emission calculator, and personalized recommendations for reducing carbon emissions and increasing cost-saving.',
-                image: '/images/releaf.png',
-                demo: 'https://releafutd.vercel.app/',
-                github: 'https://github.com/hibamubeen/ReLeafApp',
-                skills: 'React.js/TypeScript/JavaScript/Tailwind CSS',
-                date: 'November 2024 - HACK UTD 2024 (Ripple Effect)'
-              },
-              {
-                title: 'To Do List',
-                description: 'Dynamic To-Do List application with due dates and task management',
-                image: '/images/To Do List.png',
-                demo: 'https://parsabazrpash.github.io/To-Do-List/',
-                github: 'https://github.com/ParsaBazrpash/To-Do-List',
-                skills: 'HTML/CSS/JavaScript',
-                date: 'September 2024'
-              },
+          
+          <div className="flex flex-col md:flex-row md:items-center md:justify-end gap-4 mb-8">
+            <div className="flex items-center gap-3">
+              <span className="text-sm text-gray-300">Sort by date:</span>
+              <button
+                onClick={() => setSortOrder(sortOrder === 'desc' ? 'asc' : 'desc')}
+                className="px-3 py-2 rounded-lg text-sm border border-gray-700 bg-gray-900 text-gray-200 hover:border-gray-500"
+              >
+                {sortOrder === 'desc' ? 'Newest → Oldest' : 'Oldest → Newest'}
+              </button>
+            </div>
+          </div>
 
-            {
-              title: 'Quiz Generator',
-              description: 'My first website that I created to practice my skills. This website includes a question page with some basic questions about web development which you can read, and take the quiz, and see your grade at the end of that.',
-              image: '/images/quiz-website-image.png',
-              demo: 'https://parsabazrpash.github.io/Quiz-Website/home.html',
-              github: 'https://github.com/ParsaBazrpash/Quiz-Website',
-              skills: 'HTML/CSS/JavaScript',
-              date: 'December 2023'
-            },
-            {
-              title: 'Rock Paper Scissors Game',
-              description: 'Rock Paper Scissors is a popular hand game played between two people where each player simultaneously forms one of three shapes with their hand. The game has three possible outcomes and features a dark mode.',
-              image: '/images/Rock Paper Scissors.png',
-              demo: 'https://parsabazrpash.github.io/Rock-Paper-Scissors/game.html',
-              github: 'https://github.com/ParsaBazrpash/Rock-Paper-Scissors',
-              skills: 'HTML/CSS/JavaScript',
-              date: 'February 2024'
-            },
-            {
-              title: 'BMI Calculator',
-              description: 'A lightweight BMI (Body Mass Index) calculator web app. Supports metric (kg, cm) and imperial (pounds, feet) units. Simple UI, easy to use. Ideal for quick BMI checks.',
-              image: '/images/BMI Calc.png',
-              demo: 'https://parsabazrpash.github.io/BMI-Calculator/home.html',
-              github: 'https://github.com/ParsaBazrpash/BMI-Calculator',
-              skills: 'HTML/CSS/JavaScript',
-              date: 'January 2024'
-            },
-            {
-              title: 'Calculator with Dark Mode',
-              description: 'A minimalist web calculator built with HTML, CSS, and JavaScript. Features a responsive layout, dark mode toggle, and supports basic arithmetic operations. Great for integrating into web projects or standalone use.',
-              image: '/images/Calculator.png',
-              demo: 'https://parsabazrpash.github.io/Calculator-with-Dark-Mode/calc.html',
-              github: 'https://github.com/ParsaBazrpash/Calculator-with-Dark-Mode',
-              skills: 'HTML/CSS/JavaScript',
-              date: 'February 2024'
-            },
-            {
-              title: 'Theater Seat Map Booking',
-              description: 'Design and develop a responsive user interface for booking seats in cinemas and theaters. The UI aims to enhance user experience across devices, enabling seamless seat reservations. Features include dynamic seat mapping, adaptive controls, and intuitive interaction.',
-              image: '/images/theather.png',
-              demo: 'https://parsabazrpash.github.io/Theater-Seat-Map-Booking/seatmap.html',
-              github: 'https://github.com/ParsaBazrpash/Theater-Seat-Map-Booking',
-              skills: 'HTML/CSS/JavaScript',
-              date: 'February 2024'
-            }
-            ].map((project) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {sortedProjects.map((project) => (
               <div key={project.title} className="bg-gray-900 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:-translate-y-2">
                 <Link href={project.demo} target="_blank">
                 <div className="relative h-48">
