@@ -100,7 +100,7 @@ export default function Home() {
             <div className="text-center">
               <div className="relative w-64 h-64 mx-auto rounded-full overflow-hidden ring-4 ring-custom-blue">
                 <Image
-                  src="/images/Prof1.jpg"
+                  src="/images/Parsa%20Profile.png"
                   alt="Profile"
                   fill
                   className="object-cover"
