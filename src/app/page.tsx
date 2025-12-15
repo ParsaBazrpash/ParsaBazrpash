@@ -69,552 +69,288 @@ export default function Home() {
       <section id="resume" className="py-20 px-4 bg-gray-800">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-100">My Resume</h2>
-        <div className="grid md:grid-cols-3 gap-12">
+        <div className="grid md:grid-cols-3 gap-8">
         
-
-{/* Professional Experience Column */}
-<div className="space-y-8 relative">
-  {/* Animated background elements */}
-  <div className="absolute inset-0 pointer-events-none overflow-hidden">
-    <div className="absolute top-10 left-1/4 w-32 h-32 bg-green-500/5 rounded-full blur-3xl animate-pulse"></div>
-    <div className="absolute bottom-20 right-1/4 w-40 h-40 bg-blue-500/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
-  </div>
-
-  <div className="relative z-10">
-    <div className="flex items-center gap-4 mb-8">
-      <div className="w-1 h-12 bg-gradient-to-b from-green-400 to-blue-500 rounded-full"></div>
-      <h3 className="text-3xl font-bold text-transparent bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 bg-clip-text">
-        Professional Experience
-      </h3>
-    </div>
-    
-    <div className="space-y-8 relative">
-      {/* Timeline line */}
-      <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-green-400 via-blue-500 to-purple-500 rounded-full opacity-30"></div>
-      
-      {/* Always visible experiences */}
-      {[
-        {
-          logo: "/logos/starbucks.png",
-          company: "Starbucks",
-          position: "Barista",
-          period: "01/2024 - Present",
-          status: "Current",
-          color: "from-green-600 to-teal-500",
-          glowColor: "shadow-green-600/20",
-          responsibilities: [
-            "Served 100+ customers daily while maintaining high service standards in fast-paced shifts",
-            "Collaborated closely with teammates to streamline peak-hour operations"
-          ]
-        },{
-          logo: "/logos/mercatalyst.png",
-          company: "Mercatalyst",
-          position: "Software Engineer Intern",
-          period: "05/2025 - 10/2025",
-          status: "Completed",
-          color: "from-blue-500 to-cyan-500",
-          glowColor: "shadow-blue-500/20",
-          responsibilities: []
-        },
-        {
-          logo: "/logos/aiaa logo new.avif",
-          company: "AIAA UT Dallas",
-          position: "Frontend Web Developer",
-          period: "02/2025 - 05/2025",
-          status: "Completed",
-          color: "from-blue-500 to-cyan-500",
-          glowColor: "shadow-blue-500/20",
-          responsibilities: []
-        }
-      ].map((exp, index) => (
-        <div
-          key={exp.company}
-          className="relative group"
-          style={{
-            animationDelay: `${index * 200}ms`
-          }}
-        >
-          {/* Timeline dot */}
-          <div className={`absolute left-4 w-4 h-4 bg-gradient-to-r ${exp.color} rounded-full border-2 border-gray-900 group-hover:scale-125 transition-all duration-300 z-20`}></div>
+        {/* Professional Experience Column */}
+        <div className="space-y-6">
+          <h3 className="text-2xl font-bold mb-6 text-gray-100">Professional Experience</h3>
           
-          {/* Experience card */}
-          <div className={`ml-14 relative overflow-hidden bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-gray-600 transition-all duration-500 hover:shadow-2xl hover:${exp.glowColor} hover:transform hover:scale-[1.02]`}>
-            
-            {/* Animated background pattern */}
-            <div className="absolute inset-0 opacity-5">
-              <div className="absolute top-4 right-4 w-20 h-20 border border-white/10 rounded-full animate-spin" style={{animationDuration: '20s'}}></div>
-              <div className="absolute bottom-4 left-4 w-16 h-16 bg-white/5 rounded-full animate-pulse"></div>
-            </div>
-            
-            {/* Status badge */}
-            <div className="absolute top-4 right-4 z-10">
-              <span className={`px-3 py-1 text-xs font-semibold rounded-full ${
-                exp.status === 'Current' 
-                  ? 'bg-green-500/20 text-green-400 border border-green-500/30'
-                  : 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
-              }`}>
-                {exp.status}
-              </span>
-            </div>
-            
-            <div className="flex items-start gap-4 relative z-10">
-              {/* Logo */}
-              <div className={`w-16 h-16 relative rounded-xl overflow-hidden ring-2 ring-gray-600 group-hover:ring-opacity-50 transition-all duration-300`}>
-                <Image 
-                  src={exp.logo}
-                  alt={`${exp.company} Logo`}
-                  fill
-                  className="object-contain p-1"
-                />
-              </div>
-              
-              {/* Content */}
-              <div className="flex-1">
-                <h4 className="text-lg font-bold text-gray-100 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 group-hover:bg-clip-text transition-all duration-300 pr-20">
-                  {exp.position}
-                </h4>
-                <p className="text-gray-300 font-medium mt-1">{exp.company}</p>
-                <p className="text-gray-400 text-sm mt-1">{exp.period}</p>
-                
-                {/* Responsibilities */}
-                {exp.responsibilities.length > 0 && (
-                  <ul className="list-disc ml-4 mt-3 text-gray-400 space-y-1">
-                    {exp.responsibilities.map((resp, idx) => (
-                      <li key={idx} className="text-sm">{resp}</li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            </div>
-            
-            {/* Hover gradient overlay */}
-            <div className={`absolute inset-0 bg-gradient-to-br ${exp.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}></div>
-          </div>
-        </div>
-      ))}
-
-      {/* Expandable section */}
-      <div
-        className={`transition-all duration-500 overflow-hidden ${
-          showAll ? 'max-h-[3000px]' : 'max-h-0'
-        }`}
-      >
-        <div className="space-y-8 pt-2">
+          {/* Always visible experiences */}
           {[
             {
-              logo: "/logos/NebulaLabs.png",
-              company: "Nebula Labs",
-              position: "UI/UX Designer",
-              period: "10/2024 - 02/2025",
-              status: "Completed",
-              color: "from-purple-500 to-pink-500",
-              glowColor: "shadow-purple-500/20",
+              logo: "/logos/starbucks.png",
+              company: "Starbucks",
+              position: "Barista",
+              period: "01/2024 - Present",
+              status: "Current",
               responsibilities: [
-                "Designed responsive UI/UX for Trends, a website for the UTD student community to select the best professors and compare them using Figma, collaborating with developers to improve usability for 2,000+ users."
+                "Served 100+ customers daily while maintaining high service standards in fast-paced shifts",
+                "Collaborated closely with teammates to streamline peak-hour operations"
               ]
             },
             {
-              logo: "/logos/AIMD.webp",
-              company: "AIMD",
-              position: "Full Stack Developer",
-              period: "10/2024 - 02/2025",
+              logo: "/logos/mercatalyst.png",
+              company: "Mercatalyst",
+              position: "Software Engineer Intern",
+              period: "05/2025 - 10/2025",
               status: "Completed",
-              color: "from-indigo-500 to-purple-500",
-              glowColor: "shadow-indigo-500/20",
-              responsibilities: [
-                "Developed a full-stack web-based medical appointment app named (Doc Alert) with secure login, real-time reminders, and provider search, streamlining scheduling and communication for patients."
-              ]
+              responsibilities: []
             },
             {
-              logo: "/logos/icode.jpeg",
-              company: "iCode School Franchise",
-              position: "Computer Science Instructor",
-              period: "03/2024 - 08/2024",
+              logo: "/logos/aiaa logo new.avif",
+              company: "AIAA UT Dallas",
+              position: "Frontend Web Developer",
+              period: "02/2025 - 05/2025",
               status: "Completed",
-              color: "from-orange-500 to-red-500",
-              glowColor: "shadow-orange-500/20",
-              responsibilities: [
-                "Taught 200+ K–12 students coding, robotics, game development (Scratch, Python), and digital media skills, including green screen, video editing, and 3D design."
-              ]
+              responsibilities: []
             }
-          ].map((exp, index) => (
+          ].map((exp) => (
             <div
               key={exp.company}
-              className="relative group"
-              style={{
-                animationDelay: `${(index + 3) * 200}ms`
-              }}
+              className="bg-gray-900 rounded-lg shadow-lg p-6 transform transition-transform duration-300 hover:-translate-y-1"
             >
-              {/* Timeline dot */}
-              <div className={`absolute left-4 w-4 h-4 bg-gradient-to-r ${exp.color} rounded-full border-2 border-gray-900 group-hover:scale-125 transition-all duration-300 z-20`}></div>
-              
-              {/* Experience card */}
-              <div className={`ml-14 relative overflow-hidden bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-gray-600 transition-all duration-500 hover:shadow-2xl hover:${exp.glowColor} hover:transform hover:scale-[1.02]`}>
-                
-                {/* Animated background pattern */}
-                <div className="absolute inset-0 opacity-5">
-                  <div className="absolute top-4 right-4 w-20 h-20 border border-white/10 rounded-full animate-spin" style={{animationDuration: '20s'}}></div>
-                  <div className="absolute bottom-4 left-4 w-16 h-16 bg-white/5 rounded-full animate-pulse"></div>
+              <div className="flex items-start gap-4">
+                <div className="w-16 h-16 relative rounded-lg overflow-hidden flex-shrink-0">
+                  <Image 
+                    src={exp.logo}
+                    alt={`${exp.company} Logo`}
+                    fill
+                    className="object-contain p-1"
+                  />
                 </div>
                 
-                {/* Status badge */}
-                <div className="absolute top-4 right-4 z-10">
-                  <span className={`px-3 py-1 text-xs font-semibold rounded-full ${
-                    exp.status === 'Current' 
-                      ? 'bg-green-500/20 text-green-400 border border-green-500/30'
-                      : 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
-                  }`}>
-                    {exp.status}
-                  </span>
-                </div>
-                
-                <div className="flex items-start gap-4 relative z-10">
-                  {/* Logo */}
-                  <div className={`w-16 h-16 relative rounded-xl overflow-hidden ring-2 ring-gray-600 group-hover:ring-opacity-50 transition-all duration-300`}>
-                    <Image 
-                      src={exp.logo}
-                      alt={`${exp.company} Logo`}
-                      fill
-                      className="object-contain p-1"
-                    />
+                <div className="flex-1">
+                  <div className="flex items-start justify-between mb-2">
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-100">{exp.position}</h4>
+                      <p className="text-gray-300 font-medium">{exp.company}</p>
+                    </div>
+                    <span className={`px-2 py-1 text-xs font-semibold rounded ${
+                      exp.status === 'Current' 
+                        ? 'bg-green-500/20 text-green-400'
+                        : 'bg-gray-700 text-gray-400'
+                    }`}>
+                      {exp.status}
+                    </span>
                   </div>
+                  <p className="text-gray-400 text-sm mb-3">{exp.period}</p>
                   
-                  {/* Content */}
-                  <div className="flex-1">
-                    <h4 className="text-lg font-bold text-gray-100 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 group-hover:bg-clip-text transition-all duration-300 pr-20">
-                      {exp.position}
-                    </h4>
-                    <p className="text-gray-300 font-medium mt-1">{exp.company}</p>
-                    <p className="text-gray-400 text-sm mt-1">{exp.period}</p>
+                  {exp.responsibilities.length > 0 && (
+                    <ul className="list-disc ml-4 text-gray-400 space-y-1">
+                      {exp.responsibilities.map((resp, idx) => (
+                        <li key={idx} className="text-sm">{resp}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+
+          {/* Expandable section */}
+          <div
+            className={`transition-all duration-500 overflow-hidden ${
+              showAll ? 'max-h-[3000px]' : 'max-h-0'
+            }`}
+          >
+            <div className="space-y-6">
+              {[
+                {
+                  logo: "/logos/NebulaLabs.png",
+                  company: "Nebula Labs",
+                  position: "UI/UX Designer",
+                  period: "10/2024 - 02/2025",
+                  status: "Completed",
+                  responsibilities: [
+                    "Designed responsive UI/UX for Trends, a website for the UTD student community to select the best professors and compare them using Figma, collaborating with developers to improve usability for 2,000+ users."
+                  ]
+                },
+                {
+                  logo: "/logos/AIMD.webp",
+                  company: "AIMD",
+                  position: "Full Stack Developer",
+                  period: "10/2024 - 02/2025",
+                  status: "Completed",
+                  responsibilities: [
+                    "Developed a full-stack web-based medical appointment app named (Doc Alert) with secure login, real-time reminders, and provider search, streamlining scheduling and communication for patients."
+                  ]
+                },
+                {
+                  logo: "/logos/icode.jpeg",
+                  company: "iCode School Franchise",
+                  position: "Computer Science Instructor",
+                  period: "03/2024 - 08/2024",
+                  status: "Completed",
+                  responsibilities: [
+                    "Taught 200+ K–12 students coding, robotics, game development (Scratch, Python), and digital media skills, including green screen, video editing, and 3D design."
+                  ]
+                }
+              ].map((exp) => (
+                <div
+                  key={exp.company}
+                  className="bg-gray-900 rounded-lg shadow-lg p-6 transform transition-transform duration-300 hover:-translate-y-1"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="w-16 h-16 relative rounded-lg overflow-hidden flex-shrink-0">
+                      <Image 
+                        src={exp.logo}
+                        alt={`${exp.company} Logo`}
+                        fill
+                        className="object-contain p-1"
+                      />
+                    </div>
                     
-                    {/* Responsibilities */}
-                    {exp.responsibilities.length > 0 && (
-                      <ul className="list-disc ml-4 mt-3 text-gray-400 space-y-1">
-                        {exp.responsibilities.map((resp, idx) => (
-                          <li key={idx} className="text-sm">{resp}</li>
-                        ))}
-                      </ul>
-                    )}
+                    <div className="flex-1">
+                      <div className="flex items-start justify-between mb-2">
+                        <div>
+                          <h4 className="text-lg font-semibold text-gray-100">{exp.position}</h4>
+                          <p className="text-gray-300 font-medium">{exp.company}</p>
+                        </div>
+                        <span className="px-2 py-1 text-xs font-semibold rounded bg-gray-700 text-gray-400">
+                          {exp.status}
+                        </span>
+                      </div>
+                      <p className="text-gray-400 text-sm mb-3">{exp.period}</p>
+                      
+                      {exp.responsibilities.length > 0 && (
+                        <ul className="list-disc ml-4 text-gray-400 space-y-1">
+                          {exp.responsibilities.map((resp, idx) => (
+                            <li key={idx} className="text-sm">{resp}</li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
                   </div>
                 </div>
+              ))}
+            </div>
+          </div>
+
+          {/* See More / See Less Button */}
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="w-full px-6 py-3 bg-gray-900 hover:bg-gray-700 text-gray-100 font-medium rounded-lg transition-colors duration-300 border border-gray-700 hover:border-gray-600"
+          >
+            {showAll ? 'See Less ▲' : 'See More (+3) ▼'}
+          </button>
+        </div>
+
+        {/* Education Column */}
+        <div className="space-y-6">
+          <h3 className="text-2xl font-bold mb-6 text-gray-100">Education</h3>
+          
+          {[
+            {
+              logo: "/logos/utdlogo.png",
+              school: "University of Texas at Dallas",
+              degree: "Bachelor's, Software Engineering",
+              period: "08/2024 - 05/2026",
+              gpa: "3.67",
+              status: "Current"
+            },
+            {
+              logo: "/logos/dallascollege.png",
+              school: "Dallas College",
+              degree: "Associate's, Software Engineering",
+              period: "08/2022 - 08/2024",
+              gpa: "3.96",
+              status: "Completed"
+            },
+            {
+              logo: "/logos/alborz.jpeg",
+              school: "Alborz High School",
+              degree: "High School Diploma, Mathematics",
+              period: "07/2015 - 06/2021",
+              note: "The first modern and largest high school in Asia and the Middle East",
+              status: "Completed"
+            }
+          ].map((edu) => (
+            <div
+              key={edu.school}
+              className="bg-gray-900 rounded-lg shadow-lg p-6 transform transition-transform duration-300 hover:-translate-y-1"
+            >
+              <div className="flex items-start gap-4">
+                <div className="w-16 h-16 relative rounded-lg overflow-hidden flex-shrink-0">
+                  <Image 
+                    src={edu.logo}
+                    alt={`${edu.school} Logo`}
+                    fill
+                    className="object-contain p-1"
+                  />
+                </div>
                 
-                {/* Hover gradient overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${exp.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}></div>
+                <div className="flex-1">
+                  <div className="flex items-start justify-between mb-2">
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-100">{edu.school}</h4>
+                      <p className="text-gray-300 font-medium">{edu.degree}</p>
+                    </div>
+                    <span className={`px-2 py-1 text-xs font-semibold rounded ${
+                      edu.status === 'Current' 
+                        ? 'bg-green-500/20 text-green-400'
+                        : 'bg-gray-700 text-gray-400'
+                    }`}>
+                      {edu.status}
+                    </span>
+                  </div>
+                  <p className="text-gray-400 text-sm mb-3">{edu.period}</p>
+                  
+                  {edu.gpa && (
+                    <div className="mt-3 flex items-center gap-2">
+                      <span className="text-gray-400 text-sm">GPA:</span>
+                      <span className="px-3 py-1 bg-custom-blue text-white font-bold text-sm rounded">
+                        {edu.gpa}
+                      </span>
+                    </div>
+                  )}
+                  
+                  {edu.note && (
+                    <p className="text-gray-400 text-sm mt-3 italic border-l-2 border-gray-700 pl-3">
+                      {edu.note}
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
           ))}
         </div>
-      </div>
 
-      {/* See More / See Less Button */}
-      <div className="ml-14">
-        <button
-          onClick={() => setShowAll(!showAll)}
-          className="group flex items-center justify-center gap-2 w-full px-6 py-4 
-                     bg-gradient-to-r from-gray-700 to-gray-600 hover:from-gray-600 hover:to-gray-500 active:from-gray-800 active:to-gray-700
-                     text-white font-medium rounded-2xl
-                     transition-all duration-300 ease-in-out
-                     focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500
-                     shadow-lg hover:shadow-xl hover:shadow-gray-500/20 hover:transform hover:scale-[1.02]
-                     border border-gray-600/50 hover:border-gray-500"
-        >
-          <span className="group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-200 group-hover:bg-clip-text transition-all duration-300">
-            {showAll ? 'See Less ▲' : 'See More (+3) ▼'}
-          </span>
-        </button>
-      </div>
-    </div>
-    
-    {/* Decorative elements */}
-    <div className="mt-12 flex justify-center">
-      <div className="flex items-center gap-2 text-gray-500 text-sm">
-        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-        <span>Professional Growth Journey</span>
-        <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-{/* Education Column */}
-
-<div className="space-y-8 relative">
-  {/* Animated background elements */}
-  <div className="absolute inset-0 pointer-events-none overflow-hidden">
-    <div className="absolute top-10 left-1/4 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
-    <div className="absolute bottom-20 right-1/4 w-40 h-40 bg-purple-500/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
-  </div>
-
-  <div className="relative z-10">
-    <div className="flex items-center gap-4 mb-8">
-      <div className="w-1 h-12 bg-gradient-to-b from-blue-400 to-purple-500 rounded-full"></div>
-      <h3 className="text-3xl font-bold text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text">
-        Educational Journey
-      </h3>
-    </div>
-    
-    <div className="space-y-8 relative">
-      {/* Timeline line */}
-      <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-400 via-purple-500 to-pink-500 rounded-full opacity-30"></div>
-      
-      {[
-        {
-          logo: "/logos/utdlogo.png",
-          school: "University of Texas at Dallas",
-          degree: "Bachelor's, Software Engineering",
-          period: "08/2024 - 05/2026",
-          gpa: "3.67",
-          status: "Current",
-          color: "from-orange-500 to-red-500",
-          glowColor: "shadow-orange-500/20"
-        },
-        {
-          logo: "/logos/dallascollege.png",
-          school: "Dallas College",
-          degree: "Associate's, Software Engineering",
-          period: "08/2022 - 08/2024",
-          gpa: "3.96",
-          status: "Completed",
-          color: "from-blue-500 to-cyan-500",
-          glowColor: "shadow-blue-500/20"
-        },
-        {
-          logo: "/logos/alborz.jpeg",
-          school: "Alborz High School",
-          degree: "High School Diploma, Mathematics",
-          period: "07/2015 - 06/2021",
-          note: "The first modern and largest high school in Asia and the Middle East",
-          status: "Completed",
-          color: "from-green-500 to-emerald-500",
-          glowColor: "shadow-green-500/20"
-        }
-      ].map((edu, index) => (
-        <div
-          key={edu.school}
-          className="relative group"
-          style={{
-            animationDelay: `${index * 200}ms`
-          }}
-        >
-          {/* Timeline dot */}
-          <div className={`absolute left-4 w-4 h-4 bg-gradient-to-r ${edu.color} rounded-full border-2 border-gray-900 group-hover:scale-125 transition-all duration-300 z-20`}></div>
+        {/* Skills Column */}
+        <div className="space-y-6">
+          <h3 className="text-2xl font-bold mb-6 text-gray-100">Skills & Expertise</h3>
           
-          {/* Education card */}
-          <div className={`ml-14 relative overflow-hidden bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-gray-600 transition-all duration-500 hover:shadow-2xl hover:${edu.glowColor} hover:transform hover:scale-[1.02]`}>
-            
-            {/* Animated background pattern */}
-            <div className="absolute inset-0 opacity-5">
-              <div className="absolute top-4 right-4 w-20 h-20 border border-white/10 rounded-full animate-spin" style={{animationDuration: '20s'}}></div>
-              <div className="absolute bottom-4 left-4 w-16 h-16 bg-white/5 rounded-full animate-pulse"></div>
-            </div>
-            
-            {/* Status badge */}
-            <div className="absolute top-4 right-4 z-10">
-              <span className={`px-3 py-1 text-xs font-semibold rounded-full ${
-                edu.status === 'Current' 
-                  ? 'bg-green-500/20 text-green-400 border border-green-500/30'
-                  : 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
-              }`}>
-                {edu.status}
-              </span>
-            </div>
-            
-            <div className="flex items-start gap-4 relative z-10">
-              {/* Logo */}
-              <div className={`w-16 h-16 relative rounded-xl overflow-hidden ring-2 ring-gray-600 group-hover:ring-opacity-50 transition-all duration-300`}>
-                <Image 
-                  src={edu.logo}
-                  alt={`${edu.school} Logo`}
-                  fill
-                  className="object-contain p-1"
-                />
-              </div>
-              
-              {/* Content */}
-              <div className="flex-1">
-                <h4 className="text-lg font-bold text-gray-100 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 group-hover:bg-clip-text transition-all duration-300 pr-20">
-                  {edu.school}
-                </h4>
-                <p className="text-gray-300 font-medium mt-1">{edu.degree}</p>
-                <p className="text-gray-400 text-sm mt-1">{edu.period}</p>
-                
-                {/* GPA Display */}
-                {edu.gpa && (
-                  <div className="mt-3 flex items-center gap-2">
-                    <span className="text-gray-400 text-sm">GPA:</span>
-                    <div className={`px-3 py-1 bg-gradient-to-r ${edu.color} rounded-full`}>
-                      <span className="text-white font-bold text-sm">{edu.gpa}</span>
-                    </div>
-                  </div>
-                )}
-                
-                {/* Special note */}
-                {edu.note && (
-                  <p className="text-gray-400 text-sm mt-3 italic border-l-2 border-gray-600 pl-3">
-                    {edu.note}
-                  </p>
-                )}
-              </div>
-            </div>
-            
-            {/* Hover gradient overlay */}
-            <div className={`absolute inset-0 bg-gradient-to-br ${edu.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}></div>
-          </div>
-        </div>
-      ))}
-    </div>
-    
-    {/* Decorative elements */}
-    <div className="mt-12 flex justify-center">
-      <div className="flex items-center gap-2 text-gray-500 text-sm">
-        <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-        <span>Academic Excellence Journey</span>
-        <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-{/* Skills Column */}
-<div className="space-y-8 relative">
-  {/* Animated background elements */}
-  <div className="absolute inset-0 pointer-events-none overflow-hidden">
-    <div className="absolute top-10 left-1/4 w-32 h-32 bg-purple-500/5 rounded-full blur-3xl animate-pulse"></div>
-    <div className="absolute bottom-20 right-1/4 w-40 h-40 bg-cyan-500/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
-  </div>
-
-  <div className="relative z-10">
-    <div className="flex items-center gap-4 mb-8">
-      <div className="w-1 h-12 bg-gradient-to-b from-purple-400 to-cyan-500 rounded-full"></div>
-      <h3 className="text-3xl font-bold text-transparent bg-gradient-to-r from-purple-400 via-cyan-500 to-blue-500 bg-clip-text">
-        Skills & Expertise
-      </h3>
-    </div>
-    
-    <div className="space-y-8 relative">
-      {/* Timeline line */}
-      <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-400 via-cyan-500 to-blue-500 rounded-full opacity-30"></div>
-      
-      {[
-        {
-          category: "Programming Languages",
-          skills: [
-            { name: 'Java', color: 'from-orange-500 to-red-500' },
-            { name: 'C#', color: 'from-purple-500 to-indigo-500' },
-            { name: 'C++', color: 'from-blue-500 to-cyan-500' },
-            { name: 'Python', color: 'from-yellow-400 to-green-500' }
-          ],
-          color: "from-orange-500 to-red-500",
-          glowColor: "shadow-orange-500/20",
-          icon: "💻"
-        },
-        {
-          category: "Web Technologies",
-          skills: [
-            { name: 'HTML/CSS', color: 'from-pink-500 to-rose-500' },
-            { name: 'JavaScript', color: 'from-yellow-400 to-orange-500' },
-            { name: 'TypeScript', color: 'from-blue-600 to-indigo-600' },
-            { name: 'React.js', color: 'from-cyan-400 to-blue-500' },
-            { name: 'Next.js', color: 'from-gray-800 to-gray-600' },
-            { name: 'Node.js', color: 'from-green-800 to-green-600' }
-          ],
-          color: "from-cyan-500 to-blue-500",
-          glowColor: "shadow-cyan-500/20",
-          icon: "🌐"
-        },
-        {
-          category: "Database & Tools",
-          skills: [
-            { name: 'SQL/MySQL', color: 'from-teal-400 to-blue-500' },
-            { name: 'MongoDB', color: 'from-green-800 to-green-600' },
-            { name: 'Redis', color: 'from-red-500 to-orange-500' },
-            { name: 'Firebase', color: 'from-orange-900 to-orange-600' },
-            { name: 'Git/GitHub', color: 'from-purple-500 to-purple-500' },
-            { name: 'Figma', color: 'from-blue-400 to-blue-400' },
-            { name: 'npm/pm2', color: 'from-yellow-400 to-orange-500' },
-          ],
-          color: "from-teal-500 to-green-500",
-          glowColor: "shadow-teal-500/20",
-          icon: "🛠️"
-        }
-      ].map((category, index) => (
-        <div
-          key={category.category}
-          className="relative group"
-          style={{
-            animationDelay: `${index * 200}ms`
-          }}
-        >
-          {/* Timeline dot */}
-          <div className={`absolute left-4 w-4 h-4 bg-gradient-to-r ${category.color} rounded-full border-2 border-gray-900 group-hover:scale-125 transition-all duration-300 z-20`}></div>
-          
-          {/* Skills card */}
-          <div className={`ml-14 relative overflow-hidden bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-gray-600 transition-all duration-500 hover:shadow-2xl hover:${category.glowColor} hover:transform hover:scale-[1.02]`}>
-            
-            {/* Animated background pattern */}
-            <div className="absolute inset-0 opacity-5">
-              <div className="absolute top-4 right-4 w-20 h-20 border border-white/10 rounded-full animate-spin" style={{animationDuration: '20s'}}></div>
-              <div className="absolute bottom-4 left-4 w-16 h-16 bg-white/5 rounded-full animate-pulse"></div>
-            </div>
-            
-            <div className="relative z-10">
-              {/* Category header */}
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-2xl">{category.icon}</span>
-                <h4 className="text-lg font-bold text-gray-100 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 group-hover:bg-clip-text transition-all duration-300">
-                  {category.category}
-                </h4>
-              </div>
-              
-              {/* Skills grid */}
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                {category.skills.map((skill, skillIndex) => (
-                  <div
-                    key={skill.name}
-                    className={`
-                      relative group/skill cursor-pointer
-                      bg-gradient-to-br ${skill.color}
-                      rounded-xl p-[1px] 
-                      hover:scale-105
-                      transition-all duration-300 ease-out
-                      hover:shadow-lg
-                    `}
-                    style={{
-                      animationDelay: `${(index * 200) + (skillIndex * 100)}ms`
-                    }}
+          {[
+            {
+              category: "Programming Languages",
+              skills: ['Java', 'C#', 'C++', 'Python']
+            },
+            {
+              category: "Web Technologies",
+              skills: ['HTML/CSS', 'JavaScript', 'TypeScript', 'React.js', 'Next.js', 'Node.js']
+            },
+            {
+              category: "Database & Tools",
+              skills: ['SQL/MySQL', 'MongoDB', 'Redis', 'Firebase', 'Git/GitHub', 'Figma', 'npm/pm2']
+            }
+          ].map((category) => (
+            <div
+              key={category.category}
+              className="bg-gray-900 rounded-lg shadow-lg p-6 transform transition-transform duration-300 hover:-translate-y-1"
+            >
+              <h4 className="text-lg font-semibold text-gray-100 mb-4">{category.category}</h4>
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-3 py-1 bg-gray-800 text-gray-300 text-sm rounded border border-gray-700"
                   >
-                    <div className="bg-gray-900/90 backdrop-blur-sm rounded-xl p-3 h-full flex items-center justify-center relative overflow-hidden">
-                      {/* Skill name */}
-                      <span className="text-white font-medium text-xs text-center z-10 group-hover/skill:text-transparent group-hover/skill:bg-gradient-to-r group-hover/skill:from-white group-hover/skill:to-gray-200 group-hover/skill:bg-clip-text transition-all duration-300">
-                        {skill.name}
-                      </span>
-                      
-                      {/* Hover glow effect */}
-                      <div className={`absolute inset-0 bg-gradient-to-br ${skill.color} opacity-0 group-hover/skill:opacity-20 rounded-xl transition-opacity duration-300`}></div>
-                    </div>
-                  </div>
+                    {skill}
+                  </span>
                 ))}
               </div>
             </div>
-            
-            {/* Hover gradient overlay */}
-            <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}></div>
-          </div>
+          ))}
         </div>
-      ))}
-    </div>
-    
-    {/* Decorative elements */}
-    <div className="mt-12 flex justify-center">
-      <div className="flex items-center gap-2 text-gray-500 text-sm">
-        <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-        <span>Technical Mastery Path</span>
-        <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-      </div>
-    </div>
-  </div>
-</div>
         </div>
       </div>
     </section>
