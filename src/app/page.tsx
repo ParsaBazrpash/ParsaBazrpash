@@ -700,12 +700,12 @@ export default function Home() {
 
             {/* Quick Message */}
             <div className="bg-gray-900 rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-gray-100 mb-4">Let's Work Together</h3>
+              <h3 className="text-xl font-semibold text-gray-100 mb-4">Let&apos;s Work Together</h3>
               <p className="text-gray-400 mb-6">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+                I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
               </p>
               <a
-                href="mailto:prsawork1@gmail.com?subject=Let's Connect"
+                href="mailto:prsawork1@gmail.com?subject=Let%27s%20Connect"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-custom-blue hover:bg-blue-600 text-white font-medium rounded-lg transition-colors"
               >
                 <Send className="w-5 h-5" />
