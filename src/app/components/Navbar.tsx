@@ -10,7 +10,7 @@ export const Navbar = () => {
   
   const isHomePage = pathname === '/'
   
-  const navItems = ['Home', 'About', 'Resume', 'Projects'].map(item => ({
+  const navItems = ['Home', 'Resume', 'Projects', 'Achievements', 'Contact'].map(item => ({
     name: item,
     href: isHomePage ? `#${item.toLowerCase()}` : `/#${item.toLowerCase()}`
   }))

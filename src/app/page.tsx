@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { Mail, MapPin, Coffee, Code, GraduationCap } from 'lucide-react';
+import { Mail, MapPin, Coffee, Code, GraduationCap, Trophy, Linkedin, Github, Youtube, Send, ExternalLink } from 'lucide-react';
 import { Navbar } from './components/Navbar';
 
 
@@ -541,6 +541,177 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Achievements Section */}
+      <section id="achievements" className="py-20 px-4 bg-gray-900">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-100">Achievements & Awards</h2>
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {[
+              {
+                id: 'hackutd',
+                title: "1st Place - HackUTD 2025",
+                description: "State Farm Challenge Winner",
+                project: "MirrorAPI",
+                date: "November 2025",
+                icon: Trophy,
+                color: "text-yellow-400",
+                linkedinPost: "https://www.linkedin.com/feed/update/urn:li:activity:7394119067223138304/",
+                imageUrl: "https://media.licdn.com/dms/image/v2/D5622AQFOwsfziwrv0A/feedshare-shrink_2048_1536/B56Zp0wGr6I0A0-/0/1762895361122?e=1767225600&v=beta&t=OBIRuWx7vSrlFkDFl8LcC-oUQhnB4tl63F6bSfWhbiY"
+              },
+              {
+                id: 'hackai',
+                title: "1st Place - HACKAI Hackathon",
+                description: "Winner for innovative AI solution",
+                project: "Connect",
+                date: "April 2025",
+                icon: Trophy,
+                color: "text-blue-400",
+                linkedinPost: "https://www.linkedin.com/feed/update/urn:li:activity:7320514737706778626/",
+                imageUrl: "https://media.licdn.com/dms/image/v2/D5622AQGKYBaSi8rVWg/feedshare-shrink_800/B56ZZexWgjGUAg-/0/1745346720974?e=1767225600&v=beta&t=yTvcayzEMZeC_n5WLh53l8J1c0KKkR2UKnRdstL4qgc"
+              }
+            ].map((achievement, index) => {
+              const Icon = achievement.icon;
+              const imageUrl = achievement.imageUrl;
+              
+              return (
+                <div
+                  key={index}
+                  className="bg-gray-800 rounded-lg shadow-lg p-6 transform transition-transform duration-300 hover:-translate-y-1 border border-gray-700"
+                >
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className={`p-3 rounded-lg bg-gray-900 ${achievement.color}`}>
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-semibold text-gray-100 mb-1">{achievement.title}</h3>
+                      <p className="text-gray-300 text-sm mb-2">{achievement.description}</p>
+                      <p className="text-custom-blue text-sm font-medium mb-1">{achievement.project}</p>
+                      <p className="text-gray-400 text-xs">{achievement.date}</p>
+                    </div>
+                  </div>
+                  
+                  {/* LinkedIn Post Image */}
+                  {achievement.linkedinPost && imageUrl && (
+                    <div className="mt-4 border-t border-gray-700 pt-4">
+                      <div className="space-y-3">
+                        <Link
+                          href={achievement.linkedinPost}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block relative w-full rounded-lg overflow-hidden group"
+                        >
+                          <div className="relative w-full aspect-video bg-gray-900">
+                            <Image
+                              src={imageUrl}
+                              alt={`LinkedIn post image for ${achievement.title}`}
+                              fill
+                              className="object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                              <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+                                <Linkedin className="w-8 h-8 text-white" />
+                              </div>
+                            </div>
+                          </div>
+                        </Link>
+                        <Link
+                          href={achievement.linkedinPost}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-custom-blue hover:text-blue-300 transition-colors text-sm font-medium justify-center"
+                        >
+                          <Linkedin className="w-4 h-4" />
+                          View on LinkedIn
+                          <ExternalLink className="w-3 h-3" />
+                        </Link>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 px-4 bg-gray-800">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-100">Get In Touch</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Contact Information */}
+            <div className="space-y-6">
+              <h3 className="text-xl font-semibold text-gray-100 mb-6">Contact Information</h3>
+              <div className="space-y-4">
+                <div className="flex items-center gap-4 p-4 bg-gray-900 rounded-lg">
+                  <div className="p-2 bg-gray-800 rounded-lg">
+                    <Mail className="w-5 h-5 text-custom-blue" />
+                  </div>
+                  <div>
+                    <p className="text-gray-400 text-sm">Email</p>
+                    <a href="mailto:prsawork1@gmail.com" className="text-gray-100 hover:text-custom-blue transition-colors">
+                      prsawork1@gmail.com
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 p-4 bg-gray-900 rounded-lg">
+                  <div className="p-2 bg-gray-800 rounded-lg">
+                    <MapPin className="w-5 h-5 text-custom-blue" />
+                  </div>
+                  <div>
+                    <p className="text-gray-400 text-sm">Location</p>
+                    <p className="text-gray-100">Dallas, Texas, United States</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Social Links */}
+              <div className="mt-8">
+                <h4 className="text-lg font-semibold text-gray-100 mb-4">Connect With Me</h4>
+                <div className="flex gap-4">
+                  <Link
+                    href="https://www.linkedin.com/in/parsa-bazrpash-amalgar/"
+                    target="_blank"
+                    className="p-3 bg-gray-900 rounded-lg hover:bg-gray-700 transition-colors group"
+                  >
+                    <Linkedin className="w-6 h-6 text-gray-400 group-hover:text-custom-blue transition-colors" />
+                  </Link>
+                  <Link
+                    href="https://github.com/ParsaBazrpash"
+                    target="_blank"
+                    className="p-3 bg-gray-900 rounded-lg hover:bg-gray-700 transition-colors group"
+                  >
+                    <Github className="w-6 h-6 text-gray-400 group-hover:text-custom-blue transition-colors" />
+                  </Link>
+                  <Link
+                    href="https://www.youtube.com/@ParsaBazrpash"
+                    target="_blank"
+                    className="p-3 bg-gray-900 rounded-lg hover:bg-gray-700 transition-colors group"
+                  >
+                    <Youtube className="w-6 h-6 text-gray-400 group-hover:text-custom-blue transition-colors" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Quick Message */}
+            <div className="bg-gray-900 rounded-lg p-6">
+              <h3 className="text-xl font-semibold text-gray-100 mb-4">Let's Work Together</h3>
+              <p className="text-gray-400 mb-6">
+                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+              </p>
+              <a
+                href="mailto:prsawork1@gmail.com?subject=Let's Connect"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-custom-blue hover:bg-blue-600 text-white font-medium rounded-lg transition-colors"
+              >
+                <Send className="w-5 h-5" />
+                Send Email
+              </a>
+            </div>
           </div>
         </div>
       </section>
