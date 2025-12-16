@@ -1,10 +1,11 @@
 'use client'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import Image from 'next/image'
 import Link from 'next/link'
 import { Mail, MapPin, Coffee, Code, GraduationCap, Trophy, Linkedin, Github, Youtube, Send, ExternalLink } from 'lucide-react';
 import { Navbar } from './components/Navbar';
+import { GitHubContributions } from './components/GitHubContributions';
 
 
 
@@ -15,6 +16,7 @@ export default function Home() {
   const [sortOrder, setSortOrder] = useState<'desc' | 'asc'>('desc');
   const [showFidelityCard, setShowFidelityCard] = useState(true);
   const [fidelityClosing, setFidelityClosing] = useState(false);
+  const [githubContributions, setGithubContributions] = useState<number | null>(null);
   
   const projects = [
     {
@@ -88,6 +90,22 @@ export default function Home() {
   const sortedProjects = [...projects].sort((a, b) =>
     sortOrder === 'desc' ? b.sortDate.localeCompare(a.sortDate) : a.sortDate.localeCompare(b.sortDate)
   );
+
+  useEffect(() => {
+    const fetchContributions = async () => {
+      try {
+        const response = await fetch('/api/github-contributions');
+        const data = await response.json();
+        if (data.totalContributions) {
+          setGithubContributions(data.totalContributions);
+        }
+      } catch (error) {
+        console.error('Error fetching GitHub contributions:', error);
+      }
+    };
+
+    fetchContributions();
+  }, []);
   
   return (
     <main className="min-h-screen bg-gray-900 text-gray-100">
@@ -485,10 +503,19 @@ export default function Home() {
         <div className="p-6 rounded-lg bg-gray-800 shadow-lg text-center">
           <div className="flex items-center justify-center gap-4 mb-4">
             <Code className="w-8 h-8 text-custom-blue" />
-            <h3 className="text-4xl font-bold text-custom-blue">700+</h3>
+            <h3 className="text-4xl font-bold text-custom-blue">
+              {githubContributions !== null 
+                ? `${githubContributions.toLocaleString()}+` 
+                : '700+'}
+            </h3>
           </div>
           <p className="text-gray-300">Github Contributions</p>
         </div>
+      </div>
+
+      {/* GitHub Contribution Graph */}
+      <div className="max-w-7xl mx-auto mt-8 flex justify-center">
+        <GitHubContributions />
       </div>
     </section>
 
