@@ -27,15 +27,6 @@ const getIntensityColor = (count: number): string => {
   return 'bg-[#39d353] hover:bg-[#39d353]/80';
 };
 
-const getTooltipText = (date: string, count: number): string => {
-  const dateObj = new Date(date);
-  const formattedDate = dateObj.toLocaleDateString('en-US', {
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric',
-  });
-  return `${count} contribution${count !== 1 ? 's' : ''} on ${formattedDate}`;
-};
 
 export const GitHubContributions = () => {
   const [data, setData] = useState<ContributionData | null>(null);
@@ -142,12 +133,7 @@ export const GitHubContributions = () => {
     <div className="bg-gray-800 rounded-lg shadow-lg p-4 border border-gray-700 relative inline-block w-fit">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
-        <div>
-          <h3 className="text-lg font-semibold text-gray-100 mb-0.5">GitHub Contributions</h3>
-          <p className="text-gray-400 text-xs">
-            {totalContributions.toLocaleString()} contributions in the last year
-          </p>
-        </div>
+        <h3 className="text-lg font-semibold text-gray-100">GitHub Contributions</h3>
         <a
           href="https://github.com/ParsaBazrpash"
           target="_blank"
@@ -226,15 +212,23 @@ export const GitHubContributions = () => {
                           minWidth: '10px',
                           minHeight: '10px',
                         }}
-                        title={getTooltipText(day.date, day.contributionCount)}
                         onMouseEnter={(e) => {
-                          const rect = e.currentTarget.getBoundingClientRect();
                           setHoveredDay({
                             date: day.date,
                             count: day.contributionCount,
-                            x: rect.left + rect.width / 2,
-                            y: rect.top,
+                            x: e.clientX,
+                            y: e.clientY,
                           });
+                        }}
+                        onMouseMove={(e) => {
+                          if (hoveredDay) {
+                            setHoveredDay({
+                              date: day.date,
+                              count: day.contributionCount,
+                              x: e.clientX,
+                              y: e.clientY,
+                            });
+                          }
                         }}
                         onMouseLeave={() => setHoveredDay(null)}
                       />
@@ -247,14 +241,13 @@ export const GitHubContributions = () => {
         </div>
       </div>
 
-      {/* Tooltip - GitHub style */}
+      {/* Tooltip - follows mouse cursor */}
       {hoveredDay && (
         <div
-          className="absolute bg-[#161b22] text-white text-xs rounded px-2 py-1.5 pointer-events-none z-50 shadow-xl border border-[#30363d] whitespace-nowrap"
+          className="fixed bg-[#161b22] text-white text-xs rounded px-2 py-1.5 pointer-events-none z-50 shadow-xl border border-[#30363d] whitespace-nowrap"
           style={{
-            left: `${hoveredDay.x}px`,
-            top: `${hoveredDay.y - 35}px`,
-            transform: 'translateX(-50%)',
+            left: `${hoveredDay.x + 10}px`,
+            top: `${hoveredDay.y + 10}px`,
             fontSize: '12px',
           }}
         >
@@ -269,17 +262,6 @@ export const GitHubContributions = () => {
               year: 'numeric',
             })}
           </div>
-          <div 
-            className="absolute left-1/2 transform -translate-x-1/2 translate-y-full"
-            style={{
-              width: 0,
-              height: 0,
-              borderLeft: '4px solid transparent',
-              borderRight: '4px solid transparent',
-              borderTop: '4px solid #161b22',
-              top: '100%',
-            }}
-          />
         </div>
       )}
 

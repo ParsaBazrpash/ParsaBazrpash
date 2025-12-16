@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import Image from 'next/image'
 import Link from 'next/link'
@@ -16,7 +16,6 @@ export default function Home() {
   const [sortOrder, setSortOrder] = useState<'desc' | 'asc'>('desc');
   const [showFidelityCard, setShowFidelityCard] = useState(true);
   const [fidelityClosing, setFidelityClosing] = useState(false);
-  const [githubContributions, setGithubContributions] = useState<number | null>(null);
   
   const projects = [
     {
@@ -90,22 +89,6 @@ export default function Home() {
   const sortedProjects = [...projects].sort((a, b) =>
     sortOrder === 'desc' ? b.sortDate.localeCompare(a.sortDate) : a.sortDate.localeCompare(b.sortDate)
   );
-
-  useEffect(() => {
-    const fetchContributions = async () => {
-      try {
-        const response = await fetch('/api/github-contributions');
-        const data = await response.json();
-        if (data.totalContributions) {
-          setGithubContributions(data.totalContributions);
-        }
-      } catch (error) {
-        console.error('Error fetching GitHub contributions:', error);
-      }
-    };
-
-    fetchContributions();
-  }, []);
   
   return (
     <main className="min-h-screen bg-gray-900 text-gray-100">
@@ -485,7 +468,7 @@ export default function Home() {
 
       {/* Stats Section */}
       <section className="py-20 px-4 bg-gray-900">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
         <div className="p-6 rounded-lg bg-gray-800 shadow-lg text-center">
           <div className="flex items-center justify-center gap-4 mb-4">
             <Coffee className="w-8 h-8 text-custom-blue" />
@@ -499,17 +482,6 @@ export default function Home() {
             <h3 className="text-4xl font-bold text-custom-blue">3.67</h3>
           </div>
           <p className="text-gray-300">GPA</p>
-        </div>
-        <div className="p-6 rounded-lg bg-gray-800 shadow-lg text-center">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <Code className="w-8 h-8 text-custom-blue" />
-            <h3 className="text-4xl font-bold text-custom-blue">
-              {githubContributions !== null 
-                ? `${githubContributions.toLocaleString()}+` 
-                : '700+'}
-            </h3>
-          </div>
-          <p className="text-gray-300">Github Contributions</p>
         </div>
       </div>
 
