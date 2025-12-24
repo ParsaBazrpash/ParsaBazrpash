@@ -13,8 +13,6 @@ import { Navbar } from './components/Navbar';
 export default function Home() {
   const [showAll, setShowAll] = useState(false);
   const [sortOrder, setSortOrder] = useState<'desc' | 'asc'>('desc');
-  const [showFidelityCard, setShowFidelityCard] = useState(true);
-  const [fidelityClosing, setFidelityClosing] = useState(false);
   
   const projects = [
     {
@@ -152,37 +150,6 @@ export default function Home() {
         {/* Professional Experience Column */}
         <div className="space-y-6">
           <h3 className="text-2xl font-bold mb-6 text-gray-100">Professional Experience</h3>
-          {showFidelityCard && (
-            <button
-              onClick={() => {
-                setFidelityClosing(true);
-                setTimeout(() => setShowFidelityCard(false), 450);
-              }}
-              className={`w-full bg-gray-900 border border-emerald-700/70 rounded-xl shadow-lg shadow-emerald-500/20 p-4 text-left transition-all duration-500 ease-in-out ${
-                fidelityClosing ? 'opacity-0 -translate-y-3 scale-95' : 'opacity-100 translate-y-0 scale-100'
-              }`}
-            >
-              <div className="flex items-center gap-3">
-                <div className="relative w-10 h-10 overflow-hidden rounded-lg border border-emerald-800/60">
-                  <Image
-                    src="https://s.yimg.com/zb/imgv1/d6a66ba8-49ae-388d-afaf-af32ef9d1291/t_500x300"
-                    alt="Fidelity internship announcement"
-                    fill
-                    sizes="40px"
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <p className="text-xs uppercase tracking-wide text-emerald-300">Summer 2026</p>
-                  <p className="text-sm font-semibold text-gray-100">Joining Fidelity as SWE Intern</p>
-                </div>
-              </div>
-              <p className="text-sm text-gray-300 mt-2">
-                Excited to join Fidelity Investments as a Software Engineering Intern in Summer 2026 and contribute to impactful fintech solutions.
-              </p>
-              <p className="mt-3 text-xs text-emerald-200">Click to dismiss</p>
-            </button>
-          )}
           
           {/* Always visible experiences */}
           {[
