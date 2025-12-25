@@ -327,7 +327,7 @@ export default function Home() {
             {
               logo: "/logos/dallascollege.png",
               school: "Dallas College",
-              degree: "Associate's, Software Engineering",
+              degree: "Relevant Credit Coursework in Software Engineering",
               period: "08/2022 - 08/2024",
               gpa: "3.96",
               status: "Completed"
