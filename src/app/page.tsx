@@ -321,7 +321,7 @@ export default function Home() {
               school: "University of Texas at Dallas",
               degree: "Bachelor's, Software Engineering",
               period: "08/2024 - 05/2026",
-              gpa: "3.67",
+              gpa: "3.63",
               status: "Current"
             },
             {
@@ -445,7 +445,7 @@ export default function Home() {
         <div className="p-6 rounded-lg bg-gray-800 shadow-lg text-center">
           <div className="flex items-center justify-center gap-4 mb-4">
             <GraduationCap className="w-8 h-8 text-custom-blue" />
-            <h3 className="text-4xl font-bold text-custom-blue">3.67</h3>
+            <h3 className="text-4xl font-bold text-custom-blue">3.63</h3>
           </div>
           <p className="text-gray-300">GPA</p>
         </div>
@@ -530,7 +530,7 @@ export default function Home() {
                 icon: Trophy,
                 color: "text-yellow-400",
                 linkedinPost: "https://www.linkedin.com/feed/update/urn:li:activity:7394119067223138304/",
-                imageUrl: "https://media.licdn.com/dms/image/v2/D5622AQFOwsfziwrv0A/feedshare-shrink_2048_1536/B56Zp0wGr6I0A0-/0/1762895361122?e=1767225600&v=beta&t=OBIRuWx7vSrlFkDFl8LcC-oUQhnB4tl63F6bSfWhbiY"
+                imageUrl: "/images/HACKUTD.jpeg"
               },
               {
                 id: 'hackai',
@@ -541,7 +541,7 @@ export default function Home() {
                 icon: Trophy,
                 color: "text-blue-400",
                 linkedinPost: "https://www.linkedin.com/feed/update/urn:li:activity:7320514737706778626/",
-                imageUrl: "https://media.licdn.com/dms/image/v2/D5622AQGKYBaSi8rVWg/feedshare-shrink_800/B56ZZexWgjGUAg-/0/1745346720974?e=1767225600&v=beta&t=yTvcayzEMZeC_n5WLh53l8J1c0KKkR2UKnRdstL4qgc"
+                imageUrl: "/images/HACKAI.jpeg"
               }
             ].map((achievement, index) => {
               const Icon = achievement.icon;
@@ -574,14 +574,14 @@ export default function Home() {
                           rel="noopener noreferrer"
                           className="block relative w-full rounded-lg overflow-hidden group"
                         >
-                          <div className="relative w-full aspect-video bg-gray-900">
+                          <div className="relative w-full aspect-video bg-gray-900 overflow-hidden">
                             <Image
                               src={imageUrl}
                               alt={`LinkedIn post image for ${achievement.title}`}
                               fill
                               className="object-cover group-hover:scale-105 transition-transform duration-300"
                             />
-                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center z-10">
                               <div className="opacity-0 group-hover:opacity-100 transition-opacity">
                                 <Linkedin className="w-8 h-8 text-white" />
                               </div>
