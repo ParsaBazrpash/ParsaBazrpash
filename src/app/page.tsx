@@ -154,19 +154,16 @@ export default function Home() {
           {/* Always visible experiences */}
           {[
             {
-              logo: "/logos/starbucks.png",
-              company: "Starbucks",
-              position: "Barista",
-              period: "01/2024 - Present",
+              logo: "/logos/CNC.jpeg",
+              company: "Click n close",
+              position: "Software Engineer Intern",
+              period: "02/2026 - Present",
               status: "Current",
-              responsibilities: [
-                "Served 100+ customers daily while maintaining high service standards in fast-paced shifts",
-                "Collaborated closely with teammates to streamline peak-hour operations"
-              ]
+              responsibilities: []
             },
             {
-              logo: "/logos/mercatalyst.png",
-              company: "Mercatalyst",
+              logo: "/logos/stores.png",
+              company: "Stores.com (Mercatalyst)",
               position: "Software Engineer Intern",
               period: "05/2025 - 10/2025",
               status: "Completed",
@@ -177,6 +174,14 @@ export default function Home() {
               company: "AIAA UT Dallas",
               position: "Frontend Web Developer",
               period: "02/2025 - 05/2025",
+              status: "Completed",
+              responsibilities: []
+            },
+            {
+              logo: "/logos/starbucks.png",
+              company: "Starbucks",
+              position: "Barista",
+              period: "01/2024 - 02/2026",
               status: "Completed",
               responsibilities: []
             }
@@ -237,9 +242,7 @@ export default function Home() {
                   position: "UI/UX Designer",
                   period: "10/2024 - 02/2025",
                   status: "Completed",
-                  responsibilities: [
-                    "Designed responsive UI/UX for Trends, a website for the UTD student community to select the best professors and compare them using Figma, collaborating with developers to improve usability for 2,000+ users."
-                  ]
+                  responsibilities: []
                 },
                 {
                   logo: "/logos/AIMD.webp",
@@ -247,9 +250,7 @@ export default function Home() {
                   position: "Full Stack Developer",
                   period: "10/2024 - 02/2025",
                   status: "Completed",
-                  responsibilities: [
-                    "Developed a full-stack web-based medical appointment app named (Doc Alert) with secure login, real-time reminders, and provider search, streamlining scheduling and communication for patients."
-                  ]
+                  responsibilities: []
                 },
                 {
                   logo: "/logos/icode.jpeg",
@@ -257,9 +258,7 @@ export default function Home() {
                   position: "Computer Science Instructor",
                   period: "03/2024 - 08/2024",
                   status: "Completed",
-                  responsibilities: [
-                    "Taught 200+ K–12 students coding, robotics, game development (Scratch, Python), and digital media skills, including green screen, video editing, and 3D design."
-                  ]
+                  responsibilities: []
                 }
               ].map((exp) => (
                 <div
@@ -402,11 +401,15 @@ export default function Home() {
             },
             {
               category: "Web Technologies",
-              skills: ['HTML/CSS', 'JavaScript', 'TypeScript', 'React.js', 'Next.js', 'Node.js']
+              skills: ['HTML/CSS', 'JavaScript', 'TypeScript', 'React.js', 'Next.js', 'Node.js', 'ASP.NET']
+            },
+            {
+              category: "Testing",
+              skills: ['Mocha', 'Puppeteer', 'JUnit', 'xUnit']
             },
             {
               category: "Database & Tools",
-              skills: ['SQL/MySQL', 'MongoDB', 'Redis', 'Firebase', 'Git/GitHub', 'Figma', 'npm/pm2']
+              skills: ['SQL/MySQL', 'MongoDB', 'Redis', 'Firebase', 'Git/GitHub', 'Figma', 'npm/pm2', 'Azure DevOps']
             }
           ].map((category) => (
             <div
