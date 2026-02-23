@@ -162,7 +162,7 @@ export default function Home() {
               responsibilities: []
             },
             {
-              logo: "/logos/stores.png",
+              logo: "/logos/Stores.png",
               company: "Stores.com (Mercatalyst)",
               position: "Software Engineer Intern",
               period: "05/2025 - 10/2025",
