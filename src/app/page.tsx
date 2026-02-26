@@ -409,7 +409,7 @@ export default function Home() {
             },
             {
               category: "Database & Tools",
-              skills: ['SQL/MySQL', 'MongoDB', 'Redis', 'Firebase', 'Git/GitHub', 'Figma', 'npm/pm2', 'Azure DevOps']
+              skills: ['SQL/MySQL', 'MongoDB', 'Redis', 'Firebase', 'Git/GitHub', 'Figma', 'npm/pm2', 'Microsoft Azure', 'Azure DevOps']
             }
           ].map((category) => (
             <div
