@@ -16,6 +16,17 @@ export default function Home() {
   
   const projects = [
     {
+      title: 'BizTrack',
+      description: 'BizTrack is a lead management platform built to help sales teams close more deals with less admin work. It gives you a fast, spreadsheet-style CRM to track prospects, prioritize opportunities, update pipeline status in real time, and keep your team aligned across desktop and mobile - so you can move from outreach to revenue faster.',
+      image: '/images/biz-track.png',
+      demo: 'https://biz-trackai.vercel.app/signup',
+      github: '',
+      skills: 'Next.js/TypeScript/React/Tailwind CSS/CRM/Product Design',
+      date: 'March 2026',
+      sortDate: '2026-03-01',
+      tags: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS']
+    },
+    {
       title: 'MirrorAPI',
       description: "MirrorAPI is an AI-powered web-application that compares two API endpoints, detects changes, and generates detailed documentation using NVIDIA's Nemotron Agentic AI. Built with Next.js & TypeScript it streamlines API version control and automates developer insights.",
       image: '/images/mirrorapi.png',
@@ -502,13 +513,15 @@ export default function Home() {
                   <p className="text-gray-400 mb-4">{project.description}</p>
                   <p className="text-sm text-gray-400 mb-4">{project.skills}</p>
                   <div className="flex gap-4">
-                    <Link
-                      href={project.github}
-                      target="_blank"
-                      className="text-custom-blue hover:text-blue-300 hover:underline"
-                    >
-                      GitHub Repository
-                    </Link>
+                    {project.github && (
+                      <Link
+                        href={project.github}
+                        target="_blank"
+                        className="text-custom-blue hover:text-blue-300 hover:underline"
+                      >
+                        GitHub Repository
+                      </Link>
+                    )}
                   </div>
                   <p className="text-sm text-gray-200 mt-4">{project.date}</p>
                 </div>
