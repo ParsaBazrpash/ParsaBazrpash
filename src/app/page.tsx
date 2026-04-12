@@ -16,6 +16,17 @@ export default function Home() {
   
   const projects = [
     {
+      title: 'NexTrip',
+      description: 'NexTrip is a modern travel expense tracker that helps users plan trips and manage their spending effortlessly. Users can create trips, track expenses, upload receipts with autofill, and visualize routes on an interactive map. ',
+      image: '/images/nextrip.png',
+      demo: 'https://nextripai.vercel.app/',
+      github: '',
+      skills: 'Next.js/TypeScript/React/Tailwind CSS',
+      date: 'April 2026',
+      sortDate: '2026-04-01',
+      tags: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS']
+    },
+    {
       title: 'BizTrack',
       description: 'BizTrack is a lead management platform built to help sales teams close more deals with less admin work. It gives you a fast, spreadsheet-style CRM to track prospects, prioritize opportunities, update pipeline status in real time, and keep your team aligned across desktop and mobile - so you can move from outreach to revenue faster.',
       image: '/images/biz-track.png',
@@ -497,7 +508,7 @@ export default function Home() {
                 <div className="relative h-48">
                 
                   <Image
-                    src={project.image}
+                    src={project.image || ''}
                     alt={project.title}
                     fill
                     className="object-cover"
