@@ -341,7 +341,7 @@ export default function Home() {
               logo: "/logos/utdlogo.png",
               school: "University of Texas at Dallas",
               degree: "Bachelor's, Software Engineering",
-              period: "08/2024 - 05/2026",
+              period: "08/2024 - 12/2026",
               gpa: "3.63",
               status: "Current"
             },
