@@ -18,7 +18,7 @@ export default function Home() {
     {
       title: 'NexTrip',
       description: 'NexTrip is a modern travel expense tracker that helps users plan trips and manage their spending effortlessly. Users can create trips, track expenses, upload receipts with autofill, and visualize routes on an interactive map. ',
-      image: '/images/nextrip.png',
+      image: '/images/NexTrip.png',
       demo: 'https://nextripai.vercel.app/',
       github: '',
       skills: 'Next.js/TypeScript/React/Tailwind CSS',
