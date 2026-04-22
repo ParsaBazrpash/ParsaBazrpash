@@ -40,3 +40,6 @@
 [![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://parsa-bazrpash.vercel.app/)
 
 ---
+![Profile Views](https://komarev.com/ghpvc/?username=ParsaBazrpash&color=blue)
+
+
