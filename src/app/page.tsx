@@ -178,7 +178,7 @@ export default function Home() {
             {
               logo: "/logos/CNC.jpeg",
               company: "Click n close",
-              position: "Software Engineer Intern",
+              position: "Software Engineer",
               period: "02/2026 - Present",
               status: "Current",
               responsibilities: []
@@ -186,27 +186,19 @@ export default function Home() {
             {
               logo: "/logos/Stores.png",
               company: "Stores.com (Mercatalyst)",
-              position: "Software Engineer Intern",
+              position: "Software Engineer",
               period: "05/2025 - 10/2025",
               status: "Completed",
               responsibilities: []
             },
             {
-              logo: "/logos/aiaa logo new.avif",
-              company: "AIAA UT Dallas",
-              position: "Frontend Web Developer",
-              period: "02/2025 - 05/2025",
+              logo: "/logos/AIMD.webp",
+              company: "AIMD",
+              position: "Software Engineer",
+              period: "10/2024 - 02/2025",
               status: "Completed",
               responsibilities: []
             },
-            {
-              logo: "/logos/starbucks.png",
-              company: "Starbucks",
-              position: "Barista",
-              period: "01/2024 - 02/2026",
-              status: "Completed",
-              responsibilities: []
-            }
           ].map((exp) => (
             <div
               key={exp.company}
@@ -259,17 +251,17 @@ export default function Home() {
             <div className="space-y-6">
               {[
                 {
-                  logo: "/logos/NebulaLabs.png",
-                  company: "Nebula Labs",
-                  position: "UI/UX Designer",
-                  period: "10/2024 - 02/2025",
+                  logo: "/logos/starbucks.png",
+                  company: "Starbucks",
+                  position: "Barista",
+                  period: "01/2024 - 02/2026",
                   status: "Completed",
                   responsibilities: []
                 },
                 {
-                  logo: "/logos/AIMD.webp",
-                  company: "AIMD",
-                  position: "Full Stack Developer",
+                  logo: "/logos/NebulaLabs.png",
+                  company: "Nebula Labs",
+                  position: "UI/UX Designer",
                   period: "10/2024 - 02/2025",
                   status: "Completed",
                   responsibilities: []
