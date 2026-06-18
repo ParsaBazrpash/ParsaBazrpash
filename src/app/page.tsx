@@ -531,7 +531,7 @@ export default function Home() {
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/60 transition-colors duration-300 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-accent opacity-0 group-hover:opacity-60 transition-opacity duration-300 flex items-center justify-center">
                       <span className="text-white text-sm font-medium tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">
                         VIEW PROJECT
                       </span>
