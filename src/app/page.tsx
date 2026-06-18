@@ -262,7 +262,7 @@ export default function Home() {
             {/* Left Content */}
             <div className="space-y-6 order-2 lg:order-1">
               <p className="text-xs tracking-[0.25em] text-muted uppercase">
-                Hello, I&apos;m 👋
+                Hello, I&apos;m
               </p>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
                 Parsa Bazrpash
@@ -271,9 +271,12 @@ export default function Home() {
                 Software Engineer
               </h2>
               <p className="text-muted leading-relaxed max-w-lg text-sm sm:text-base">
-                Passionate about building efficient, scalable, and user-friendly applications.
-                Experienced in full-stack development with a focus on clean code and modern
-                technologies.
+                Software Engineering student at The University of Texas at Dallas and Application
+                Engineer at Vanguard, with internship experience in full-stack development, backend
+                systems, cloud services, and enterprise software. Skilled in Java, C#, C++, Python,
+                JavaScript, TypeScript, React.js, Next.js, Node.js, MongoDB, and PostgreSQL.
+                Passionate about building reliable, user-friendly applications and exploring the
+                intersection of software engineering, financial technology, and AI.
               </p>
               <Link
                 href="#projects"
@@ -340,43 +343,6 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-4 max-w-xs">
               <div className="w-px h-10 bg-accent flex-shrink-0" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── About ─── */}
-      <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 border-t border-border-subtle">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
-            <p className="text-[10px] tracking-[0.25em] text-accent uppercase mb-3">About Me</p>
-            <h2 className="text-3xl sm:text-4xl font-bold">Who Am I?</h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="space-y-4">
-              <p className="text-muted leading-relaxed">
-                I&apos;m a Software Engineering student at The University of Texas at Dallas,
-                passionate about full-stack development and user-friendly applications. Skilled in
-                C++, Java, Python, and modern web technologies like JavaScript, React.js, Next.js,
-                TypeScript, Node.js, and MongoDB. I bring a strong foundation in both front-end and
-                back-end development, with a growing interest in AI.
-              </p>
-            </div>
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold">Personal Info</h3>
-              <div className="space-y-3 text-muted">
-                <div className="flex items-center gap-3">
-                  <Mail className="w-4 h-4 text-accent flex-shrink-0" />
-                  <span>prsawork1@gmail.com</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <MapPin className="w-4 h-4 text-accent flex-shrink-0" />
-                  <span>Dallas, Texas, United States</span>
-                </div>
-                <p>Education: University of Texas at Dallas</p>
-                <p>Languages: English, Persian</p>
-              </div>
             </div>
           </div>
         </div>
