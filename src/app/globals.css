@@ -3,10 +3,47 @@
 @tailwind utilities;
 
 :root {
+  --background: #faf9ff;
+  --foreground: #1a1a1a;
+  --muted: #555555;
+  --accent: #7b61ff;
+  --accent-light: #9b85ff;
+  --accent-dim: rgba(123, 97, 255, 0.12);
+  --surface: #ffffff;
+  --surface-elevated: #f8f8fc;
+  --border-subtle: #e8e8ef;
+  --nav-bg: rgba(255, 255, 255, 0.92);
+  --nav-shadow: 0 4px 24px rgba(123, 97, 255, 0.1);
+  --card-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  --glow-color: rgba(123, 97, 255, 0.22);
+  --glow-color-soft: rgba(123, 97, 255, 0.1);
+  --background-mesh:
+    radial-gradient(ellipse 70% 55% at 0% 0%, rgba(123, 97, 255, 0.14), transparent 70%),
+    radial-gradient(ellipse 60% 50% at 100% 100%, rgba(123, 97, 255, 0.12), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 50% 40%, rgba(155, 133, 255, 0.08), transparent 70%),
+    radial-gradient(ellipse 40% 35% at 85% 15%, rgba(123, 97, 255, 0.1), transparent 70%),
+    radial-gradient(ellipse 35% 30% at 10% 75%, rgba(155, 133, 255, 0.09), transparent 70%);
+}
+
+.dark {
   --background: #000000;
   --foreground: #ffffff;
   --muted: #a1a1aa;
   --accent: #8b5cf6;
+  --accent-light: #a78bfa;
+  --accent-dim: rgba(139, 92, 246, 0.15);
+  --surface: #0a0a0a;
+  --surface-elevated: #111111;
+  --border-subtle: #1f1f1f;
+  --nav-bg: rgba(0, 0, 0, 0.85);
+  --nav-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --card-shadow: none;
+  --glow-color: rgba(139, 92, 246, 0.14);
+  --glow-color-soft: rgba(139, 92, 246, 0.06);
+  --background-mesh:
+    radial-gradient(ellipse 70% 55% at 0% 0%, rgba(139, 92, 246, 0.1), transparent 70%),
+    radial-gradient(ellipse 60% 50% at 100% 100%, rgba(139, 92, 246, 0.08), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 50% 50%, rgba(167, 139, 250, 0.05), transparent 70%);
 }
 
 html {
@@ -28,5 +65,18 @@ body {
   .writing-vertical {
     writing-mode: vertical-rl;
     text-orientation: mixed;
+  }
+
+  .nav-surface {
+    background: var(--nav-bg);
+    box-shadow: var(--nav-shadow);
+  }
+
+  .card-surface {
+    box-shadow: var(--card-shadow);
+  }
+
+  .bg-purple-mesh {
+    background: var(--background-mesh);
   }
 }

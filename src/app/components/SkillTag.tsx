@@ -56,7 +56,7 @@ export function SkillTag({ name }: { name: string }) {
 
   return (
     <div
-      className="inline-flex items-center gap-1.5 sm:gap-2.5 px-2.5 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm border border-border-subtle text-muted hover:border-accent/40 hover:text-white transition-colors"
+      className="inline-flex items-center gap-1.5 sm:gap-2.5 px-2.5 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm border border-border-subtle text-muted hover:border-accent/40 hover:text-foreground transition-colors"
       title={name}
     >
       {icons.length > 0 && (

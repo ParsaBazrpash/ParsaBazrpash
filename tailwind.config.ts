@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 export default {
+  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -15,14 +16,14 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         accent: {
-          DEFAULT: "#8B5CF6",
-          light: "#A78BFA",
-          dim: "rgba(139, 92, 246, 0.15)",
+          DEFAULT: "var(--accent)",
+          light: "var(--accent-light)",
+          dim: "var(--accent-dim)",
         },
-        muted: "#A1A1AA",
-        surface: "#0A0A0A",
-        "surface-elevated": "#111111",
-        "border-subtle": "#1F1F1F",
+        muted: "var(--muted)",
+        surface: "var(--surface)",
+        "surface-elevated": "var(--surface-elevated)",
+        "border-subtle": "var(--border-subtle)",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],

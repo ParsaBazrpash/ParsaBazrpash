@@ -253,16 +253,41 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen bg-black text-white overflow-x-hidden">
+    <main className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
+      {/* Ambient purple background */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden -z-10" aria-hidden>
+        <div className="absolute inset-0 bg-purple-mesh" />
+        <div
+          className="absolute -top-32 -left-32 w-[32rem] h-[32rem] rounded-full blur-3xl"
+          style={{ background: 'var(--glow-color)' }}
+        />
+        <div
+          className="absolute -bottom-32 -right-32 w-[32rem] h-[32rem] rounded-full blur-3xl"
+          style={{ background: 'var(--glow-color)' }}
+        />
+        <div
+          className="absolute top-1/3 -right-20 w-80 h-80 rounded-full blur-3xl"
+          style={{ background: 'var(--glow-color-soft)' }}
+        />
+        <div
+          className="absolute top-2/3 -left-24 w-72 h-72 rounded-full blur-3xl"
+          style={{ background: 'var(--glow-color-soft)' }}
+        />
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] rounded-full blur-[100px]"
+          style={{ background: 'var(--glow-color-soft)' }}
+        />
+      </div>
+
       <Navbar />
 
       {/* ─── Hero ─── */}
-      <section id="home" className="min-h-screen pt-16 sm:pt-20 lg:pt-24 px-4 sm:px-6 lg:px-8">
+      <section id="home" className="min-h-screen pt-24 sm:pt-28 lg:pt-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col justify-center min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-5rem)]">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-8 items-center py-8 sm:py-12 lg:py-0">
             {/* Left Content */}
             <div className="space-y-4 sm:space-y-6 order-2 lg:order-1 text-center lg:text-left">
-              <p className="text-xs tracking-[0.25em] text-muted uppercase">
+              <p className="text-xs tracking-[0.25em] text-accent uppercase">
                 Hello, I&apos;m
               </p>
               <h1 className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
@@ -281,7 +306,7 @@ export default function Home() {
               </p>
               <Link
                 href="#projects"
-                className="inline-flex items-center gap-3 px-6 py-3 border border-accent text-accent text-xs tracking-[0.2em] font-medium hover:bg-accent/10 transition-colors group mx-auto lg:mx-0"
+                className="inline-flex items-center gap-3 px-6 py-3 rounded-lg bg-gradient-to-r from-accent to-accent-light text-white text-xs tracking-[0.2em] font-medium hover:opacity-90 transition-opacity group mx-auto lg:mx-0"
               >
                 VIEW MY WORK
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -321,7 +346,7 @@ export default function Home() {
               </div>
 
               {/* Learning Card */}
-              <div className="w-full sm:w-auto border border-accent/60 px-4 py-3 bg-black/90 backdrop-blur-sm lg:absolute lg:-bottom-2 lg:right-4">
+              <div className="w-full sm:w-auto px-4 py-3 rounded-lg bg-surface border border-border-subtle/60 card-surface lg:absolute lg:-bottom-2 lg:right-4">
                 <p className="text-[10px] tracking-[0.2em] text-muted uppercase mb-1">
                   Currently Working At
                 </p>
@@ -402,7 +427,7 @@ export default function Home() {
               ))}
               <button
                 onClick={() => setShowAll(!showAll)}
-                className="w-full py-3 border border-border-subtle text-sm text-muted hover:border-accent/50 hover:text-white transition-colors"
+                className="w-full py-3 border border-border-subtle text-sm text-muted hover:border-accent/50 hover:text-foreground transition-colors"
               >
                 {showAll ? 'See Less ▲' : 'See More (+2) ▼'}
               </button>
@@ -495,7 +520,7 @@ export default function Home() {
             <span className="text-sm text-muted">Sort by date:</span>
             <button
               onClick={() => setSortOrder(sortOrder === 'desc' ? 'asc' : 'desc')}
-              className="px-4 py-2 text-sm border border-border-subtle text-muted hover:border-accent/50 hover:text-white transition-colors w-full xs:w-auto text-center"
+              className="px-4 py-2 text-sm border border-border-subtle text-muted hover:border-accent/50 hover:text-foreground transition-colors w-full xs:w-auto text-center"
             >
               {sortOrder === 'desc' ? 'Newest → Oldest' : 'Oldest → Newest'}
             </button>
@@ -685,7 +710,7 @@ export default function Home() {
               </p>
               <a
                 href="mailto:prsawork1@gmail.com?subject=Let%27s%20Connect"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-accent text-accent text-sm tracking-wider hover:bg-accent/10 transition-colors w-fit"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-accent to-accent-light text-white text-sm tracking-wider hover:opacity-90 transition-opacity w-fit"
               >
                 <Send className="w-4 h-4" />
                 SEND EMAIL
