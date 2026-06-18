@@ -122,7 +122,7 @@ export default function Home() {
             <div className="text-center">
               <div className="relative w-64 h-64 mx-auto rounded-full overflow-hidden ring-4 ring-custom-blue">
                 <Image
-                  src="/images/Parsa%20Profile.png"
+                  src="/images/linkedin-prof.PNG"
                   alt="Profile"
                   fill
                   className="object-cover"
@@ -176,11 +176,19 @@ export default function Home() {
           {/* Always visible experiences */}
           {[
             {
+              logo: "/logos/van.png",
+              company: "Vanguard",
+              position: "Software Engineer",
+              period: "06/2026 - Present",
+              status: "Current",
+              responsibilities: []
+            },
+            {
               logo: "/logos/CNC.jpeg",
               company: "Click n close",
               position: "Software Engineer",
-              period: "02/2026 - Present",
-              status: "Current",
+              period: "02/2026 - 06/2026",
+              status: "Completed",
               responsibilities: []
             },
             {
@@ -255,14 +263,6 @@ export default function Home() {
                   company: "Starbucks",
                   position: "Barista",
                   period: "01/2024 - 02/2026",
-                  status: "Completed",
-                  responsibilities: []
-                },
-                {
-                  logo: "/logos/NebulaLabs.png",
-                  company: "Nebula Labs",
-                  position: "UI/UX Designer",
-                  period: "10/2024 - 02/2025",
                   status: "Completed",
                   responsibilities: []
                 },
