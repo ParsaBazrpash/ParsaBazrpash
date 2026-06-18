@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -15,17 +14,27 @@ import {
   ExternalLink,
   ArrowRight,
   ArrowUpRight,
+  Briefcase,
+  GraduationCap,
+  Zap,
+  Code2,
+  Globe,
+  Shield,
+  Database,
+  Plus,
+  Quote,
+  LayoutGrid,
+  ArrowDownUp,
+  Award,
+  Calendar,
 } from 'lucide-react';
 import { Navbar } from './components/Navbar';
 import { RotatingBadge } from './components/RotatingBadge';
 import { TechStackIcons } from './components/TechStackIcons';
 import { SkillTag } from './components/SkillTag';
 import { HeroMapBackground } from './components/HeroMapBackground';
-
-const AmbientBackground = dynamic(
-  () => import('./components/AmbientBackground').then((mod) => mod.AmbientBackground),
-  { ssr: false }
-);
+import { AmbientBackground } from './components/AmbientBackground';
+import { VisitorCount } from './components/VisitorCount';
 
 export default function Home() {
   const [showAll, setShowAll] = useState(false);
@@ -220,40 +229,44 @@ export default function Home() {
   const skillCategories = [
     {
       category: 'Programming Languages',
+      icon: Code2,
       skills: ['Java', 'C#', 'C++', 'Python'],
     },
     {
       category: 'Web Technologies',
+      icon: Globe,
       skills: ['HTML/CSS', 'JavaScript', 'TypeScript', 'React.js', 'Next.js', 'Node.js', 'ASP.NET'],
     },
     {
       category: 'Testing',
+      icon: Shield,
       skills: ['Mocha', 'Puppeteer', 'JUnit', 'xUnit'],
     },
     {
       category: 'Database & Tools',
+      icon: Database,
       skills: ['SQL/MySQL', 'MongoDB', 'Redis', 'Firebase', 'Git/GitHub', 'Figma', 'npm/pm2', 'Microsoft Azure', 'Azure DevOps'],
     },
   ];
 
   const achievements = [
     {
-      title: '1st Place - HackUTD 2025',
+      title: 'HackUTD 2025',
+      placement: '1st Place',
       description: 'State Farm Challenge Winner',
       project: 'MirrorAPI',
       date: 'November 2025',
-      icon: Trophy,
-      color: 'text-yellow-400',
+      theme: 'gold' as const,
       linkedinPost: 'https://www.linkedin.com/feed/update/urn:li:activity:7394119067223138304/',
       imageUrl: '/images/HACKUTD.jpeg',
     },
     {
-      title: '1st Place - HACKAI Hackathon',
+      title: 'HACKAI Hackathon',
+      placement: '1st Place',
       description: 'Winner for innovative AI solution',
       project: 'Connect',
       date: 'April 2025',
-      icon: Trophy,
-      color: 'text-accent-light',
+      theme: 'accent' as const,
       linkedinPost: 'https://www.linkedin.com/feed/update/urn:li:activity:7320514737706778626/',
       imageUrl: '/images/HACKAI.jpeg',
     },
@@ -370,130 +383,154 @@ export default function Home() {
       {/* ─── Experience ─── */}
       <section id="experience" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 border-t border-border-subtle">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-10 sm:mb-16">
-            <p className="text-[10px] tracking-[0.25em] text-accent uppercase mb-3">Resume</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Experience & Education</h2>
+          <div className="mb-10 sm:mb-14 text-center lg:text-left">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
+              Experience &{' '}
+              <span className="bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent">
+                Education
+              </span>
+            </h2>
+            <p className="text-muted text-sm sm:text-base mt-3 max-w-xl mx-auto lg:mx-0">
+              My professional journey, academic background, and technical strengths.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {/* Experience */}
-            <div className="space-y-5">
-              <h3 className="text-lg font-semibold mb-6 pb-2 border-b border-border-subtle">
-                Professional Experience
-              </h3>
-              {[...experiences, ...(showAll ? moreExperiences : [])].map((exp) => (
-                <div
-                  key={exp.company}
-                  className="border border-border-subtle p-5 hover:border-accent/30 transition-colors"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 relative rounded overflow-hidden flex-shrink-0 border border-border-subtle">
-                      <Image
-                        src={exp.logo}
-                        alt={`${exp.company} Logo`}
-                        fill
-                        className="object-contain p-1"
-                      />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex flex-col xs:flex-row xs:items-start xs:justify-between gap-2 mb-1">
-                        <div className="min-w-0">
-                          <h4 className="font-semibold text-sm">{exp.position}</h4>
-                          <p className="text-muted text-sm">{exp.company}</p>
-                        </div>
-                        <span
-                          className={`self-start px-2 py-0.5 text-[10px] font-medium tracking-wider flex-shrink-0 ${
-                            exp.status === 'Current'
-                              ? 'border border-accent text-accent'
-                              : 'border border-border-subtle text-muted'
-                          }`}
-                        >
-                          {exp.status}
-                        </span>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+            {/* Professional Experience */}
+            <div className="resume-column-card">
+              <div className="flex items-center gap-2.5 mb-5">
+                <Briefcase className="w-5 h-5 text-accent" />
+                <h3 className="text-base sm:text-lg font-semibold">Professional Experience</h3>
+              </div>
+              <div className="space-y-3">
+                {[...experiences, ...(showAll ? moreExperiences : [])].map((exp) => (
+                  <div
+                    key={exp.company}
+                    className={`resume-entry-card ${exp.status === 'Current' ? 'resume-entry-card--active' : ''}`}
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className="w-11 h-11 relative rounded-lg overflow-hidden flex-shrink-0 bg-surface-elevated border border-white/[0.06]">
+                        <Image
+                          src={exp.logo}
+                          alt={`${exp.company} Logo`}
+                          fill
+                          className="object-contain p-1"
+                        />
                       </div>
-                      <p className="text-muted text-xs">{exp.period}</p>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-start justify-between gap-2">
+                          <div className="min-w-0">
+                            <h4 className="font-semibold text-sm leading-snug">{exp.position}</h4>
+                            <p className="text-muted text-xs sm:text-sm mt-0.5">{exp.company}</p>
+                          </div>
+                          <span
+                            className={`resume-status-badge flex-shrink-0 ${
+                              exp.status === 'Current'
+                                ? 'resume-status-badge--current'
+                                : 'resume-status-badge--completed'
+                            }`}
+                          >
+                            <span className="resume-status-dot" />
+                            {exp.status}
+                          </span>
+                        </div>
+                        <p className="text-muted text-xs mt-1.5">{exp.period}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
               <button
                 onClick={() => setShowAll(!showAll)}
-                className="w-full py-3 border border-border-subtle text-sm text-muted hover:border-accent/50 hover:text-foreground transition-colors"
+                className="resume-see-more-btn mt-4"
               >
-                {showAll ? 'See Less ▲' : 'See More (+2) ▼'}
+                <Plus className="w-4 h-4" />
+                {showAll ? 'See Less' : 'See More (+2)'}
+                <ArrowRight className="w-4 h-4 ml-auto" />
               </button>
             </div>
 
             {/* Education */}
-            <div className="space-y-5">
-              <h3 className="text-lg font-semibold mb-6 pb-2 border-b border-border-subtle">
-                Education
-              </h3>
-              {education.map((edu) => (
-                <div
-                  key={edu.school}
-                  className="border border-border-subtle p-5 hover:border-accent/30 transition-colors"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 relative rounded overflow-hidden flex-shrink-0 border border-border-subtle">
-                      <Image
-                        src={edu.logo}
-                        alt={`${edu.school} Logo`}
-                        fill
-                        className="object-contain p-1"
-                      />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex flex-col xs:flex-row xs:items-start xs:justify-between gap-2 mb-1">
-                        <div className="min-w-0">
-                          <h4 className="font-semibold text-sm">{edu.school}</h4>
-                          <p className="text-muted text-sm">{edu.degree}</p>
-                        </div>
-                        <span
-                          className={`self-start px-2 py-0.5 text-[10px] font-medium tracking-wider flex-shrink-0 ${
-                            edu.status === 'Current'
-                              ? 'border border-accent text-accent'
-                              : 'border border-border-subtle text-muted'
-                          }`}
-                        >
-                          {edu.status}
-                        </span>
+            <div className="resume-column-card">
+              <div className="flex items-center gap-2.5 mb-5">
+                <GraduationCap className="w-5 h-5 text-accent" />
+                <h3 className="text-base sm:text-lg font-semibold">Education</h3>
+              </div>
+              <div className="space-y-3">
+                {education.map((edu) => (
+                  <div
+                    key={edu.school}
+                    className={`resume-entry-card ${edu.status === 'Current' ? 'resume-entry-card--active' : ''}`}
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className="w-11 h-11 relative rounded-lg overflow-hidden flex-shrink-0 bg-surface-elevated border border-white/[0.06]">
+                        <Image
+                          src={edu.logo}
+                          alt={`${edu.school} Logo`}
+                          fill
+                          className="object-contain p-1"
+                        />
                       </div>
-                      <p className="text-muted text-xs mb-2">{edu.period}</p>
-                      {edu.gpa && (
-                        <span className="inline-block px-2 py-0.5 text-xs border border-accent text-accent">
-                          GPA: {edu.gpa}
-                        </span>
-                      )}
-                      {'note' in edu && edu.note && (
-                        <p className="text-muted text-xs mt-2 italic border-l-2 border-accent/40 pl-3">
-                          {edu.note}
-                        </p>
-                      )}
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-start justify-between gap-2">
+                          <div className="min-w-0">
+                            <h4 className="font-semibold text-sm leading-snug">{edu.school}</h4>
+                            <p className="text-muted text-xs sm:text-sm mt-0.5">{edu.degree}</p>
+                          </div>
+                          <span
+                            className={`resume-status-badge flex-shrink-0 ${
+                              edu.status === 'Current'
+                                ? 'resume-status-badge--current'
+                                : 'resume-status-badge--completed'
+                            }`}
+                          >
+                            <span className="resume-status-dot" />
+                            {edu.status}
+                          </span>
+                        </div>
+                        <p className="text-muted text-xs mt-1.5">{edu.period}</p>
+                        {edu.gpa && (
+                          <span className="inline-block mt-2 px-2.5 py-0.5 text-[11px] font-medium rounded-md border border-accent/40 text-accent bg-accent/10">
+                            GPA: {edu.gpa}
+                          </span>
+                        )}
+                        {'note' in edu && edu.note && (
+                          <div className="flex gap-2 mt-3 pt-2 border-t border-white/[0.06]">
+                            <Quote className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                            <p className="text-muted text-xs italic leading-relaxed">{edu.note}</p>
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
-            {/* Skills — full width on md, third column on lg */}
-            <div className="space-y-5 md:col-span-2 lg:col-span-1">
-              <h3 className="text-lg font-semibold mb-6 pb-2 border-b border-border-subtle">
-                Skills & Expertise
-              </h3>
-              {skillCategories.map((cat) => (
-                <div
-                  key={cat.category}
-                  className="border border-border-subtle p-5 hover:border-accent/30 transition-colors"
-                >
-                  <h4 className="font-medium text-sm mb-3">{cat.category}</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {cat.skills.map((skill) => (
-                      <SkillTag key={skill} name={skill} />
-                    ))}
-                  </div>
-                </div>
-              ))}
+            {/* Skills & Expertise */}
+            <div className="resume-column-card md:col-span-2 lg:col-span-1">
+              <div className="flex items-center gap-2.5 mb-5">
+                <Zap className="w-5 h-5 text-accent" />
+                <h3 className="text-base sm:text-lg font-semibold">Skills & Expertise</h3>
+              </div>
+              <div className="space-y-5">
+                {skillCategories.map((cat) => {
+                  const CategoryIcon = cat.icon;
+                  return (
+                    <div key={cat.category}>
+                      <div className="flex items-center gap-2 mb-3">
+                        <CategoryIcon className="w-4 h-4 text-accent/80" />
+                        <h4 className="font-medium text-sm text-muted">{cat.category}</h4>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {cat.skills.map((skill) => (
+                          <SkillTag key={skill} name={skill} variant="chip" />
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
@@ -502,67 +539,90 @@ export default function Home() {
       {/* ─── Projects ─── */}
       <section id="projects" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 border-t border-border-subtle">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-10 sm:mb-16">
-            <p className="text-[10px] tracking-[0.25em] text-accent uppercase mb-3">Portfolio</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">My Projects</h2>
+          <div className="mb-10 sm:mb-14 text-center lg:text-left">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
+              My{' '}
+              <span className="bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent">
+                Projects
+              </span>
+            </h2>
+            <p className="text-muted text-sm sm:text-base mt-3 max-w-xl mx-auto lg:mx-0">
+              Applications, hackathon winners, and personal builds showcasing full-stack development.
+            </p>
           </div>
 
-          <div className="flex flex-col xs:flex-row xs:items-center xs:justify-end gap-3 mb-6 sm:mb-8">
-            <span className="text-sm text-muted">Sort by date:</span>
+          <div className="flex flex-col xs:flex-row xs:items-center xs:justify-between gap-4 mb-8">
+            <div className="flex items-center gap-2.5">
+              <LayoutGrid className="w-5 h-5 text-accent" />
+              <span className="text-sm font-medium">{sortedProjects.length} Projects</span>
+            </div>
             <button
               onClick={() => setSortOrder(sortOrder === 'desc' ? 'asc' : 'desc')}
-              className="px-4 py-2 text-sm border border-border-subtle text-muted hover:border-accent/50 hover:text-foreground transition-colors w-full xs:w-auto text-center"
+              className="project-sort-btn"
             >
+              <ArrowDownUp className="w-4 h-4" />
               {sortOrder === 'desc' ? 'Newest → Oldest' : 'Oldest → Newest'}
             </button>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
             {sortedProjects.map((project) => (
-              <div
-                key={project.title}
-                className="border border-border-subtle hover:border-accent/30 transition-all group overflow-hidden"
-              >
-                <Link href={project.demo} target="_blank">
-                  <div className="relative h-48 overflow-hidden">
+              <article key={project.title} className="project-card group">
+                <Link href={project.demo} target="_blank" rel="noopener noreferrer" className="block">
+                  <div className="relative aspect-[16/10] overflow-hidden">
                     <Image
                       src={project.image}
                       alt={project.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-accent opacity-0 group-hover:opacity-60 transition-opacity duration-300 flex items-center justify-center">
-                      <span className="text-white text-sm font-medium tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">
-                        VIEW PROJECT
-                      </span>
+                    <div className="project-card-overlay">
+                      <span className="text-sm font-medium tracking-wide">View Project</span>
+                      <ArrowUpRight className="w-4 h-4" />
                     </div>
                   </div>
                 </Link>
-                <div className="p-5">
-                  <h3 className="font-semibold text-base sm:text-lg mb-2">{project.title}</h3>
-                  <p className="text-muted text-sm mb-3 line-clamp-3">{project.description}</p>
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3">
+                <div className="p-5 flex flex-col flex-1">
+                  <h3 className="font-semibold text-base sm:text-lg mb-2 group-hover:text-accent-light transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted text-sm leading-relaxed line-clamp-3 mb-4 flex-1">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2 py-0.5 text-[10px] tracking-wider border border-border-subtle text-muted"
-                      >
-                        {tag}
-                      </span>
+                      <SkillTag key={tag} name={tag} variant="chip" />
                     ))}
                   </div>
-                  {project.github && (
-                    <Link
-                      href={project.github}
-                      target="_blank"
-                      className="text-accent text-sm hover:text-accent-light transition-colors"
-                    >
-                      GitHub Repository →
-                    </Link>
-                  )}
-                  <p className="text-xs text-muted mt-3 break-words">{project.date}</p>
+                  <div className="flex items-end justify-between gap-3 pt-4 border-t border-white/[0.06]">
+                    <p className="text-[11px] text-muted leading-relaxed line-clamp-2 flex-1">
+                      {project.date}
+                    </p>
+                    <div className="flex items-center gap-2 flex-shrink-0">
+                      {project.github && (
+                        <Link
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="project-icon-btn"
+                          title="GitHub Repository"
+                        >
+                          <Github className="w-4 h-4" />
+                        </Link>
+                      )}
+                      <Link
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-icon-btn project-icon-btn--primary"
+                        title="View Project"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
@@ -571,65 +631,85 @@ export default function Home() {
       {/* ─── Achievements ─── */}
       <section id="achievements" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 border-t border-border-subtle">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-10 sm:mb-16">
-            <p className="text-[10px] tracking-[0.25em] text-accent uppercase mb-3">Recognition</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Achievements & Awards</h2>
+          <div className="mb-10 sm:mb-14 text-center lg:text-left">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
+              Achievements &{' '}
+              <span className="bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent">
+                Awards
+              </span>
+            </h2>
+            <p className="text-muted text-sm sm:text-base mt-3 max-w-xl mx-auto lg:mx-0">
+              Hackathon wins and recognition for building innovative, impactful solutions.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 max-w-4xl mx-auto">
-            {achievements.map((achievement, index) => {
-              const Icon = achievement.icon;
-              return (
-                <div
-                  key={index}
-                  className="border border-border-subtle p-6 hover:border-accent/30 transition-colors"
-                >
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className={`p-3 border border-border-subtle ${achievement.color}`}>
-                      <Icon className="w-5 h-5" />
+          <div className="flex items-center gap-2.5 mb-8 justify-center lg:justify-start">
+            <Award className="w-5 h-5 text-accent" />
+            <span className="text-sm font-medium">{achievements.length} Awards</span>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-6 max-w-5xl mx-auto lg:mx-0">
+            {achievements.map((achievement) => (
+              <article
+                key={achievement.title}
+                className={`achievement-card group achievement-card--${achievement.theme}`}
+              >
+                <div className="p-5 sm:p-6">
+                  <div className="flex items-start gap-4">
+                    <div className={`achievement-trophy achievement-trophy--${achievement.theme}`}>
+                      <Trophy className="w-6 h-6" />
                     </div>
-                    <div className="flex-1">
-                      <h3 className="font-semibold mb-1">{achievement.title}</h3>
-                      <p className="text-muted text-sm mb-1">{achievement.description}</p>
-                      <p className="text-accent text-sm font-medium">{achievement.project}</p>
-                      <p className="text-muted text-xs mt-1">{achievement.date}</p>
+                    <div className="flex-1 min-w-0">
+                      <span className={`achievement-badge achievement-badge--${achievement.theme}`}>
+                        {achievement.placement}
+                      </span>
+                      <h3 className="font-semibold text-lg mt-2 mb-1">{achievement.title}</h3>
+                      <p className="text-muted text-sm mb-2">{achievement.description}</p>
+                      <p className="text-accent-light text-sm font-medium mb-2">
+                        Project: {achievement.project}
+                      </p>
+                      <div className="flex items-center gap-1.5 text-muted text-xs">
+                        <Calendar className="w-3.5 h-3.5 flex-shrink-0" />
+                        {achievement.date}
+                      </div>
                     </div>
                   </div>
-                  {achievement.linkedinPost && achievement.imageUrl && (
-                    <div className="border-t border-border-subtle pt-4">
-                      <Link
-                        href={achievement.linkedinPost}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block relative w-full overflow-hidden group"
-                      >
-                        <div className="relative w-full aspect-video">
-                          <Image
-                            src={achievement.imageUrl}
-                            alt={`LinkedIn post for ${achievement.title}`}
-                            fill
-                            className="object-cover group-hover:scale-105 transition-transform duration-300"
-                          />
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
-                            <Linkedin className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
-                          </div>
-                        </div>
-                      </Link>
-                      <Link
-                        href={achievement.linkedinPost}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-accent hover:text-accent-light transition-colors text-sm mt-3 justify-center"
-                      >
-                        <Linkedin className="w-4 h-4" />
-                        View on LinkedIn
-                        <ExternalLink className="w-3 h-3" />
-                      </Link>
-                    </div>
-                  )}
                 </div>
-              );
-            })}
+
+                {achievement.linkedinPost && achievement.imageUrl && (
+                  <div className="px-5 pb-5 sm:px-6 sm:pb-6 pt-0">
+                    <Link
+                      href={achievement.linkedinPost}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block relative w-full overflow-hidden rounded-xl achievement-image-link"
+                    >
+                      <div className="relative w-full aspect-video">
+                        <Image
+                          src={achievement.imageUrl}
+                          alt={`LinkedIn post for ${achievement.title}`}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="achievement-image-overlay">
+                          <Linkedin className="w-8 h-8" style={{ color: '#0A66C2' }} />
+                        </div>
+                      </div>
+                    </Link>
+                    <Link
+                      href={achievement.linkedinPost}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="achievement-linkedin-btn mt-3"
+                    >
+                      <Linkedin className="w-4 h-4" style={{ color: '#0A66C2' }} />
+                      View on LinkedIn
+                      <ExternalLink className="w-3.5 h-3.5 ml-auto" />
+                    </Link>
+                  </div>
+                )}
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -715,6 +795,7 @@ export default function Home() {
       <footer className="border-t border-border-subtle py-6 sm:py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-muted text-xs sm:text-sm">
           <p suppressHydrationWarning>&copy; {new Date().getFullYear()} Parsa Bazrpash. All rights reserved.</p>
+          <VisitorCount />
         </div>
       </footer>
     </main>
