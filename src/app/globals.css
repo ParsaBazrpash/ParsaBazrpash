@@ -3,7 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --background: #faf9ff;
+  --background: #f8f6ff;
+  --ambient-gradient-1: #ebe4ff;
+  --ambient-gradient-2: #f0ebff;
+  --ambient-gradient-3: #f5f2fc;
   --foreground: #1a1a1a;
   --muted: #555555;
   --accent: #7b61ff;
@@ -12,38 +15,65 @@
   --surface: #ffffff;
   --surface-elevated: #f8f8fc;
   --border-subtle: #e8e8ef;
-  --nav-bg: rgba(255, 255, 255, 0.92);
+  --nav-bg: rgba(248, 246, 255, 0.88);
   --nav-shadow: 0 4px 24px rgba(123, 97, 255, 0.1);
   --card-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-  --glow-color: rgba(123, 97, 255, 0.22);
-  --glow-color-soft: rgba(123, 97, 255, 0.1);
+  --glow-color: rgba(123, 97, 255, 0.18);
+  --glow-color-soft: rgba(123, 97, 255, 0.08);
+  --glow-color-bright: rgba(123, 97, 255, 0.22);
+  --ambient-glow-strong: rgba(123, 97, 255, 0.14);
+  --ambient-glow-medium: rgba(155, 133, 255, 0.08);
+  --map-glow: rgba(123, 97, 255, 0.28);
+  --map-glow-mid: rgba(123, 97, 255, 0.12);
+  --map-radial-accent: rgba(123, 97, 255, 0.1);
+  --map-label-color: rgba(123, 97, 255, 0.42);
+  --map-fade-color: #f8f6ff;
+  --map-vignette-color: rgba(248, 246, 255, 0.75);
+  --profile-glow-inner: rgba(123, 97, 255, 0.28);
+  --profile-glow-mid: rgba(123, 97, 255, 0.12);
+  --profile-glow-outer: rgba(155, 133, 255, 0.06);
   --background-mesh:
-    radial-gradient(ellipse 70% 55% at 0% 0%, rgba(123, 97, 255, 0.14), transparent 70%),
-    radial-gradient(ellipse 60% 50% at 100% 100%, rgba(123, 97, 255, 0.12), transparent 70%),
-    radial-gradient(ellipse 50% 40% at 50% 40%, rgba(155, 133, 255, 0.08), transparent 70%),
-    radial-gradient(ellipse 40% 35% at 85% 15%, rgba(123, 97, 255, 0.1), transparent 70%),
-    radial-gradient(ellipse 35% 30% at 10% 75%, rgba(155, 133, 255, 0.09), transparent 70%);
+    radial-gradient(ellipse 80% 60% at 25% 42%, rgba(123, 97, 255, 0.12), transparent 70%),
+    radial-gradient(ellipse 70% 55% at 75% 45%, rgba(123, 97, 255, 0.09), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 50% 75%, rgba(155, 133, 255, 0.05), transparent 70%),
+    radial-gradient(ellipse 40% 35% at 88% 12%, rgba(123, 97, 255, 0.04), transparent 70%);
 }
 
 .dark {
-  --background: #000000;
+  --background: #050208;
+  --ambient-gradient-1: #0e0618;
+  --ambient-gradient-2: #0a0414;
+  --ambient-gradient-3: #070310;
   --foreground: #ffffff;
   --muted: #a1a1aa;
   --accent: #8b5cf6;
   --accent-light: #a78bfa;
   --accent-dim: rgba(139, 92, 246, 0.15);
-  --surface: #0a0a0a;
-  --surface-elevated: #111111;
-  --border-subtle: #1f1f1f;
-  --nav-bg: rgba(0, 0, 0, 0.85);
-  --nav-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --surface: #0a0614;
+  --surface-elevated: #0e081a;
+  --border-subtle: #181024;
+  --nav-bg: rgba(5, 2, 8, 0.88);
+  --nav-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
   --card-shadow: none;
-  --glow-color: rgba(139, 92, 246, 0.14);
-  --glow-color-soft: rgba(139, 92, 246, 0.06);
+  --glow-color: rgba(80, 40, 135, 0.1);
+  --glow-color-soft: rgba(65, 32, 110, 0.06);
+  --glow-color-bright: rgba(90, 45, 145, 0.14);
+  --ambient-glow-strong: rgba(70, 35, 120, 0.12);
+  --ambient-glow-medium: rgba(55, 28, 95, 0.08);
+  --map-glow: rgba(75, 40, 130, 0.14);
+  --map-glow-mid: rgba(45, 25, 80, 0.08);
+  --map-radial-accent: rgba(55, 30, 95, 0.1);
+  --map-label-color: rgba(120, 80, 180, 0.25);
+  --map-fade-color: #050208;
+  --map-vignette-color: rgba(5, 2, 8, 0.85);
+  --profile-glow-inner: rgba(75, 40, 130, 0.22);
+  --profile-glow-mid: rgba(45, 25, 80, 0.1);
+  --profile-glow-outer: rgba(30, 15, 55, 0.05);
   --background-mesh:
-    radial-gradient(ellipse 70% 55% at 0% 0%, rgba(139, 92, 246, 0.1), transparent 70%),
-    radial-gradient(ellipse 60% 50% at 100% 100%, rgba(139, 92, 246, 0.08), transparent 70%),
-    radial-gradient(ellipse 50% 40% at 50% 50%, rgba(167, 139, 250, 0.05), transparent 70%);
+    radial-gradient(ellipse 80% 60% at 25% 42%, rgba(90, 45, 140, 0.14), transparent 70%),
+    radial-gradient(ellipse 70% 55% at 75% 45%, rgba(70, 35, 115, 0.1), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 50% 75%, rgba(55, 28, 95, 0.06), transparent 70%),
+    radial-gradient(ellipse 40% 35% at 88% 12%, rgba(65, 32, 105, 0.05), transparent 70%);
 }
 
 html {
@@ -78,5 +108,246 @@ body {
 
   .bg-purple-mesh {
     background: var(--background-mesh);
+  }
+
+  .bg-noise-texture {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 128px 128px;
+  }
+
+  .bg-ambient-base {
+    background:
+      radial-gradient(ellipse 85% 65% at 28% 42%, var(--ambient-gradient-1) 0%, transparent 55%),
+      radial-gradient(ellipse 70% 55% at 72% 48%, var(--ambient-gradient-2) 0%, transparent 50%),
+      radial-gradient(ellipse 50% 40% at 50% 85%, var(--ambient-gradient-3) 0%, transparent 60%),
+      var(--background);
+  }
+}
+
+/* ─── Hero Dallas map background ─── */
+.hero-map-bg {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 62%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to left,
+    black 55%,
+    rgba(0, 0, 0, 0.6) 75%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to left,
+    black 55%,
+    rgba(0, 0, 0, 0.6) 75%,
+    transparent 100%
+  );
+}
+
+.hero-map-bg__lines {
+  position: absolute;
+  inset: -5%;
+  opacity: 0.85;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600' fill='none'%3E%3Cg stroke='%231a1a1a' stroke-opacity='0.06' stroke-width='0.6'%3E%3Cline x1='0' y1='80' x2='800' y2='80'/%3E%3Cline x1='0' y1='160' x2='800' y2='160'/%3E%3Cline x1='0' y1='240' x2='800' y2='240'/%3E%3Cline x1='0' y1='320' x2='800' y2='320'/%3E%3Cline x1='0' y1='400' x2='800' y2='400'/%3E%3Cline x1='0' y1='480' x2='800' y2='480'/%3E%3Cline x1='80' y1='0' x2='80' y2='600'/%3E%3Cline x1='160' y1='0' x2='160' y2='600'/%3E%3Cline x1='240' y1='0' x2='240' y2='600'/%3E%3Cline x1='320' y1='0' x2='320' y2='600'/%3E%3Cline x1='400' y1='0' x2='400' y2='600'/%3E%3Cline x1='480' y1='0' x2='480' y2='600'/%3E%3Cline x1='560' y1='0' x2='560' y2='600'/%3E%3Cline x1='640' y1='0' x2='640' y2='600'/%3E%3Cline x1='720' y1='0' x2='720' y2='600'/%3E%3C/g%3E%3Cg stroke='%237b61ff' stroke-opacity='0.14' stroke-width='1.2' stroke-linecap='round'%3E%3Cpath d='M0 300 L800 300'/%3E%3Cpath d='M400 0 L400 600'/%3E%3Cpath d='M120 0 L680 600'/%3E%3Cpath d='M680 0 L120 600'/%3E%3Cpath d='M0 120 L800 480'/%3E%3Cpath d='M0 480 L800 120'/%3E%3Cpath d='M200 0 Q400 300 200 600'/%3E%3Cpath d='M600 0 Q400 300 600 600'/%3E%3Cpath d='M0 200 Q400 300 800 200'/%3E%3Cpath d='M0 400 Q400 300 800 400'/%3E%3Ccircle cx='400' cy='300' r='90' stroke-opacity='0.1'/%3E%3Ccircle cx='400' cy='300' r='150' stroke-opacity='0.06'/%3E%3C/g%3E%3Cg stroke='%231a1a1a' stroke-opacity='0.04' stroke-width='0.5'%3E%3Cpath d='M400 300 L520 180'/%3E%3Cpath d='M400 300 L560 260'/%3E%3Cpath d='M400 300 L580 380'/%3E%3Cpath d='M400 300 L500 440'/%3E%3Cpath d='M400 300 L300 420'/%3E%3Cpath d='M400 300 L220 360'/%3E%3Cpath d='M400 300 L260 200'/%3E%3Cpath d='M400 300 L340 160'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.dark .hero-map-bg {
+  opacity: 0.3;
+}
+
+.dark .hero-map-bg__lines {
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600' fill='none'%3E%3Cg stroke='%23ffffff' stroke-opacity='0.03' stroke-width='0.6'%3E%3Cline x1='0' y1='80' x2='800' y2='80'/%3E%3Cline x1='0' y1='160' x2='800' y2='160'/%3E%3Cline x1='0' y1='240' x2='800' y2='240'/%3E%3Cline x1='0' y1='320' x2='800' y2='320'/%3E%3Cline x1='0' y1='400' x2='800' y2='400'/%3E%3Cline x1='0' y1='480' x2='800' y2='480'/%3E%3Cline x1='80' y1='0' x2='80' y2='600'/%3E%3Cline x1='160' y1='0' x2='160' y2='600'/%3E%3Cline x1='240' y1='0' x2='240' y2='600'/%3E%3Cline x1='320' y1='0' x2='320' y2='600'/%3E%3Cline x1='400' y1='0' x2='400' y2='600'/%3E%3Cline x1='480' y1='0' x2='480' y2='600'/%3E%3Cline x1='560' y1='0' x2='560' y2='600'/%3E%3Cline x1='640' y1='0' x2='640' y2='600'/%3E%3Cline x1='720' y1='0' x2='720' y2='600'/%3E%3C/g%3E%3Cg stroke='%231a1028' stroke-opacity='0.12' stroke-width='1.2' stroke-linecap='round'%3E%3Cpath d='M0 300 L800 300'/%3E%3Cpath d='M400 0 L400 600'/%3E%3Cpath d='M120 0 L680 600'/%3E%3Cpath d='M680 0 L120 600'/%3E%3Cpath d='M0 120 L800 480'/%3E%3Cpath d='M0 480 L800 120'/%3E%3Cpath d='M200 0 Q400 300 200 600'/%3E%3Cpath d='M600 0 Q400 300 600 600'/%3E%3Cpath d='M0 200 Q400 300 800 200'/%3E%3Cpath d='M0 400 Q400 300 800 400'/%3E%3Ccircle cx='400' cy='300' r='90' stroke-opacity='0.08'/%3E%3Ccircle cx='400' cy='300' r='150' stroke-opacity='0.05'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-opacity='0.02' stroke-width='0.5'%3E%3Cpath d='M400 300 L520 180'/%3E%3Cpath d='M400 300 L560 260'/%3E%3Cpath d='M400 300 L580 380'/%3E%3Cpath d='M400 300 L500 440'/%3E%3Cpath d='M400 300 L300 420'/%3E%3Cpath d='M400 300 L220 360'/%3E%3Cpath d='M400 300 L260 200'/%3E%3Cpath d='M400 300 L340 160'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.hero-map-bg__routes {
+  position: absolute;
+  inset: 0;
+  opacity: 0.55;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600' fill='none'%3E%3Cg stroke='%237b61ff' stroke-opacity='0.18' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M400 300 L750 140'/%3E%3Cpath d='M400 300 L720 420'/%3E%3Cpath d='M400 300 L620 520'/%3E%3Cpath d='M400 300 L180 480'/%3E%3Cpath d='M400 300 L60 280'/%3E%3C/g%3E%3Cg stroke='%237b61ff' stroke-opacity='0.08' stroke-width='2'%3E%3Cpath d='M280 80 C360 200 440 220 520 300 S640 420 720 500'/%3E%3Cpath d='M100 350 C200 320 300 310 400 300 S600 290 700 250'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.dark .hero-map-bg__routes {
+  opacity: 0.35;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600' fill='none'%3E%3Cg stroke='%231a1028' stroke-opacity='0.1' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M400 300 L750 140'/%3E%3Cpath d='M400 300 L720 420'/%3E%3Cpath d='M400 300 L620 520'/%3E%3Cpath d='M400 300 L180 480'/%3E%3Cpath d='M400 300 L60 280'/%3E%3C/g%3E%3Cg stroke='%231a1028' stroke-opacity='0.05' stroke-width='2'%3E%3Cpath d='M280 80 C360 200 440 220 520 300 S640 420 720 500'/%3E%3Cpath d='M100 350 C200 320 300 310 400 300 S600 290 700 250'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.hero-map-bg__center-glow {
+  position: absolute;
+  top: 48%;
+  left: 52%;
+  width: 14rem;
+  height: 14rem;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    var(--map-glow) 0%,
+    var(--map-glow-mid) 35%,
+    transparent 70%
+  );
+  filter: blur(28px);
+}
+
+.hero-map-bg__radial-accent {
+  position: absolute;
+  top: 30%;
+  right: 10%;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    var(--map-radial-accent) 0%,
+    transparent 65%
+  );
+  filter: blur(40px);
+}
+
+.hero-map-bg__label {
+  position: absolute;
+  top: 54%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  color: var(--map-label-color);
+  text-transform: uppercase;
+  user-select: none;
+  pointer-events: none;
+}
+
+.hero-map-bg__vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 80% 70% at 55% 50%,
+    transparent 30%,
+    color-mix(in srgb, var(--map-fade-color) 50%, transparent) 80%,
+    var(--map-vignette-color) 100%
+  );
+}
+
+.hero-map-bg__fade-left {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to left,
+    transparent 40%,
+    color-mix(in srgb, var(--map-fade-color) 40%, transparent) 70%,
+    var(--map-fade-color) 100%
+  );
+}
+
+.hero-profile-glow {
+  position: absolute;
+  inset: -20%;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    var(--profile-glow-inner) 0%,
+    var(--profile-glow-mid) 35%,
+    var(--profile-glow-outer) 55%,
+    transparent 72%
+  );
+  filter: blur(36px);
+  pointer-events: none;
+}
+
+@media (max-width: 1023px) {
+  .hero-map-bg {
+    width: 75%;
+    height: 65%;
+    opacity: 0.7;
+  }
+
+  .dark .hero-map-bg {
+    opacity: 0.65;
+  }
+
+  .hero-map-bg__label {
+    font-size: 0.5rem;
+    letter-spacing: 0.3em;
+    opacity: 0.75;
+  }
+
+  .hero-map-bg__center-glow {
+    width: 10rem;
+    height: 10rem;
+    filter: blur(22px);
+  }
+}
+
+@media (max-width: 639px) {
+  .hero-map-bg {
+    width: 100%;
+    height: 55%;
+    top: 0;
+    opacity: 0.45;
+    mask-image: linear-gradient(
+      to bottom,
+      black 30%,
+      rgba(0, 0, 0, 0.4) 70%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      black 30%,
+      rgba(0, 0, 0, 0.4) 70%,
+      transparent 100%
+    );
+  }
+
+  .dark .hero-map-bg {
+    opacity: 0.35;
+  }
+
+  .hero-map-bg__lines,
+  .hero-map-bg__routes {
+    opacity: 0.45;
+  }
+
+  .dark .hero-map-bg__lines,
+  .dark .hero-map-bg__routes {
+    opacity: 0.4;
+  }
+
+  .hero-map-bg__label {
+    opacity: 0.4;
+    top: 50%;
+    left: 50%;
+  }
+
+  .dark .hero-map-bg__label {
+    opacity: 0.35;
+  }
+
+  .hero-map-bg__center-glow {
+    width: 8rem;
+    height: 8rem;
+    filter: blur(18px);
+    opacity: 0.65;
+  }
+
+  .dark .hero-map-bg__center-glow {
+    opacity: 0.6;
+  }
+
+  .hero-profile-glow {
+    filter: blur(28px);
+    inset: -15%;
   }
 }

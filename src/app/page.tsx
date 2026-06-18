@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -19,6 +20,12 @@ import { Navbar } from './components/Navbar';
 import { RotatingBadge } from './components/RotatingBadge';
 import { TechStackIcons } from './components/TechStackIcons';
 import { SkillTag } from './components/SkillTag';
+import { HeroMapBackground } from './components/HeroMapBackground';
+
+const AmbientBackground = dynamic(
+  () => import('./components/AmbientBackground').then((mod) => mod.AmbientBackground),
+  { ssr: false }
+);
 
 export default function Home() {
   const [showAll, setShowAll] = useState(false);
@@ -253,41 +260,23 @@ export default function Home() {
   ];
 
   return (
-    <main className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
-      {/* Ambient purple background */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden -z-10" aria-hidden>
-        <div className="absolute inset-0 bg-purple-mesh" />
-        <div
-          className="absolute -top-32 -left-32 w-[32rem] h-[32rem] rounded-full blur-3xl"
-          style={{ background: 'var(--glow-color)' }}
-        />
-        <div
-          className="absolute -bottom-32 -right-32 w-[32rem] h-[32rem] rounded-full blur-3xl"
-          style={{ background: 'var(--glow-color)' }}
-        />
-        <div
-          className="absolute top-1/3 -right-20 w-80 h-80 rounded-full blur-3xl"
-          style={{ background: 'var(--glow-color-soft)' }}
-        />
-        <div
-          className="absolute top-2/3 -left-24 w-72 h-72 rounded-full blur-3xl"
-          style={{ background: 'var(--glow-color-soft)' }}
-        />
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] rounded-full blur-[100px]"
-          style={{ background: 'var(--glow-color-soft)' }}
-        />
-      </div>
+    <main className="relative min-h-screen text-foreground overflow-x-hidden">
+      <AmbientBackground />
 
       <Navbar />
 
       {/* ─── Hero ─── */}
-      <section id="home" className="min-h-screen pt-24 sm:pt-28 lg:pt-32 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex flex-col justify-center min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-5rem)]">
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-8 items-center py-8 sm:py-12 lg:py-0">
+      <section
+        id="home"
+        className="relative min-h-screen pt-24 sm:pt-28 lg:pt-32 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      >
+        <div className="relative z-10 max-w-7xl mx-auto flex flex-col justify-center min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-5rem)]">
+          <div className="relative">
+            <HeroMapBackground />
+            <div className="relative z-10 grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-8 items-center py-8 sm:py-12 lg:py-0">
             {/* Left Content */}
             <div className="space-y-4 sm:space-y-6 order-2 lg:order-1 text-center lg:text-left">
-              <p className="text-xs tracking-[0.25em] text-accent uppercase">
+              <p className="text-sm tracking-[0.25em] text-accent uppercase">
                 Hello, I&apos;m
               </p>
               <h1 className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
@@ -326,7 +315,8 @@ export default function Home() {
               <div className="relative flex items-center justify-center gap-2 sm:gap-4 w-full">
                 {/* Image Frame */}
                 <div className="relative flex-shrink-0">
-                  <div className="p-1 bg-accent clip-image-frame">
+                  <div className="hero-profile-glow" aria-hidden />
+                  <div className="p-1 bg-accent clip-image-frame relative z-[1]">
                     <div className="relative w-44 h-56 xs:w-48 xs:h-60 sm:w-56 sm:h-72 md:w-64 md:h-80 lg:w-72 lg:h-96 clip-image-frame overflow-hidden bg-accent">
                       <Image
                         src="/images/linkedin-prof2.png"
@@ -356,6 +346,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
           </div>
 
           {/* Tech Stack + Quote */}
@@ -723,7 +714,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-border-subtle py-6 sm:py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-muted text-xs sm:text-sm">
-          <p>&copy; {new Date().getFullYear()} Parsa Bazrpash. All rights reserved.</p>
+          <p suppressHydrationWarning>&copy; {new Date().getFullYear()} Parsa Bazrpash. All rights reserved.</p>
         </div>
       </footer>
     </main>
