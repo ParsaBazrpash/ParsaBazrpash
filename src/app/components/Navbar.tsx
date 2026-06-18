@@ -78,8 +78,8 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* Social Icons */}
-          <div className="hidden md:flex items-center gap-5">
+          {/* Social Icons — desktop only (mobile uses menu) */}
+          <div className="hidden lg:flex items-center gap-5">
             <Link
               href="https://www.linkedin.com/in/parsa-bazrpash-amalgar/"
               target="_blank"

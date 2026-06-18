@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   description: "Portfolio of Parsa Bazrpash — Software Engineering Student passionate about full-stack development.",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{

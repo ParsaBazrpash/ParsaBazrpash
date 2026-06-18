@@ -18,6 +18,7 @@ import {
 import { Navbar } from './components/Navbar';
 import { RotatingBadge } from './components/RotatingBadge';
 import { TechStackIcons } from './components/TechStackIcons';
+import { SkillTag } from './components/SkillTag';
 
 export default function Home() {
   const [showAll, setShowAll] = useState(false);
@@ -252,25 +253,25 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-black text-white overflow-x-hidden">
       <Navbar />
 
       {/* ─── Hero ─── */}
-      <section id="home" className="min-h-screen pt-20 lg:pt-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex flex-col justify-center min-h-[calc(100vh-5rem)]">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center py-12 lg:py-0">
+      <section id="home" className="min-h-screen pt-16 sm:pt-20 lg:pt-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex flex-col justify-center min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-5rem)]">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-8 items-center py-8 sm:py-12 lg:py-0">
             {/* Left Content */}
-            <div className="space-y-6 order-2 lg:order-1">
+            <div className="space-y-4 sm:space-y-6 order-2 lg:order-1 text-center lg:text-left">
               <p className="text-xs tracking-[0.25em] text-muted uppercase">
                 Hello, I&apos;m
               </p>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
+              <h1 className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
                 Parsa Bazrpash
               </h1>
-              <h2 className="text-xl sm:text-2xl text-accent font-medium">
+              <h2 className="text-lg sm:text-xl md:text-2xl text-accent font-medium">
                 Software Engineer
               </h2>
-              <p className="text-muted leading-relaxed max-w-lg text-sm sm:text-base">
+              <p className="text-muted leading-relaxed max-w-lg mx-auto lg:mx-0 text-sm sm:text-base">
                 Software Engineering student at The University of Texas at Dallas and Application
                 Engineer at Vanguard, with internship experience in full-stack development, backend
                 systems, cloud services, and enterprise software. Skilled in Java, C#, C++, Python,
@@ -280,7 +281,7 @@ export default function Home() {
               </p>
               <Link
                 href="#projects"
-                className="inline-flex items-center gap-3 px-6 py-3 border border-accent text-accent text-xs tracking-[0.2em] font-medium hover:bg-accent/10 transition-colors group"
+                className="inline-flex items-center gap-3 px-6 py-3 border border-accent text-accent text-xs tracking-[0.2em] font-medium hover:bg-accent/10 transition-colors group mx-auto lg:mx-0"
               >
                 VIEW MY WORK
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -288,18 +289,20 @@ export default function Home() {
             </div>
 
             {/* Right Content — Profile */}
-            <div className="relative order-1 lg:order-2 flex justify-center lg:justify-end">
+            <div className="relative order-1 lg:order-2 flex flex-col items-center lg:items-end gap-5 sm:gap-6 w-full max-w-xs sm:max-w-none mx-auto lg:mx-0 lg:max-w-none">
               {/* Location */}
-              <div className="absolute top-0 right-0 lg:right-8 z-10 text-right">
-                <p className="text-[10px] tracking-[0.2em] text-muted uppercase">Based in</p>
-                <p className="text-sm font-semibold tracking-wider">DALLAS, TX</p>
+              <div className="w-full flex justify-end lg:absolute lg:top-0 lg:right-8 z-10">
+                <div className="text-right">
+                  <p className="text-[10px] tracking-[0.2em] text-muted uppercase">Based in</p>
+                  <p className="text-sm font-semibold tracking-wider">DALLAS, TX</p>
+                </div>
               </div>
 
-              <div className="relative flex items-center gap-4 mt-8">
+              <div className="relative flex items-center justify-center gap-2 sm:gap-4 w-full">
                 {/* Image Frame */}
-                <div className="relative">
+                <div className="relative flex-shrink-0">
                   <div className="p-1 bg-accent clip-image-frame">
-                    <div className="relative w-56 h-72 sm:w-64 sm:h-80 md:w-72 md:h-96 clip-image-frame overflow-hidden bg-accent">
+                    <div className="relative w-44 h-56 xs:w-48 xs:h-60 sm:w-56 sm:h-72 md:w-64 md:h-80 lg:w-72 lg:h-96 clip-image-frame overflow-hidden bg-accent">
                       <Image
                         src="/images/linkedin-prof2.png"
                         alt="Parsa Bazrpash"
@@ -312,13 +315,13 @@ export default function Home() {
                 </div>
 
                 {/* Rotating Badge */}
-                <div className="hidden sm:block">
+                <div className="hidden xs:block flex-shrink-0">
                   <RotatingBadge />
                 </div>
               </div>
 
               {/* Learning Card */}
-              <div className="absolute -bottom-2 right-0 lg:right-4 border border-accent/60 px-4 py-3 bg-black/90 backdrop-blur-sm">
+              <div className="w-full sm:w-auto border border-accent/60 px-4 py-3 bg-black/90 backdrop-blur-sm lg:absolute lg:-bottom-2 lg:right-4">
                 <p className="text-[10px] tracking-[0.2em] text-muted uppercase mb-1">
                   Currently Working At
                 </p>
@@ -331,9 +334,9 @@ export default function Home() {
           </div>
 
           {/* Tech Stack + Quote */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-8 pt-12 pb-8 border-t border-border-subtle mt-8">
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-4 mb-5">
+          <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 sm:gap-8 pt-8 sm:pt-12 pb-6 sm:pb-8 border-t border-border-subtle mt-6 sm:mt-8">
+            <div className="flex-1 min-w-0 w-full">
+              <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-5">
                 <p className="text-[10px] tracking-[0.25em] text-muted uppercase whitespace-nowrap">
                   Tech Stack
                 </p>
@@ -341,7 +344,7 @@ export default function Home() {
               </div>
               <TechStackIcons />
             </div>
-            <div className="flex items-center gap-4 max-w-xs">
+            <div className="hidden sm:flex items-center gap-4 max-w-xs">
               <div className="w-px h-10 bg-accent flex-shrink-0" />
             </div>
           </div>
@@ -349,14 +352,14 @@ export default function Home() {
       </section>
 
       {/* ─── Experience ─── */}
-      <section id="experience" className="py-24 px-4 sm:px-6 lg:px-8 border-t border-border-subtle">
+      <section id="experience" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 border-t border-border-subtle">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+          <div className="mb-10 sm:mb-16">
             <p className="text-[10px] tracking-[0.25em] text-accent uppercase mb-3">Resume</p>
-            <h2 className="text-3xl sm:text-4xl font-bold">Experience & Education</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Experience & Education</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {/* Experience */}
             <div className="space-y-5">
               <h3 className="text-lg font-semibold mb-6 pb-2 border-b border-border-subtle">
@@ -377,13 +380,13 @@ export default function Home() {
                       />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-start justify-between gap-2 mb-1">
-                        <div>
+                      <div className="flex flex-col xs:flex-row xs:items-start xs:justify-between gap-2 mb-1">
+                        <div className="min-w-0">
                           <h4 className="font-semibold text-sm">{exp.position}</h4>
                           <p className="text-muted text-sm">{exp.company}</p>
                         </div>
                         <span
-                          className={`px-2 py-0.5 text-[10px] font-medium tracking-wider flex-shrink-0 ${
+                          className={`self-start px-2 py-0.5 text-[10px] font-medium tracking-wider flex-shrink-0 ${
                             exp.status === 'Current'
                               ? 'border border-accent text-accent'
                               : 'border border-border-subtle text-muted'
@@ -425,13 +428,13 @@ export default function Home() {
                       />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-start justify-between gap-2 mb-1">
-                        <div>
+                      <div className="flex flex-col xs:flex-row xs:items-start xs:justify-between gap-2 mb-1">
+                        <div className="min-w-0">
                           <h4 className="font-semibold text-sm">{edu.school}</h4>
                           <p className="text-muted text-sm">{edu.degree}</p>
                         </div>
                         <span
-                          className={`px-2 py-0.5 text-[10px] font-medium tracking-wider flex-shrink-0 ${
+                          className={`self-start px-2 py-0.5 text-[10px] font-medium tracking-wider flex-shrink-0 ${
                             edu.status === 'Current'
                               ? 'border border-accent text-accent'
                               : 'border border-border-subtle text-muted'
@@ -457,8 +460,8 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Skills */}
-            <div className="space-y-5">
+            {/* Skills — full width on md, third column on lg */}
+            <div className="space-y-5 md:col-span-2 lg:col-span-1">
               <h3 className="text-lg font-semibold mb-6 pb-2 border-b border-border-subtle">
                 Skills & Expertise
               </h3>
@@ -470,12 +473,7 @@ export default function Home() {
                   <h4 className="font-medium text-sm mb-3">{cat.category}</h4>
                   <div className="flex flex-wrap gap-2">
                     {cat.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="px-2 py-1 text-xs border border-border-subtle text-muted"
-                      >
-                        {skill}
-                      </span>
+                      <SkillTag key={skill} name={skill} />
                     ))}
                   </div>
                 </div>
@@ -486,26 +484,24 @@ export default function Home() {
       </section>
 
       {/* ─── Projects ─── */}
-      <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 border-t border-border-subtle">
+      <section id="projects" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 border-t border-border-subtle">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+          <div className="mb-10 sm:mb-16">
             <p className="text-[10px] tracking-[0.25em] text-accent uppercase mb-3">Portfolio</p>
-            <h2 className="text-3xl sm:text-4xl font-bold">My Projects</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">My Projects</h2>
           </div>
 
-          <div className="flex justify-end mb-8">
-            <div className="flex items-center gap-3">
-              <span className="text-sm text-muted">Sort by date:</span>
-              <button
-                onClick={() => setSortOrder(sortOrder === 'desc' ? 'asc' : 'desc')}
-                className="px-4 py-2 text-sm border border-border-subtle text-muted hover:border-accent/50 hover:text-white transition-colors"
-              >
-                {sortOrder === 'desc' ? 'Newest → Oldest' : 'Oldest → Newest'}
-              </button>
-            </div>
+          <div className="flex flex-col xs:flex-row xs:items-center xs:justify-end gap-3 mb-6 sm:mb-8">
+            <span className="text-sm text-muted">Sort by date:</span>
+            <button
+              onClick={() => setSortOrder(sortOrder === 'desc' ? 'asc' : 'desc')}
+              className="px-4 py-2 text-sm border border-border-subtle text-muted hover:border-accent/50 hover:text-white transition-colors w-full xs:w-auto text-center"
+            >
+              {sortOrder === 'desc' ? 'Newest → Oldest' : 'Oldest → Newest'}
+            </button>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {sortedProjects.map((project) => (
               <div
                 key={project.title}
@@ -527,9 +523,9 @@ export default function Home() {
                   </div>
                 </Link>
                 <div className="p-5">
-                  <h3 className="font-semibold text-lg mb-2">{project.title}</h3>
+                  <h3 className="font-semibold text-base sm:text-lg mb-2">{project.title}</h3>
                   <p className="text-muted text-sm mb-3 line-clamp-3">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-3">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
@@ -548,7 +544,7 @@ export default function Home() {
                       GitHub Repository →
                     </Link>
                   )}
-                  <p className="text-xs text-muted mt-3">{project.date}</p>
+                  <p className="text-xs text-muted mt-3 break-words">{project.date}</p>
                 </div>
               </div>
             ))}
@@ -557,14 +553,14 @@ export default function Home() {
       </section>
 
       {/* ─── Achievements ─── */}
-      <section id="achievements" className="py-24 px-4 sm:px-6 lg:px-8 border-t border-border-subtle">
+      <section id="achievements" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 border-t border-border-subtle">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+          <div className="mb-10 sm:mb-16">
             <p className="text-[10px] tracking-[0.25em] text-accent uppercase mb-3">Recognition</p>
-            <h2 className="text-3xl sm:text-4xl font-bold">Achievements & Awards</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Achievements & Awards</h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 max-w-4xl mx-auto">
             {achievements.map((achievement, index) => {
               const Icon = achievement.icon;
               return (
@@ -623,32 +619,32 @@ export default function Home() {
       </section>
 
       {/* ─── Contact ─── */}
-      <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 border-t border-border-subtle">
+      <section id="contact" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 border-t border-border-subtle">
         <div className="max-w-4xl mx-auto">
-          <div className="mb-16 text-center">
+          <div className="mb-10 sm:mb-16 text-center">
             <p className="text-[10px] tracking-[0.25em] text-accent uppercase mb-3">Reach Out</p>
-            <h2 className="text-3xl sm:text-4xl font-bold">Get In Touch</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Get In Touch</h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             <div className="space-y-5">
               <h3 className="text-lg font-semibold">Contact Information</h3>
               <div className="space-y-4">
-                <div className="flex items-center gap-4 p-4 border border-border-subtle">
+                <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 border border-border-subtle">
                   <Mail className="w-5 h-5 text-accent flex-shrink-0" />
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-muted text-xs uppercase tracking-wider mb-0.5">Email</p>
                     <a
                       href="mailto:prsawork1@gmail.com"
-                      className="text-sm hover:text-accent transition-colors"
+                      className="text-sm hover:text-accent transition-colors break-all"
                     >
                       prsawork1@gmail.com
                     </a>
                   </div>
                 </div>
-                <div className="flex items-center gap-4 p-4 border border-border-subtle">
+                <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 border border-border-subtle">
                   <MapPin className="w-5 h-5 text-accent flex-shrink-0" />
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-muted text-xs uppercase tracking-wider mb-0.5">Location</p>
                     <p className="text-sm">Dallas, Texas, United States</p>
                   </div>
@@ -681,7 +677,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="border border-border-subtle p-6 flex flex-col justify-center">
+            <div className="border border-border-subtle p-5 sm:p-6 flex flex-col justify-center">
               <h3 className="text-lg font-semibold mb-3">Let&apos;s Work Together</h3>
               <p className="text-muted text-sm mb-6 leading-relaxed">
                 I&apos;m always open to discussing new projects, creative ideas, or opportunities
@@ -700,8 +696,8 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border-subtle py-8">
-        <div className="max-w-7xl mx-auto px-4 text-center text-muted text-sm">
+      <footer className="border-t border-border-subtle py-6 sm:py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-muted text-xs sm:text-sm">
           <p>&copy; {new Date().getFullYear()} Parsa Bazrpash. All rights reserved.</p>
         </div>
       </footer>
