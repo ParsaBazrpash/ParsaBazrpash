@@ -25,11 +25,11 @@ const stacks: { name: string; Icon: IconType }[] = [
 
 export function TechStackIcons() {
   return (
-    <div className="flex items-center gap-3 sm:gap-4 flex-wrap justify-center sm:justify-start">
+    <div className="flex items-center gap-2.5 sm:gap-4 flex-wrap justify-center lg:justify-start">
       {stacks.map(({ name, Icon }) => (
         <div
           key={name}
-          className="flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-lg bg-surface border border-border-subtle/50 card-surface text-muted hover:text-accent transition-colors"
+          className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-surface border border-border-subtle/50 card-surface text-muted hover:text-accent transition-colors flex-shrink-0"
           title={name}
         >
           <Icon className="w-5 h-5 sm:w-6 sm:h-6" />

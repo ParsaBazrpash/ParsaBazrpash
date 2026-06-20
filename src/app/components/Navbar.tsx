@@ -52,11 +52,9 @@ export function Navbar() {
         <div className="px-4 sm:px-6">
           <div className="flex items-center justify-between h-14 md:h-16">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-1 group">
-              <span className="text-xl font-bold text-foreground tracking-tight">P</span>
-              <span className="relative text-xl font-bold text-foreground tracking-tight">
-                B
-                <span className="absolute -top-1 -right-1.5 w-1.5 h-1.5 rounded-full bg-accent" />
+            <Link href="/" className="group">
+              <span className="text-sm sm:text-base font-bold text-foreground tracking-tight whitespace-nowrap">
+                Parsa Bazrpash
               </span>
             </Link>
 

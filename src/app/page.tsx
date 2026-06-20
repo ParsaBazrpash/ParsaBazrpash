@@ -281,24 +281,24 @@ export default function Home() {
       {/* ─── Hero ─── */}
       <section
         id="home"
-        className="relative min-h-screen pt-24 sm:pt-28 lg:pt-32 px-4 sm:px-6 lg:px-8 overflow-hidden"
+        className="relative lg:min-h-screen pt-24 sm:pt-28 lg:pt-32 px-4 sm:px-6 lg:px-8 overflow-hidden"
       >
-        <div className="relative z-10 max-w-7xl mx-auto flex flex-col justify-center min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-5rem)]">
+        <div className="relative z-10 max-w-7xl mx-auto flex flex-col justify-center lg:min-h-[calc(100vh-5rem)]">
           <div className="relative">
             <HeroMapBackground />
-            <div className="relative z-10 grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-8 items-center py-8 sm:py-12 lg:py-0">
+            <div className="relative z-10 grid lg:grid-cols-2 gap-6 sm:gap-12 lg:gap-8 items-center py-6 sm:py-12 lg:py-0">
             {/* Left Content */}
-            <div className="space-y-4 sm:space-y-6 order-2 lg:order-1 text-center lg:text-left">
-              <p className="text-sm tracking-[0.25em] text-accent uppercase">
+            <div className="space-y-4 sm:space-y-6 order-2 lg:order-1 text-left">
+              <p className="text-xs sm:text-sm tracking-[0.25em] text-accent uppercase">
                 Hello, I&apos;m
               </p>
-              <h1 className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
+              <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold leading-tight">
                 Parsa Bazrpash
               </h1>
-              <h2 className="text-lg sm:text-xl md:text-2xl text-accent font-medium">
+              <h2 className="text-base sm:text-xl md:text-2xl text-accent font-medium">
                 Software Engineer
               </h2>
-              <p className="text-muted leading-relaxed max-w-lg mx-auto lg:mx-0 text-sm sm:text-base">
+              <p className="text-muted leading-relaxed max-w-lg text-sm sm:text-base">
                 Software Engineering student at The University of Texas at Dallas and Application
                 Engineer at Vanguard, with internship experience in full-stack development, backend
                 systems, cloud services, and enterprise software. Skilled in Java, C#, C++, Python,
@@ -306,9 +306,25 @@ export default function Home() {
                 Passionate about building reliable, user-friendly applications and exploring the
                 intersection of software engineering, financial technology, and AI.
               </p>
+              <div className="flex flex-row gap-3 pt-1 lg:hidden">
+                <Link
+                  href="#projects"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-gradient-to-r from-accent to-accent-light text-white text-xs font-medium hover:opacity-90 transition-opacity group flex-1"
+                >
+                  View My Work
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link
+                  href="#contact"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg border border-border-subtle text-foreground text-xs font-medium hover:border-accent transition-colors flex-1"
+                >
+                  <Mail className="w-4 h-4" />
+                  Contact Me
+                </Link>
+              </div>
               <Link
                 href="#projects"
-                className="inline-flex items-center gap-3 px-6 py-3 rounded-lg bg-gradient-to-r from-accent to-accent-light text-white text-xs tracking-[0.2em] font-medium hover:opacity-90 transition-opacity group mx-auto lg:mx-0"
+                className="hidden lg:inline-flex items-center gap-3 px-6 py-3 rounded-lg bg-gradient-to-r from-accent to-accent-light text-white text-xs tracking-[0.2em] font-medium hover:opacity-90 transition-opacity group"
               >
                 VIEW MY WORK
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -316,9 +332,9 @@ export default function Home() {
             </div>
 
             {/* Right Content — Profile */}
-            <div className="relative order-1 lg:order-2 flex flex-col items-center lg:items-end gap-5 sm:gap-6 w-full max-w-xs sm:max-w-none mx-auto lg:mx-0 lg:max-w-none">
-              {/* Location */}
-              <div className="w-full flex justify-end lg:absolute lg:top-0 lg:right-8 z-10">
+            <div className="relative order-1 lg:order-2 flex flex-col items-center lg:items-end gap-4 sm:gap-6 w-full max-w-sm sm:max-w-none mx-auto lg:mx-0 lg:max-w-none">
+              {/* Location — desktop only */}
+              <div className="hidden lg:flex w-full justify-end lg:absolute lg:top-0 lg:right-8 z-10">
                 <div className="text-right">
                   <p className="text-[10px] tracking-[0.2em] text-muted uppercase">Based in</p>
                   <p className="text-sm font-semibold tracking-wider">DALLAS, TX</p>
@@ -330,7 +346,7 @@ export default function Home() {
                 <div className="relative flex-shrink-0">
                   <div className="hero-profile-glow" aria-hidden />
                   <div className="p-1 bg-accent clip-image-frame relative z-[1]">
-                    <div className="relative w-44 h-56 xs:w-48 xs:h-60 sm:w-56 sm:h-72 md:w-64 md:h-80 lg:w-72 lg:h-96 clip-image-frame overflow-hidden bg-accent">
+                    <div className="relative w-52 h-64 sm:w-56 sm:h-72 md:w-64 md:h-80 lg:w-72 lg:h-96 clip-image-frame overflow-hidden bg-accent">
                       <Image
                         src="/images/linkedin-prof2.png"
                         alt="Parsa Bazrpash"
@@ -342,14 +358,35 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Rotating Badge */}
-                <div className="hidden xs:block flex-shrink-0">
+                {/* Rotating Badge — desktop only */}
+                <div className="hidden lg:flex flex-shrink-0">
                   <RotatingBadge />
                 </div>
               </div>
 
-              {/* Learning Card */}
-              <div className="w-full sm:w-auto px-4 py-3 rounded-lg bg-surface border border-border-subtle/60 card-surface lg:absolute lg:-bottom-2 lg:right-4">
+              {/* Info cards — mobile only */}
+              <div className="grid grid-cols-2 gap-3 w-full lg:hidden">
+                <div className="p-3 rounded-lg border border-border-subtle/60 bg-surface/40">
+                  <MapPin className="w-4 h-4 text-accent mb-2" />
+                  <p className="text-[10px] tracking-[0.2em] text-accent uppercase mb-1">
+                    Based In
+                  </p>
+                  <p className="text-sm font-semibold">Dallas, TX</p>
+                </div>
+                <div className="p-3 rounded-lg border border-border-subtle/60 bg-surface/40">
+                  <Briefcase className="w-4 h-4 text-accent mb-2" />
+                  <p className="text-[10px] tracking-[0.2em] text-accent uppercase mb-1">
+                    Currently Working At
+                  </p>
+                  <div className="flex items-center justify-between gap-1">
+                    <p className="text-sm font-semibold">Vanguard</p>
+                    <ArrowUpRight className="w-3.5 h-3.5 text-muted flex-shrink-0" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Working card — desktop only */}
+              <div className="hidden lg:block w-full sm:w-auto px-4 py-3 rounded-lg bg-surface border border-border-subtle/60 card-surface lg:absolute lg:-bottom-2 lg:right-4">
                 <p className="text-[10px] tracking-[0.2em] text-muted uppercase mb-1">
                   Currently Working At
                 </p>
@@ -363,15 +400,24 @@ export default function Home() {
           </div>
 
           {/* Tech Stack + Quote */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 sm:gap-8 pt-8 sm:pt-12 pb-6 sm:pb-8 border-t border-border-subtle mt-6 sm:mt-8">
+          <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 sm:gap-8 pt-6 sm:pt-12 pb-6 sm:pb-8 border-t border-border-subtle mt-4 sm:mt-8">
             <div className="flex-1 min-w-0 w-full">
-              <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-5">
+              <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-5 justify-center lg:justify-start">
+                <div className="flex-1 h-px bg-border-subtle lg:hidden" />
                 <p className="text-[10px] tracking-[0.25em] text-muted uppercase whitespace-nowrap">
                   Tech Stack
                 </p>
                 <div className="flex-1 h-px bg-border-subtle" />
               </div>
               <TechStackIcons />
+              <div className="flex justify-center lg:hidden mt-4">
+                <Link
+                  href="#experience"
+                  className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-border-subtle text-xs text-muted hover:border-accent hover:text-accent transition-colors"
+                >
+                  + More
+                </Link>
+              </div>
             </div>
             <div className="hidden sm:flex items-center gap-4 max-w-xs">
               <div className="w-px h-10 bg-accent flex-shrink-0" />
