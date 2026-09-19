@@ -42,6 +42,18 @@ export default function Home() {
 
   const projects = [
     {
+      title: 'Roomify',
+      description:
+        'Roomify is an AI-powered interior visualization platform that lets users upload a photo of their room, select real furniture and decor products, and preview how they would look in their space before buying.',
+      image: '/images/roomify.png',
+      demo: 'https://roomifyai1.vercel.app/',
+      github: '',
+      skills: 'Next.js/TypeScript/React/Tailwind CSS/Firebase/AI',
+      date: 'September 2026',
+      sortDate: '2026-09-01',
+      tags: ['Next.js', 'TypeScript', 'Firebase', 'AI'],
+    },
+    {
       title: 'NexTrip',
       description:
         'NexTrip is a modern travel expense tracker that helps users plan trips and manage their spending effortlessly. Users can create trips, track expenses, upload receipts with autofill, and visualize routes on an interactive map.',
